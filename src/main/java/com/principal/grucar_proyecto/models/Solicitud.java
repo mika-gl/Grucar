@@ -1,46 +1,47 @@
 package com.principal.grucar_proyecto.models;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter
+
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="ratings")
-public class Rating extends Base {
-
+@Table(name = "solicitudes")
+public class Solicitud extends BaseUser {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="rating_id")
-    private Long ratingId;
+    @Column(name = "show_id")
+    private Long solicitudId;
+
+    @NotBlank(message = "especificar averia")
+    private String averia; //deberia ser un modelo? ej. Averia averia
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "userId")
+    private Cliente user;
 
     @ManyToOne
-    @JoinColumn(name = "show_id")
-    private Show show;
-
-    @Min(value=1, message="minimo es 1")
-    @Max(value=5, message="maximo es 5")
-    @Column(name="rating_value")
-    @NotNull(message = "no puede estar vacio")
-    private Integer ratingValue;
+    @JoinColumn(name = "prestadorId")
+    private Prestador prestador;
 }

@@ -6,20 +6,20 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.principal.grucar_proyecto.models.Show;
+import com.principal.grucar_proyecto.models.Solicitud;
 
 @Repository
-public interface ShowRepository extends CrudRepository<Show, Long> {
+public interface SolicitudRepository extends CrudRepository<Solicitud, Long> {
 
     // Método para buscar todos los cursos
-    List<Show> findAll();
+    List<Solicitud> findAll();
 
     // Método para buscar un curso por id
-    Optional<Show> findById(long id);
+    Optional<Solicitud> findById(long id);
 
     // Método para crear un curso
     // Método para actualizar un curso
-    Show save(Show show);
+    Solicitud save(Solicitud show);
 
     // Método para eliminar un curso
     void deleteById(Long id);

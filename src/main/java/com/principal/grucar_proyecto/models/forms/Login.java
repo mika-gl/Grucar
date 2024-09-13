@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Session {
+public class Login {
 
     @NotBlank(message = "El email es requerido")
     private String email;
