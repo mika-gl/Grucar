@@ -1,0 +1,23 @@
+main {
+    width: 60vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    row-gap: 16px;
+}
+
+.filterRow{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.filterRow>div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+main form button[type="submit"] {
+    margin: 0 0 0 auto;
+}
