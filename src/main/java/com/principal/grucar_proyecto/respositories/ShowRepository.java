@@ -1,4 +1,4 @@
-package com.examen.grucar_proyecto.respositories;
+package com.principal.grucar_proyecto.respositories;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.examen.grucar_proyecto.models.Show;
+import com.principal.grucar_proyecto.models.Show;
 
 @Repository
 public interface ShowRepository extends CrudRepository<Show, Long> {

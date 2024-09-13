@@ -1,4 +1,4 @@
-package com.examen.grucar_proyecto.controllers;
+package com.principal.grucar_proyecto.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.examen.grucar_proyecto.models.User;
-import com.examen.grucar_proyecto.models.forms.Session;
-import com.examen.grucar_proyecto.services.SessionService;
-import com.examen.grucar_proyecto.services.UserService;
+import com.principal.grucar_proyecto.models.User;
+import com.principal.grucar_proyecto.models.forms.Session;
+import com.principal.grucar_proyecto.services.SessionService;
+import com.principal.grucar_proyecto.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;

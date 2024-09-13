@@ -1,11 +1,11 @@
-package com.examen.grucar_proyecto.controllers;
+package com.principal.grucar_proyecto.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.examen.grucar_proyecto.models.User;
-import com.examen.grucar_proyecto.models.forms.Session;
+import com.principal.grucar_proyecto.models.User;
+import com.principal.grucar_proyecto.models.forms.Session;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;

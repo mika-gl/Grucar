@@ -1,4 +1,4 @@
-package com.examen.grucar_proyecto.services;
+package com.principal.grucar_proyecto.services;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -7,10 +7,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.examen.grucar_proyecto.models.Rating;
-import com.examen.grucar_proyecto.models.Show;
-import com.examen.grucar_proyecto.models.User;
-import com.examen.grucar_proyecto.respositories.RatingRepository;
+import com.principal.grucar_proyecto.models.Rating;
+import com.principal.grucar_proyecto.models.Show;
+import com.principal.grucar_proyecto.models.User;
+import com.principal.grucar_proyecto.respositories.RatingRepository;
 
 import jakarta.servlet.http.HttpSession;
 

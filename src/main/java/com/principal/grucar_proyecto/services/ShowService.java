@@ -1,4 +1,4 @@
-package com.examen.grucar_proyecto.services;
+package com.principal.grucar_proyecto.services;
 
 
 import java.util.Date;
@@ -7,8 +7,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.examen.grucar_proyecto.models.Show;
-import com.examen.grucar_proyecto.respositories.ShowRepository;
+import com.principal.grucar_proyecto.models.Show;
+import com.principal.grucar_proyecto.respositories.ShowRepository;
 
 import lombok.AllArgsConstructor;
 

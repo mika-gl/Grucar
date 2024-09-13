@@ -1,4 +1,4 @@
-package com.examen.grucar_proyecto.models.forms;
+package com.principal.grucar_proyecto.models.forms;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;

@@ -1,12 +1,12 @@
-package com.examen.grucar_proyecto.services;
+package com.principal.grucar_proyecto.services;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
-import com.examen.grucar_proyecto.models.User;
-import com.examen.grucar_proyecto.respositories.UserRepository;
+import com.principal.grucar_proyecto.models.User;
+import com.principal.grucar_proyecto.respositories.UserRepository;
 
 import jakarta.servlet.http.HttpSession;
 

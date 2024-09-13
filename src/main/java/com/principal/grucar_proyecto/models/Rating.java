@@ -1,4 +1,4 @@
-package com.examen.grucar_proyecto.models;
+package com.principal.grucar_proyecto.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

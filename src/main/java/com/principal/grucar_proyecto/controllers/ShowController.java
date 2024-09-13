@@ -1,4 +1,4 @@
-package com.examen.grucar_proyecto.controllers;
+package com.principal.grucar_proyecto.controllers;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.examen.grucar_proyecto.models.Rating;
-import com.examen.grucar_proyecto.models.Show;
-import com.examen.grucar_proyecto.services.RatingService;
-import com.examen.grucar_proyecto.services.ShowService;
-import com.examen.grucar_proyecto.services.UserService;
+import com.principal.grucar_proyecto.models.Rating;
+import com.principal.grucar_proyecto.models.Show;
+import com.principal.grucar_proyecto.services.RatingService;
+import com.principal.grucar_proyecto.services.ShowService;
+import com.principal.grucar_proyecto.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
