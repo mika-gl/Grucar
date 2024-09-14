@@ -40,7 +40,7 @@ public class Cliente extends BaseUser {
     private Long clienteId;
 
     
-    @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Solicitud> solicitudes_clientes;
 
     @PrePersist

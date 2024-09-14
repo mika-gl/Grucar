@@ -26,8 +26,8 @@ public class Prestador extends BaseUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long prestadorId;
 
-    @OneToMany(mappedBy = "prestadorId")
-    private List<Solicitud> solicitudes_prestador;
+    @OneToMany(mappedBy = "prestador")
+    private List<Solicitud> solicitudes_aceptadas_prestador;
 
     @PrePersist
     public void SetIsPrestador() {

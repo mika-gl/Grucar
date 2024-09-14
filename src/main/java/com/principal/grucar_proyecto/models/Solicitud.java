@@ -1,6 +1,10 @@
 package com.principal.grucar_proyecto.models;
 
+import java.util.Date;
 import java.util.List;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,6 +18,8 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,21 +33,31 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "solicitudes")
-public class Solicitud extends BaseUser {
+public class Solicitud {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "show_id")
+    @Column(name = "solicitud_id")
     private Long solicitudId;
 
     @NotBlank(message = "especificar averia")
     private String averia; //deberia ser un modelo? ej. Averia averia
 
     @ManyToOne
-    @JoinColumn(name = "userId")
-    private Cliente user;
+    @JoinColumn(name = "cliente_id")
+    private Cliente cliente;
 
     @ManyToOne
-    @JoinColumn(name = "prestadorId")
+    @JoinColumn(name = "prestador_id")
     private Prestador prestador;
+
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(updatable = false,name = "created_at")
+    private Date createdAt;
+
+    @UpdateTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "updated_at")
+    private Date updatedAt;
 }
