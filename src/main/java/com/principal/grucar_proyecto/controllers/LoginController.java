@@ -16,7 +16,7 @@ import com.principal.grucar_proyecto.models.Prestador;
 import com.principal.grucar_proyecto.models.forms.Login;
 import com.principal.grucar_proyecto.services.LoginService;
 import com.principal.grucar_proyecto.services.PrestadorService;
-import com.principal.grucar_proyecto.services.BaseService;
+import com.principal.grucar_proyecto.services.BaseUserService;
 import com.principal.grucar_proyecto.services.ClienteService;
 
 import jakarta.servlet.http.HttpSession;
@@ -40,11 +40,11 @@ public class LoginController {
     @GetMapping("")
     public String index(Model model, HttpSession session) {
 
-        if (!(session.getAttribute("loggedUser") == null)){
-            return "redirect:/shows";
+        if (session.getAttribute("currentUser") != null) {
+            return "redirect:/solicitudes";
         }
         model.addAttribute("login", new Login());
-        return "login.jsp";
+        return "login-registro/login.jsp";
     }
 
     //recibir login
@@ -52,16 +52,14 @@ public class LoginController {
     public String login(@Valid @ModelAttribute Login login, BindingResult result, HttpSession currentSession, Model model) {
         //VALIDACION DE ERRORES POR ANOTADORES
         if (result.hasErrors()) {
-            model.addAttribute("login", new Login());
-            return "login.jsp";
+            return "login-registro/login.jsp";
         }
 
         //VALIDACION DE ERRORES POR METODOS
         result = loginService.validateLogin(login.getEmail(), login.getPassword(), currentSession, result);
         if (result.hasErrors()) {
             currentSession.invalidate();
-            model.addAttribute("login", new Login());
-            return "login.jsp";
+            return "login-registro/login.jsp";
         }
         // currentSession.setAttribute("currentUser", userService.findByEmail(session.getEmail())); no es necesario si se hace en loginService.validateLogin no?
         return "redirect:/solicitudes";

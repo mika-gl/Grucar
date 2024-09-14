@@ -21,6 +21,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -45,6 +46,7 @@ public class Solicitud {
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")
+    @NotNull(message = "Error: solicitud sin cliente")
     private Cliente cliente;
 
     @ManyToOne
@@ -53,7 +55,7 @@ public class Solicitud {
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(updatable = false,name = "created_at")
+    @Column(updatable = false, name = "created_at")
     private Date createdAt;
 
     @UpdateTimestamp

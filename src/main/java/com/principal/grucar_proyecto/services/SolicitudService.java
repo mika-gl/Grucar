@@ -44,8 +44,9 @@ public class SolicitudService {
         return allShows;
     }
 
-    public void asignarFechas(Solicitud show, Solicitud currentShow) {
-        show.setCreatedAt(currentShow.getCreatedAt());
-        show.setUpdatedAt(new Date());
+    public Solicitud asignarFechas(Solicitud solicitud) {
+        solicitud.setCreatedAt(new Date());
+        solicitud.setUpdatedAt(new Date());
+        return solicitud;
     }
 }

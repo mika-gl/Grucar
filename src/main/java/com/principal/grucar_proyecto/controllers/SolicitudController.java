@@ -16,7 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.principal.grucar_proyecto.models.Solicitud;
 import com.principal.grucar_proyecto.services.SolicitudService;
-import com.principal.grucar_proyecto.services.BaseService;
+import com.principal.grucar_proyecto.services.BaseUserService;
 
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
@@ -32,16 +32,25 @@ public class SolicitudController {
     @Autowired
     private SolicitudService solicitudService;
     @Autowired
-    private BaseService userService; //?
+    private BaseUserService userService;
 
     //vista principal servicio
     @GetMapping("")
-    public String indexSolicitud(HttpSession session, Model model) {
+    public String indexSolicitud(HttpSession session, Model model, @ModelAttribute(name="solicitud") Solicitud solicitud) {
         if (session.getAttribute("currentUser") == null) {
             return "redirect:/login";
         }
 
-        return "home/solicitudes/index.jsp";
+        Class<?> claseDeObjetoUsuario = session.getAttribute("currentUser").getClass();
+        switch (claseDeObjetoUsuario.getName()) {
+            case "com.principal.grucar_proyecto.models.Prestador":
+            model.addAttribute("solicitudes", solicitudService.findAll()); //el prestador vera la lista de todas las solicitudes
+            return "home/prestador/solicitudes.jsp";
+            
+            default: // "Cliente"
+                System.out.println(claseDeObjetoUsuario.getName());
+                return "home/cliente/solicitudes.jsp";
+        }
     }
 
     // // Método para mostrar la vista de tarea por id
@@ -53,24 +62,17 @@ public class SolicitudController {
     //     return "home/shows/show.jsp";
     // }
 
-    // // Método para mostrar la vista de crear tarea
-    // @GetMapping("/new")
-    // public String create(@ModelAttribute("show") Solicitud show, Model model, HttpSession session) {
-    //     model.addAttribute("users", userService.findAll());
-    //     return "home/shows/create.jsp";
-    // }
+    // Hacer nueva solicitud de cliente (pedir asistencia)
+    @PostMapping("/nueva")
+    public String save(@Valid @ModelAttribute("solicitud") Solicitud solicitud, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            return "home/cliente/solicitudes.jsp";
+        }
 
-    // // Método para guardar un tarea
-    // @PostMapping("/new")
-    // public String save(@Valid @ModelAttribute("show") Solicitud show, BindingResult result, Model model, HttpSession session) {
-    //     if (result.hasErrors()) {
-    //         model.addAttribute("users", userService.findAll());
-    //         return "home/shows/create.jsp";
-    //     }
-
-    //     showService.save(show);
-    //     return "redirect:/shows";
-    // }
+        solicitud = solicitudService.asignarFechas(solicitud);
+        solicitudService.save(solicitud);
+        return "redirect:/solicitudes";
+    }
 
     // // Método para mostrar la vista de editar tarea
     // @GetMapping("/{showId}/edit")

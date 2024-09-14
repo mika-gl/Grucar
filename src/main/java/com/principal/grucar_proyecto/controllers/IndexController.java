@@ -9,14 +9,13 @@ import com.principal.grucar_proyecto.models.forms.Login;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @AllArgsConstructor
 @Controller
 public class IndexController {
     @GetMapping("/")
-    public String index(@RequestParam String param) {
+    public String index() {
         return "index.jsp";
     }
 }

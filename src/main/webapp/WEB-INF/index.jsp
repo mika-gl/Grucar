@@ -6,8 +6,8 @@
     <title>Index</title>
 </head>
 <body>
-    <a href="/login">Login</a>
-    <a href="/registro?userType=prestador">registro prestadores</a>
+    <a href="/login">Login</a><br>
+    <a href="/registro?userType=prestador">registro prestadores</a><br>
     <a href="/registro?userType=cliente">registro clientes</a>
 </body>
 </html>

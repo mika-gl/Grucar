@@ -29,8 +29,8 @@ public class Prestador extends BaseUser {
     @OneToMany(mappedBy = "prestador")
     private List<Solicitud> solicitudes_aceptadas_prestador;
 
-    @PrePersist
-    public void SetIsPrestador() {
-        this.setPrestador(true);
-    }
+    // @PrePersist
+    // public void SetIsPrestador() {
+    //     this.setPrestador(true);
+    // }
 }

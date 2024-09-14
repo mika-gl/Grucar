@@ -8,30 +8,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro conductores</title>
+    <link rel="stylesheet" href="/css/base.css"/>
 </head>
 <body>
-    <form:form action="/registro/nuevo">
-        <form:label path="name"/>
-        <form:input path="name"/>
-        <form:error path="name"/>
+    <form:form action="/registro/nuevo?tipoDeUsuario=prestador" method="POST" modelAttribute="baseUser">
+        <div>
+            <form:label path="name">Nombre:</form:label>
+            <form:input path="name"/>
+        </div>
+        <form:errors class="error" path="name"/>
+        <div>
+            <form:label path="email">Email</form:label>
+            <form:input path="email"/>
+        </div>
+        <form:errors class="error" path="email"/>        
+        <div>
+            <form:label path="passwordForm">Contrasena</form:label>
+            <form:input path="passwordForm"/>
+        </div>
+        <form:errors class="error" path="passwordForm"/>        
+        <div>
+            <form:label path="passwordConfirm">Confirmar Contrasena</form:label>
+            <form:input path="passwordConfirm"/>
+        </div>
+        <form:errors class="error" path="passwordConfirm"/>
 
-        <form:label path="email"/>
-        <form:input path="email"/>
-        <form:error path="email"/>        
-
-        <form:label path="passwordForm"/>
-        <form:input path="passwordForm"/>
-        <form:error path="passwordForm"/>        
-
-        <form:label path="passwordConfirm"/>
-        <form:error path="passwordConfirm"/>
-        <form:input path="passwordConfirm"/>
-
-        <form:label path="genero"/>
-        <form:error path="genero"/>
-        <form:input path="genero"/>
+        <div>
+            <form:label path="genero">Genero</form:label>
+            <form:input path="genero"/>
+        </div>
+        <form:errors class="error" path="genero"/>
 
         <!-- CARNET DE IDENTIDAD, O DE CONDUCIR -->
+
+        <button type="submit">Registrar</button>
     </form:form>
 </body>
 </html>

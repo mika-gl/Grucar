@@ -28,11 +28,18 @@ public class LoginService {
         if (cliente == null && prestador == null) {
             result.rejectValue("email", "error", "Email no registrado");
 
-        } else if (BCrypt.checkpw(password, cliente.getPassword())) {
-            session.setAttribute("currentUser", cliente);
-        } else if (BCrypt.checkpw(password, prestador.getPassword())) {
-            session.setAttribute("currentUser", prestador);
-
+        } else if (cliente != null && prestador == null) {
+            if (BCrypt.checkpw(password, cliente.getPassword())) {
+                session.setAttribute("currentUser", cliente);
+            } else {
+                result.rejectValue("password", "error", "Contraseña incorrecta");
+            }
+        } else if (cliente == null && prestador != null) {
+            if (BCrypt.checkpw(password, prestador.getPassword())) {
+                session.setAttribute("currentUser", prestador);
+            } else {
+                result.rejectValue("password", "error", "Contraseña incorrecta");
+            }
         } else {
             result.rejectValue("password", "error", "Contraseña incorrecta");
         }

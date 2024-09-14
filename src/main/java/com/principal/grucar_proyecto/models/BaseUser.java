@@ -26,7 +26,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public abstract class BaseUser {
+public class BaseUser {
     
     @NotBlank(message = "nombre requerido")
     private String name;
@@ -34,7 +34,6 @@ public abstract class BaseUser {
     @NotBlank(message = "email requerido")
     @Email(message = "email no valido")
     private String email;
-
 
     private String password;
 
@@ -45,9 +44,8 @@ public abstract class BaseUser {
     @Transient
     private String passwordConfirm;
 
+    @NotNull(message="genero requerido")
     private String genero;
-
-    private boolean isPrestador;
 
     //TODO: validacion de indentida por camara
 
@@ -60,6 +58,4 @@ public abstract class BaseUser {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated_at")
     private Date updatedAt;
-
-    
 }
