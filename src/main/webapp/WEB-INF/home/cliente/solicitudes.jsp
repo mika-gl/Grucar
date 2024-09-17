@@ -3,28 +3,98 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hacer solicitud</title>
+    <link rel="stylesheet" href="/css/vistacliente.css">
+    <link rel="stylesheet" href="/css/popup.css"> 
 </head>
 <body>
-    <h1>Logeado como: ${currentUser.name}</h1>
-    <h3>cliente</h3>
-    <form action="/login/logout" method="POST">
-        <input type="hidden" name="_method" value="DELETE"/>
-        <button type="submit">logout</button>
-    </form>
-
-    <form:form action="/solicitudes/nueva" method="POST" modelAttribute="solicitud">
-        <div>
-            <form:label path="averia"></form:label>
-            <form:input path="averia"/>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">Mi Plataforma</div>
+        <div class="user-info">
+            <p>Logeado como: ${currentUser.name}</p>
+            <form action="/login/logout" method="POST">
+                <input type="hidden" name="_method" value="DELETE"/>
+                <button type="submit" class="logout-btn">Cerrar sesión</button>
+            </form>
         </div>
-        <form:errors path="averia"/>
-        <form:input path="cliente" type="hidden" readonly="true" value="${currentUser.clienteId}"/> <!-- para agregar atributo cliente en Solicitud-->
-        <button type="submit">solicitar</button>
-    </form:form>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <!-- Columna izquierda (S.O.S) -->
+        <div class="column left-column">
+            <button id="popupBtn" class="sos-btn">S.O.S. Emergencia</button>
+        </div>
+
+        <!-- Columna central (Formulario de problemas) -->
+        <div class="column middle-column">
+            <h2>Seleccione el problema</h2>
+            <form:form action="/solicitudes/nueva" method="POST" modelAttribute="solicitud">
+                <div class="form-group">
+                    <form:label path="averia">Problema:</form:label>
+                    <form:select path="averia">
+                        <option value="">Seleccione un problema</option>
+                        <option value="motor">Problemas con el motor</option>
+                        <option value="llantas">Pinchazo de llanta</option>
+                        <option value="bateria">Batería agotada</option>
+                        <option value="otro">Otro</option>
+                    </form:select>
+                </div>
+                <form:errors path="averia"/>
+
+                <div class="form-group">
+                    <form:label path="detalles">Detalle:</form:label>
+                    <form:textarea path="detalles" rows="4" placeholder="Escriba detalles adicionales aquí..."></form:textarea>
+                </div>
+                <form:errors path="detalles"/>
+
+                <form:input path="cliente" type="hidden" readonly="true" value="${currentUser.clienteId}"/>
+
+                <button type="submit" class="submit-btn">Pedir Asistencia</button>
+            </form:form>
+        </div>
+
+        <!-- Columna derecha (Mapa o imagen) -->
+        <div class="column right-column">
+            <img src="ruta-a-imagen-placeholder.jpg" alt="Mapa placeholder">
+        </div>
+    </div>
+
+    <!-- Popup de emergencia -->
+    <div id="miModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Números de Emergencia</h3>
+            <p>Ambulancia: 131</p>
+            <p>Bomberos: 132</p>
+            <p>Carabineros: 133</p>
+        </div>
+    </div>
+
+    <!-- JS para controlar el popup -->
+    <script>
+        var modal = document.getElementById("miModal");
+        var btn = document.getElementById("popupBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
