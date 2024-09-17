@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/popup.css">
     <title>Hacer solicitud</title>
 </head>
 <body>
@@ -19,12 +20,68 @@
 
     <form:form action="/solicitudes/nueva" method="POST" modelAttribute="solicitud">
         <div>
-            <form:label path="averia"></form:label>
+            <form:label path="averia">Averia</form:label>
             <form:input path="averia"/>
         </div>
         <form:errors path="averia"/>
         <form:input path="cliente" type="hidden" readonly="true" value="${currentUser.clienteId}"/> <!-- para agregar atributo cliente en Solicitud-->
+        
+<!--         <div>
+            <form:label path="averia">Problema:</form:label>
+            <form:select path="averia">
+                <form:option value="1">Cambio de llanta/rueda</form:option>
+                <form:option value="2">Bateria sin carga</form:option>
+                <form:option value="3">Otro (especificar)</form:option>
+            </form:select>
+            <form:errors path="averia" />
+        </div> 
+        Ejemplo de forma de lista, se tendria que cambiar el tipo de averia de string a integer, opiniones?
+        en este caso funciona ya que toma el value como string xd -->
+
+        <div>
+            <form:label path="descripcion">Descripcion: </form:label>
+            <form:input path="descripcion" type="text" />
+            <form:errors path="descripcion" />
+        </div>
+        
         <button type="submit">solicitar</button>
     </form:form>
+
+
+<!-- popup/ventana emergente con numeros de emergencia -->
+<button id="popupBtn">SOS</button>
+
+<div id="miModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Numeros de Emergencia</h3>
+        <p>Ambulancia: 131.</p>
+        <p>Bomberos: 132.</p>
+        <p>Carabineros: 133.</p>
+    </div>
+</div>
+
+<!-- js para el popup -->
+<script>
+    var modal = document.getElementById("miModal");
+
+    var btn = document.getElementById("popupBtn");
+
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 </body>
 </html>

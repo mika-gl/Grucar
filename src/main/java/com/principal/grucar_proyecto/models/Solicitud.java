@@ -44,6 +44,8 @@ public class Solicitud {
     @NotBlank(message = "especificar averia")
     private String averia; //deberia ser un modelo? ej. Averia averia
 
+    private String descripcion;
+
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     @NotNull(message = "Error: solicitud sin cliente")
