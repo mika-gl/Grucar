@@ -39,9 +39,9 @@
         en este caso funciona ya que toma el value como string xd -->
 
         <div>
-            <form:label path="descripcion">Descripcion: </form:label>
-            <form:input path="descripcion" type="text" />
-            <form:errors path="descripcion" />
+            <form:label path="detalles">Detalles: </form:label>
+            <form:input path="detalles" type="text" />
+            <form:errors path="detalles" />
         </div>
         
         <button type="submit">solicitar</button>

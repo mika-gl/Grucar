@@ -20,7 +20,7 @@
             <tr>
                 <th>cliente</th>
                 <th>Averia</th>
-                <th>Descripcion</th>
+                <th>Detalles</th>
                 <th>Prestador</th>
                 <th>Fecha emision</th>
             </tr>
@@ -28,7 +28,7 @@
                 <tr>
                     <td>${solicitud.cliente.name}</td>
                     <td>${solicitud.averia}</td>
-                    <td>${solicitud.descripcion}</td>
+                    <td>${solicitud.detalles}</td>
                     <td>${solicitud.prestador.name}</td>
                     <td>${solicitud.createdAt}</td>
                 </tr>
