@@ -7,24 +7,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>login y register</title>
-        <link rel="stylesheet" href="/css/base.css"/>
+        <link rel="stylesheet" href="/css/login.css"/>
     </head>
     <body>
         <main >
             <section >
-                <h1>Login</h1>
+                <h1>Accede a tu cuenta</h1>
                 <form:form action="/login" method="POST" modelAttribute="login">
                     <div>
-                        <form:label path="email">email:</form:label>
+                        <form:label path="email">Email:</form:label>
                         <form:input path="email" type="text" />
                     </div>
                     <form:errors path="email" class="error"/>
                     <div>
-                        <form:label path="password">Contrasena:</form:label>
+                        <form:label path="password">Contraseña:</form:label>
                         <form:input path="password" type="password" />
                     </div>
                     <form:errors path="password" class="error"/>
-                    <button  type="submit">Login</button>
+                    <button  type="submit">¡Empezando la aventura!</button>
                 </form:form>
             </section>
         </main>
