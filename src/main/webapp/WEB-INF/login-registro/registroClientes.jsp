@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Clientes</title>
     <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/login.css"/>
 </head>
 <body>
     <form:form action="/registro/nuevo?tipoDeUsuario=cliente" method="POST" modelAttribute="baseUser">
