@@ -70,7 +70,7 @@ uri="http://www.springframework.org/tags/form" %>
         <div class="services-container">
           <!-- Para Solicitadores -->
           <div class="service-box">
-            <h3>Para Solicitadores (Clientes)</h3>
+            <h3>Para gruAmigos!</h3>
             <ul>
               <li>
                 <strong>Asistencia Inmediata:</strong> Respuesta rápida para
@@ -88,7 +88,7 @@ uri="http://www.springframework.org/tags/form" %>
           </div>
           <!-- Para Prestadores -->
           <div class="service-box">
-            <h3>Para Prestadores (GRUCAR)</h3>
+            <h3>Para gruCars!</h3>
             <ul>
               <li>
                 <strong>Registro como Proveedor de Servicios:</strong>
