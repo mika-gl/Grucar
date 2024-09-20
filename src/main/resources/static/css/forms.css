@@ -1,0 +1,101 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+main {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    color: #17a2b8;;
+    margin-bottom: 20px;
+}
+
+
+/* Todo sobre formulario */
+
+
+    form {
+
+    box-sizing: border-box;
+    max-height: 500px;
+    max-width: 500px;
+    margin: 0px;
+    padding: 20px;
+    unicode-bidi: isolate;
+    align-items: stretch;
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde del formulario */
+    background-color: #8a2be2; /* Color de fondo */ 
+}
+
+div {
+    display: inline-block;
+    margin-bottom: 10px; /* Espaciado entre divs */
+    max-width: 200px;
+
+}
+
+form label {
+    font-size: 1rem;
+    color: #fff;;
+    display: block; /* Que el label ocupe toda la línea */
+    font-weight: bold; /* Negrita para el label */
+    margin-bottom: 5px; /* Espaciado debajo del label */
+}
+
+form input[type="text"],
+form input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 3px solid #ccc; /* Borde del input */
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+    border-color: #17a2b8;
+    outline: none;
+    width: 100%;
+    border: 3px solid #17a2b8; /* Borde del input */
+}
+
+form .error {
+    color: red;
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+button {
+    background-color: #17a2b8; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    margin: 10px auto;
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    font-size: 1em; /* Tamaño de fuente del botón */
+    width: 100%;
+
+}
+
+
+
+
+
