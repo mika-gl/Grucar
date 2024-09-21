@@ -15,6 +15,17 @@
     <!-- Encabezado -->
     <header>
         <div class="logo">Mi Plataforma</div>
+        <div>
+            <form action="/" method="get">
+                <button class="logout-btn">Inicio</button>
+            </form>
+            <form action="/#servicios" method="get">
+                <button class="logout-btn">servicios</button>
+            </form>
+            <form action="/#contacto" method="get">
+                <button class="logout-btn">contacto</button>
+            </form>
+        </div>
         <div class="user-info">
             <p>Logeado como: ${currentUser.name}</p>
             <form action="/login/logout" method="POST">
@@ -39,9 +50,9 @@
                     <form:label path="averia">Problema:</form:label>
                     <form:select path="averia">
                         <option value="">Seleccione un problema</option>
-                        <option value="motor">Problemas con el motor</option>
-                        <option value="llantas">Pinchazo de llanta</option>
-                        <option value="bateria">Batería agotada</option>
+                        <option value="Problemas con el motor">Problemas con el motor</option>
+                        <option value="Pinchazo de llanta">Pinchazo de llanta</option>
+                        <option value="Batería agotada">Batería agotada</option>
                         <option value="otro">Otro</option>
                     </form:select>
                 </div>
