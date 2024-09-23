@@ -11,8 +11,39 @@
 </head>
 <body>
     <header>
-
+        <div class="logo">Mi Plataforma</div>
+        <div>
+            <form action="/" method="get">
+                <a href="/">Inicio</a>
+            </form>
+            <form action="/#servicios" method="get">
+                <a href="/#servicios">Servicios</a>
+            </form>
+            <form action="/#contacto" method="get">
+                <a href="/#contacto">Contacto</a>
+            </form>
+        </div>
+        <form method="POST" action="/login/logout"></form>
+            <input type="hidden" name="_method" value="DELETE"/>
+            <button type="submit">logout</button>
+        </form>
     </header>
     <h1>Perfil</h1>
+    <div class="container">
+        <h1>Perfil del Usuario</h1>
+    
+        <div class="user-info">
+            <label>Nombre:</label> 
+            <p>${user.name}</p>
+        </div>
+    
+
+    
+        <div class="user-info">
+            <label>Correo:</label>
+            <p>${user.email}</p>
+        </div>
+    
+    </div>
 </body>
 </html>

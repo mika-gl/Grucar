@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import com.principal.grucar_proyecto.models.BaseUser;
 import com.principal.grucar_proyecto.models.Solicitud;
 
 import jakarta.servlet.http.HttpSession;
@@ -20,11 +21,12 @@ public class IndexController {
     }
 
     @GetMapping("/perfil")
-    public String perfilUsuario(HttpSession session, Model model, @ModelAttribute(name="solicitud") Solicitud solicitud) {
-        if (session.getAttribute("currentUser") == null) {
+    public String perfilUsuario(HttpSession session, Model model) {
+        BaseUser currentUser = (BaseUser) session.getAttribute("currentUser");
+        if (currentUser == null) {
             return "redirect:/";
-        }else
-        {
+        } else {
+            model.addAttribute("user", currentUser);
             return "home/prestador/perfil.jsp";
         }
     }
