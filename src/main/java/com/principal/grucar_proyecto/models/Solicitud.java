@@ -44,6 +44,12 @@ public class Solicitud {
     @NotBlank(message = "especificar averia")
     private String averia; //deberia ser un modelo? ej. Averia averia
 
+    /*@Size(max = 500, message = "El campo detalles no puede exceder los 500 caracteres")
+    @Column(name = "detalles", length = 500)
+    private String detalles; */
+
+    private String detalles;
+
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     @NotNull(message = "Error: solicitud sin cliente")

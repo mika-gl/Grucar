@@ -9,8 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Clientes</title>
     <link rel="stylesheet" href="/css/base.css"/>
+<<<<<<< HEAD
     <link rel="stylesheet" href="/css/styles2.css"/>
     <link rel="stylesheet" href="/css/forms.css"/>
+=======
+    <link rel="stylesheet" href="/css/login.css"/>
+>>>>>>> 899a8281c7b374a4dc3edd0b196d0309a536679c
 </head>
 <body>
     <header>
