@@ -17,16 +17,20 @@ uri="http://www.springframework.org/tags/form" %>
             <img src="logo.png" alt="Logo GRUCAR">
             <span>GRUCAR</span>
         </div>
-        <ul>
-            <li><a href="index.jsp">Inicio</a></li>
-            <li><a href="servicios.jsp">Servicios</a></li>
-            <li><a href="planes.jsp">Planes</a></li>
-            <li><a href="contacto.jsp">Contacto</a></li>
-        </ul>
-        <div class="nav-buttons">
-            <a href="login.jsp" class="btn">Iniciar Sesión</a>
-            <a href="registro.jsp" class="btn-register">Registro</a>
+            <form action="/" method="get">
+                <a href="/">Inicio</a>
+            </form>
+            <form action="/#servicios" method="get">
+                <a href="/#servicios">Servicios</a>
+            </form>
+            <form action="/#contacto" method="get">
+                <a href="/#contacto">Contacto</a>
+            </form>
         </div>
+        <form method="POST" action="/login/logout"></form>
+            <input type="hidden" name="_method" value="DELETE"/>
+            <button type="submit">logout</button>
+        </form>
     </nav>
 
     <!-- Perfil de Usuario -->
@@ -45,27 +49,19 @@ uri="http://www.springframework.org/tags/form" %>
             </div>
             <form class="profile-form">
                 <label for="nombre">Nombre:</label>
-                <span>${usuario.name}</span>
+                <span>${user.name}</span>
 
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required>
-
-                <label for="edad">Edad:</label>
-                <input type="number" id="edad" name="edad" placeholder="Tu edad" required>
+                
 
                 <label>Género:</label>
-                <span>${usuario.genero}</span>
+                <span>${user.genero}</span>
 
                 <label for="email">Email:</label>
-                <span>${usuario.email}</span>
+                <span>${user.email}</span>
 
                 <div>
                     <label>Fecha de registro:</label>
-                    <span>${usuario.createdAt}</span>
-                </div>
-                <div>
-                    <label>Última actualización:</label>
-                    <span>${usuario.updatedAt}</span>
+                    <span>${user.createdAt}</span>
                 </div>
 
                 <div class="buttons">
