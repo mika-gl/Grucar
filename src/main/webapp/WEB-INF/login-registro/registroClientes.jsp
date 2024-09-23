@@ -9,12 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Clientes</title>
     <link rel="stylesheet" href="/css/base.css"/>
-<<<<<<< HEAD
-    <link rel="stylesheet" href="/css/styles2.css"/>
-    <link rel="stylesheet" href="/css/forms.css"/>
-=======
     <link rel="stylesheet" href="/css/login.css"/>
->>>>>>> 899a8281c7b374a4dc3edd0b196d0309a536679c
+    <link rel="stylesheet" href="/css/styles2.css"/>
 </head>
 <body>
     <header>
@@ -40,42 +36,33 @@
     </div>
 
 
-    <form:form action="/registro/nuevo?tipoDeUsuario=cliente" method="POST" modelAttribute="baseUser">
-        <div>
-            <form:label path="name">Nombre:</form:label>
-        </div>
-        <div>
-            <form:input path="name"/>
-        </div>
-        <form:errors class="error" path="name"/>
-        <div>
-            <form:label path="email">Email</form:label>
-        </div>
-        <div>
-            <form:input path="email"/>
-        </div>
-        <form:errors class="error" path="email"/>        
-        <div>
-            <form:label path="passwordForm">Contrasena</form:label>
-        </div>
-        <div>
-            <form:input path="passwordForm"/>
-        </div>
-        <form:errors class="error" path="passwordForm"/>        
-        <div>
-            <form:label path="passwordConfirm">Confirmar Contrasena</form:label>
-        </div>
-        <div>
+        <form:form action="/registro/nuevo?tipoDeUsuario=cliente" method="POST" modelAttribute="baseUser">
+            <div>
+                <form:label path="name">Nombre:</form:label>
+                <form:input path="name"/>
+            </div>
+            <form:errors class="error" path="name"/>
+            <div>
+                <form:label path="email">Email</form:label>
+                <form:input path="email"/>
+            </div>
+            <form:errors class="error" path="email"/>        
+            <div>
+                <form:label path="passwordForm">Contrasena</form:label>
+                <form:input path="passwordForm"/>
+            </div>
+            <form:errors class="error" path="passwordForm"/>        
+            <div>
+                <form:label path="passwordConfirm">Confirmar Contrasena</form:label>
+                <form:input path="passwordConfirm"/>
+            </div>
             <form:errors class="error" path="passwordConfirm"/>
-        </div>
-        <form:input path="passwordConfirm"/>
-        <div>
-            <form:label path="genero">Genero</form:label>
-        </div>
-        <div>
+    
+            <div>
+                <form:label path="genero">Genero</form:label>
+                <form:input path="genero"/>
+            </div>
             <form:errors class="error" path="genero"/>
-        </div>
-        <form:input path="genero"/>
 
         <button type="submit">Registrarse</button>
     </form:form>
