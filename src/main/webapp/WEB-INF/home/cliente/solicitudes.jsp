@@ -17,13 +17,13 @@
         <div class="logo">Mi Plataforma</div>
         <div>
             <form action="/" method="get">
-                <button class="logout-btn">Inicio</button>
+                <a href="/">Inicio</a>
             </form>
             <form action="/#servicios" method="get">
-                <button class="logout-btn">servicios</button>
+                <a href="/#servicios">Servicios</a>
             </form>
             <form action="/#contacto" method="get">
-                <button class="logout-btn">contacto</button>
+                <a href="/#contacto">Contacto</a>
             </form>
         </div>
         <div class="user-info">
