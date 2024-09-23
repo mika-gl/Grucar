@@ -47,7 +47,7 @@ public class BaseUser {
     @NotNull(message="genero requerido")
     private String genero;
 
-    //TODO: validacion de indentida por camara
+    //TODO: validacion de identidad por camara
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
