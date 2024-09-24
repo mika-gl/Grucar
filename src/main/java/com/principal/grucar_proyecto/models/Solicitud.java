@@ -42,7 +42,7 @@ public class Solicitud {
     @Column(name = "solicitud_id")
     private Long solicitudId;
 
-    @NotBlank(message = "especificar averia")
+    @NotBlank(message = "Especificar avería")
     private String averia; //deberia ser un modelo? ej. Averia averia
 
     /*@Size(max = 500, message = "El campo detalles no puede exceder los 500 caracteres")
