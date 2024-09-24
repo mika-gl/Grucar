@@ -7,14 +7,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacer solicitud</title>
+    <title>Hacer Solicitud - GruAsistencia</title>
     <link rel="stylesheet" href="/css/vistacliente.css">
     <link rel="stylesheet" href="/css/popup.css"> 
 </head>
 <body>
     <!-- Encabezado -->
     <header>
-        <div class="logo">Mi Plataforma</div>
+        <div class="logo">GruAsistencia</div>
         <div>
             <form action="/" method="get">
                 <a href="/">Inicio</a>
@@ -42,12 +42,20 @@
     <div class="container">
         <!-- Columna izquierda (S.O.S) -->
         <div class="column left-column">
-            <button id="popupBtn" class="sos-btn">S.O.S. Emergencia</button>
+            <div class="sos-container">
+                <button id="popupBtn" class="sos-btn">S.O.S. Emergencia</button>
+                <div class="info-area">
+                    <h3>Consejos de Auxilio</h3>
+                    <p>1. Mantén la calma y evalúa la situación.</p>
+                    <p>2. Si es seguro hacerlo, mueve el vehículo a un lugar seguro.</p>
+                    <p>3. Proporciona la mayor cantidad de información posible al solicitar asistencia.</p>
+                </div>
+            </div>
         </div>
 
         <!-- Columna central (Formulario de problemas) -->
         <div class="column middle-column">
-            <h2>Seleccione el problema</h2>
+            <h2>Seleccione el Problema</h2>
             <form:form action="/solicitudes/nueva" method="POST" modelAttribute="solicitud">
                 <div class="form-group">
                     <form:label path="averia">Problema:</form:label>
@@ -112,3 +120,4 @@
     </script>
 </body>
 </html>
+
