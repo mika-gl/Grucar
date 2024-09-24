@@ -37,7 +37,7 @@ section#registro {
     border-radius: 8px; /* Bordes redondeados */
     border: 2px solid #ccc; /* Borde gris claro */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    width: 33.33%; /* Ancho del formulario - 1/3 de la pantalla */
+    width: 40%; /*33.33%;  Ancho del formulario - 1/3 de la pantalla */
     margin: 20px auto; /* Centrar formulario */
     position: relative; /* Para el posicionamiento del encabezado */
     margin-top: 40px; /* Aumentar margen superior para mayor separación */
@@ -98,4 +98,3 @@ a:hover {
 a:active {
     color: #003f7f; /* Cambia a un azul más oscuro al hacer clic */
 }
-
