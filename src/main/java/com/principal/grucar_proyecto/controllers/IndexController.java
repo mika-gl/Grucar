@@ -27,7 +27,7 @@ public class IndexController {
             return "redirect:/";
         } else {
             model.addAttribute("user", currentUser);
-            return "home/prestador/perfil.jsp";
+            return "home/prestador/perfilPrestador.jsp";
         }
     }
 }
