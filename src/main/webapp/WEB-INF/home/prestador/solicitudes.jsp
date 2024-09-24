@@ -10,12 +10,35 @@
         <title>Lista solicitudes</title>
     </head>
     <body>
-        <h1>Logeado como: ${currentUser.name}</h1>
-        <h3>prestador</h3>
-        <form method="POST" action="/login/logout">
-            <input type="hidden" name="_method" value="DELETE"/>
-            <button type="submit">logout</button>
-        </form>
+
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Logo GRUCAR">
+                <span>GRUCAR</span>
+            </div>
+                <form action="/" method="get">
+                    <a href="/">Inicio</a>
+                </form>
+                <form action="/#servicios" method="get">
+                    <a href="/#servicios">Servicios</a>
+                </form>
+                <form action="/#contacto" method="get">
+                    <a href="/#contacto">Contacto</a>
+                </form>
+                <form action="/" method="get">
+                    <a href="/perfil">Perfil</a>
+                </form>
+            </div>
+            <p>Logeado como: ${currentUser.name}</p>
+            <form action="/login/logout" method="POST"></form>
+                <input type="hidden" name="_method" value="DELETE"/>
+                <button type="submit" class="logout-btn">Cerrar sesión</button>
+            </form>
+
+            
+            <h3>prestador</h3>
+
+        </nav>
         <table>
             <tr>
                 <th>cliente</th>

@@ -25,6 +25,9 @@
             <form action="/#contacto" method="get">
                 <a href="/#contacto">Contacto</a>
             </form>
+            <form action="/" method="get">
+                <a href="/perfil">Perfil</a>
+            </form>
         </div>
         <div class="user-info">
             <p>Logeado como: ${currentUser.name}</p>

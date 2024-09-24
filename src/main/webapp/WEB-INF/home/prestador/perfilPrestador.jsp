@@ -27,9 +27,9 @@ uri="http://www.springframework.org/tags/form" %>
                 <a href="/#contacto">Contacto</a>
             </form>
         </div>
-        <form method="POST" action="/login/logout"></form>
+        <form action="/login/logout" method="POST">
             <input type="hidden" name="_method" value="DELETE"/>
-            <button type="submit">logout</button>
+            <button type="submit" class="logout-btn">Cerrar sesión</button>
         </form>
     </nav>
 
