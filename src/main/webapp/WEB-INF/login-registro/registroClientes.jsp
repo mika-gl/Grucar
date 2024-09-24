@@ -11,6 +11,7 @@ uri="http://www.springframework.org/tags/form" %>
     <title>Registro Clientes</title>
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/stylesregistro.css" />
+    <link rel="stylesheet" href="/css/stylescliente.css" />
   </head>
   <body>
     <header>
@@ -66,19 +67,19 @@ uri="http://www.springframework.org/tags/form" %>
         <form:errors class="error" path="genero" />
 
         <div>
-          <form:label path="numero">Número de celular:</form:label>
-          <div style="display: flex; align-items: center">
-            <span>+56 9</span>
-            <form:input
-              path="numero"
-              maxlength="8"
-              placeholder="12345678"
-              pattern="[0-9]{8}"
-              title="Debe ingresar solo 8 dígitos"
-            />
+            <form:label path="numero">Número de celular:</form:label>
+            <div style="display: flex; align-items: center">
+              <span>+56</span>
+              <form:input
+                path="numero"
+                maxlength="9"
+                placeholder="912345678"
+                pattern="\\d{9}"
+                title="Debe ingresar solo 9 dígitos"
+              />
+            </div>
           </div>
-        </div>
-        <form:errors class="error" path="numero" />
+          <form:errors class="error" path="numero" />
 
         <div>
           <form:label path="tipoDePersona">Tipo de Cliente:</form:label>
