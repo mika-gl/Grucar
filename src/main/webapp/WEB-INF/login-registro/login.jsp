@@ -26,6 +26,9 @@
                     <form:errors path="password" class="error"/>
                     <button  type="submit">¡Empezando la aventura!</button>
                 </form:form>
+                <form action="/" method="get">
+                    <a href="/">Volver atras</a>
+                </form>
             </section>
         </main>
     </body>

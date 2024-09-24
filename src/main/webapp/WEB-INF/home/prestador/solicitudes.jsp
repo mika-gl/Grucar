@@ -30,7 +30,7 @@
                 </form>
             </div>
             <p>Logeado como: ${currentUser.nombre}</p>
-            <form action="/login/logout" method="POST"></form>
+            <form action="/login/logout" method="POST">
                 <input type="hidden" name="_method" value="DELETE"/>
                 <button type="submit" class="logout-btn">Cerrar sesión</button>
             </form>
