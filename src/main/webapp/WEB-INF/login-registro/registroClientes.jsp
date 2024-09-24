@@ -42,8 +42,6 @@ uri="http://www.springframework.org/tags/form" %>
           <form:input path="nombre" placeholder="Introduce tu nombre" />
         </div>
         <form:errors class="error" path="nombre" />
-
-<<<<<<< HEAD
         <div>
           <form:label path="apellido">Apellido:</form:label>
           <form:input path="apellido" placeholder="Introduce tu apellido" />
@@ -66,7 +64,6 @@ uri="http://www.springframework.org/tags/form" %>
           </form:select>
         </div>
         <form:errors class="error" path="genero" />
-
         <div>
           <form:label path="numero">Número de celular:</form:label>
           <div style="display: flex; align-items: center">
@@ -81,7 +78,6 @@ uri="http://www.springframework.org/tags/form" %>
           </div>
         </div>
         <form:errors class="error" path="numero" />
-
         <div>
           <form:label path="tipoDePersona">Tipo de Cliente:</form:label>
           <form:select path="tipoDePersona">
@@ -91,7 +87,6 @@ uri="http://www.springframework.org/tags/form" %>
           </form:select>
         </div>
         <form:errors class="error" path="tipoDePersona" />
-
         <div>
           <form:label path="passwordForm">Contraseña:</form:label>
           <form:password path="passwordForm" />
@@ -111,13 +106,6 @@ uri="http://www.springframework.org/tags/form" %>
         <a href="/">Volver al Inicio</a>
       </form>
     </section>
-=======
-<!--         <form action="/" method="get" class="salirBtn">
-            <a href="/">Volver atras</a>
-        </form> 
-        Arreglar en css uwu -->
->>>>>>> back-exp
-
     <footer>
       <p>&copy; 2024 GRUCAR. Todos los derechos reservados.</p>
     </footer>

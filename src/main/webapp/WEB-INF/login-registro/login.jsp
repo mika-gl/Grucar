@@ -15,7 +15,7 @@
                 <h1>Accede a tu cuenta</h1>
                 <form:form action="/login" method="POST" modelAttribute="login">
                     <div>
-                        <form:label path="numero">Numero: +56</form:label>
+                        <form:label path="numero">Número Celular: +56</form:label>
                         <form:input path="numero" type="text" />
                     </div>
                     <form:errors path="numero" class="error"/>
@@ -33,3 +33,4 @@
         </main>
     </body>
 </html>
+

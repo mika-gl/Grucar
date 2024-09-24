@@ -16,7 +16,6 @@ body {
     flex-direction: column;
 }
 
-
 header {
     display: flex;
     justify-content: space-between;
@@ -37,8 +36,6 @@ header .user-info {
     display: flex;
     align-items: center;
 }
-
-
 
 header .user-info p {
     margin-right: 20px;
@@ -65,6 +62,16 @@ header .logout-btn {
 
 .left-column {
     background-color: #f1f1f1;
+    display: flex;
+    align-items: flex-start; /* Alinear el contenido al inicio */
+}
+
+.sos-container {
+    background-color: #ffffff; /* Fondo blanco para el contenedor S.O.S. */
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Tomar el 100% de la columna */
 }
 
 .left-column .sos-btn {
@@ -75,6 +82,11 @@ header .logout-btn {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 15px; /* Espaciado inferior para el botón */
+}
+
+.info-area {
+    margin-top: 15px; /* Espacio entre el botón y la información */
 }
 
 .middle-column {
@@ -116,3 +128,4 @@ header .logout-btn {
     max-width: 100%;
     height: auto;
 }
+
