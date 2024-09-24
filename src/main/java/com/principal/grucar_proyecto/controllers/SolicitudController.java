@@ -40,37 +40,42 @@ public class SolicitudController {
         if (session.getAttribute("currentUser") == null) {
             return "redirect:/login";
         }
-
-        Class<?> claseDeObjetoUsuario = session.getAttribute("currentUser").getClass();
-        switch (claseDeObjetoUsuario.getName()) {
-            case "com.principal.grucar_proyecto.models.Prestador":
-            model.addAttribute("solicitudes", solicitudService.findAll()); //el prestador vera la lista de todas las solicitudes
-            return "home/prestador/solicitudes.jsp";
+        if (session.getAttribute("solicitud") == null) {
             
-            default: // "Cliente"
-                System.out.println(claseDeObjetoUsuario.getName());
-                return "home/cliente/solicitudes.jsp";
+            Class<?> claseDeObjetoUsuario = session.getAttribute("currentUser").getClass();
+            switch (claseDeObjetoUsuario.getName()) {
+                case "com.principal.grucar_proyecto.models.Prestador":
+                model.addAttribute("solicitudes", solicitudService.findAll()); //el prestador vera la lista de todas las solicitudes
+                return "home/prestador/solicitudes.jsp";
+                
+                default: // "Cliente"
+                    System.out.println(claseDeObjetoUsuario.getName());
+                    return "home/cliente/solicitudes.jsp";
+            }
+        } else {
+            Solicitud solicitudActual = (Solicitud)session.getAttribute("solicitud");
+            return "redirect:/solicitudes/" + solicitudActual.getSolicitudId();
         }
     }
 
-    // // Método para mostrar la vista de tarea por id
-    // @GetMapping("/{showId}")
-    // public String show(@ModelAttribute("rating") Rating rating, @PathVariable("showId") Long showId, Model model, HttpSession session) {
-    //     Solicitud show = showService.showShowById(showId);
-    //     model.addAttribute("show",show);
-    //     model.addAttribute("currentRatings", ratingService.findRatingsByShowId(showId));
-    //     return "home/shows/show.jsp";
-    // }
+    // Método para mostrar la vista de solicitud por id
+    @GetMapping("/{solicitudId}")
+    public String show(/* @ModelAttribute("rating") Solicitud solicitud, */ @PathVariable("solicitudId") Long id, Model model, HttpSession session) {
+        Solicitud solicitud = solicitudService.findById(id);
+        model.addAttribute("solicitud", solicitud);
+        return "home/cliente/detalleSolicitud.jsp";
+    }
 
     // Hacer nueva solicitud de cliente (pedir asistencia)
     @PostMapping("/nueva")
-    public String save(@Valid @ModelAttribute("solicitud") Solicitud solicitud, BindingResult result, Model model) {
+    public String save(@Valid @ModelAttribute("solicitud") Solicitud solicitud, BindingResult result, Model model, HttpSession session) {
         if (result.hasErrors()) {
             return "home/cliente/solicitudes.jsp";
         }
 
         solicitud = solicitudService.asignarFechas(solicitud);
         solicitudService.save(solicitud);
+        session.setAttribute("solicitud", solicitud); //Agrega solicitud a session para revisar en cualquier ruta si cliente ya hizo una.
         return "redirect:/solicitudes";
     }
 
