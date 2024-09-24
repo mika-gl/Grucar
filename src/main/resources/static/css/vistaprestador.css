@@ -1,0 +1,52 @@
+/* General Styles */
+
+
+h3 {
+    text-align: center;
+    position: relative; /* Cambia la posición a relativa */
+    top: 75px; /* Ajusta este valor según sea necesario */
+    margin: 20px 0; /* Mantén márgenes para separar de otros elementos */
+    padding: 10px;
+    text-align: center; /* Centrar texto */
+}
+
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #343a40;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #e2e6ea;
+}
+
+/* Button Styles */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
