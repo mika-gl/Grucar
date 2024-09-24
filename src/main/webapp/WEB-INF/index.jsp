@@ -8,7 +8,8 @@ uri="http://www.springframework.org/tags/form" %>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GRUCAR - Asistencia en carretera</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/stylesindex.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
   </head>
   <body>
     <header>

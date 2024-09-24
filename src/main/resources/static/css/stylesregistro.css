@@ -29,16 +29,6 @@ main {
     flex: 1; /* Permite que el main ocupe el espacio disponible */
 }
 
-/* Hero Section */
-
-.hero {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    min-height: 100vh; 
-    padding: 40px 20px;
-    background-color: #ffffff; 
-}
 
 /* Contenedor del texto */
 
