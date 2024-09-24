@@ -3,50 +3,47 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lista solicitudes</title>
+        <title>Lista de Solicitudes</title>
+        <link rel="stylesheet" href="/css/vistaprestador.css">
+        <link rel="stylesheet" href="/css/base.css">
     </head>
     <body>
 
-        <nav>
+        <header>
             <div class="logo">
                 <img src="logo.png" alt="Logo GRUCAR">
-                <span>GRUCAR</span>
+                <h2>GRU</h2>
+                <h1>CAR</h1>
             </div>
-                <form action="/" method="get">
-                    <a href="/">Inicio</a>
+            <nav>
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/#servicios">Servicios</a></li>
+                    <li><a href="/#contacto">Contacto</a></li>
+                    <li><a href="/perfil">Perfil de Usuario</a></li>
+                </ul>
+                <p>Logueado como: ${currentUser.nombre}</p>
+                <form action="/login/logout" method="POST">
+                    <input type="hidden" name="_method" value="DELETE"/>
+                    <button type="submit" class="btn-login">Cerrar sesión</button>
                 </form>
-                <form action="/#servicios" method="get">
-                    <a href="/#servicios">Servicios</a>
-                </form>
-                <form action="/#contacto" method="get">
-                    <a href="/#contacto">Contacto</a>
-                </form>
-                <form action="/" method="get">
-                    <a href="/perfil">Perfil</a>
-                </form>
-            </div>
-            <p>Logeado como: ${currentUser.nombre}</p>
-            <form action="/login/logout" method="POST">
-                <input type="hidden" name="_method" value="DELETE"/>
-                <button type="submit" class="logout-btn">Cerrar sesión</button>
-            </form>
-
-            
-            <h3>prestador</h3>
-
-        </nav>
+            </nav>
+        </header>
+        
+        <h3>Solicitudes del GruAmigo</h3>
+        <p>GruCar procesando...</p>
         <table>
             <tr>
-                <th>cliente</th>
-                <th>Averia</th>
+                <th>Cliente</th>
+                <th>Avería</th>
                 <th>Detalles</th>
+                <th>Fecha de Solicitud</th> 
                 <th>Prestador</th>
-                <th>Fecha emision</th>
-                <th>Accion</th>
+                <th>Ir al Llamado</th>
             </tr>
             <c:if test="${solicitud.solicitudActiva}">
                 <c:if test="${solicitud.prestador == null}">
@@ -55,12 +52,12 @@
                             <td>${solicitud.cliente.nombre}</td>
                             <td>${solicitud.averia}</td>
                             <td>${solicitud.detalles}</td>
-                            <td>${solicitud.prestador.nombre}</td>
                             <td>${solicitud.createdAt}</td>
+                            <td>${solicitud.prestador.nombre}</td>
                             <td>
                                 <form action="/solicitudes/aceptar/${solicitud.solicitudId}" method="POST">
                                     <input type="hidden" name="_method" value="PUT"/>
-                                    <button type="submit">aceptar</button>
+                                    <button type="submit">Aceptar</button>
                                 </form>
                             </td>
                         </tr>
