@@ -18,8 +18,8 @@ public class PrestadorService {
     @Autowired
     private PrestadorRepository prestadorRepository;
 
-        public Prestador findByEmail(String email) {
-        return prestadorRepository.findByEmail(email);
+        public Prestador findByNumero(String numero) {
+        return prestadorRepository.findByNumero(numero);
     }
 
     public Prestador save(Prestador prestador) {
@@ -28,11 +28,14 @@ public class PrestadorService {
     
     public Prestador convertBaseUserToPrestador(BaseUser baseUser) {
     Prestador prestador = new Prestador();
-    prestador.setName(baseUser.getName());        
-    prestador.setEmail(baseUser.getEmail());
+    prestador.setNombre(baseUser.getNombre());        
+    prestador.setNumero(baseUser.getNumero());
     prestador.setGenero(baseUser.getGenero());
     prestador.setPassword(baseUser.getPassword());
     prestador.setPasswordForm(baseUser.getPasswordForm());
+    prestador.setRut(baseUser.getRut());
+    prestador.setApellido(baseUser.getApellido());
+    prestador.setLicencia(baseUser.getLicencia());
     return prestador;
     }
 }

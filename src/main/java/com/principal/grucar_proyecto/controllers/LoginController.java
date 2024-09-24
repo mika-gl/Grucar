@@ -56,12 +56,11 @@ public class LoginController {
         }
 
         //VALIDACION DE ERRORES POR METODOS
-        result = loginService.validateLogin(login.getEmail(), login.getPassword(), currentSession, result);
+        result = loginService.validateLogin(login.getNumero(), login.getPassword(), currentSession, result);
         if (result.hasErrors()) {
             currentSession.invalidate();
             return "login-registro/login.jsp";
         }
-        // currentSession.setAttribute("currentUser", userService.findByEmail(session.getEmail())); no es necesario si se hace en loginService.validateLogin no?
         return "redirect:/solicitudes";
     }
 

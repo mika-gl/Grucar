@@ -8,6 +8,7 @@ import org.springframework.validation.BindingResult;
 import com.principal.grucar_proyecto.models.Cliente;
 import com.principal.grucar_proyecto.models.Prestador;
 import com.principal.grucar_proyecto.respositories.ClienteRepository;
+import com.principal.grucar_proyecto.respositories.PrestadorRepository;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -15,18 +16,18 @@ import jakarta.servlet.http.HttpSession;
 public class LoginService {
 
     @Autowired
-    private ClienteService clienteService;
+    private ClienteRepository clienteRepository;
     @Autowired
-    private PrestadorService prestadorService;
+    private PrestadorRepository prestadorRepository;
 
     // Método para iniciar sesión
-    public BindingResult validateLogin(String email, String password, HttpSession session, BindingResult result) {
-        // Validar que el email y la contraseña sean correctos, sea de cliente o prestador
-        Cliente cliente = clienteService.findByEmail(email);
-        Prestador prestador = prestadorService.findByEmail(email);
+    public BindingResult validateLogin(String numero, String password, HttpSession session, BindingResult result) {
+        // Validar que el numero y la contraseña sean correctos, sea de cliente o prestador
+        Cliente cliente = clienteRepository.findByNumero(numero);
+        Prestador prestador = prestadorRepository.findByNumero(numero);
 
         if (cliente == null && prestador == null) {
-            result.rejectValue("email", "error", "Email no registrado");
+            result.rejectValue("numero", "error", "Numero no registrado");
 
         } else if (cliente != null && prestador == null) {
             if (BCrypt.checkpw(password, cliente.getPassword())) {

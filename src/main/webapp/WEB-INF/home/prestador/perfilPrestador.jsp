@@ -27,6 +27,20 @@ uri="http://www.springframework.org/tags/form" %>
             <a href="login.jsp" class="btn">Iniciar Sesión</a>
             <a href="registro.jsp" class="btn-register">Registro</a>
         </div>
+            <form action="/" method="get">
+                <a href="/">Inicio</a>
+            </form>
+            <form action="/#servicios" method="get">
+                <a href="/#servicios">Servicios</a>
+            </form>
+            <form action="/#contacto" method="get">
+                <a href="/#contacto">Contacto</a>
+            </form>
+        </div>
+        <form action="/login/logout" method="POST">
+            <input type="hidden" name="_method" value="DELETE"/>
+            <button type="submit" class="logout-btn">Cerrar sesión</button>
+        </form>
     </nav>
 
     <!-- Perfil de Usuario -->

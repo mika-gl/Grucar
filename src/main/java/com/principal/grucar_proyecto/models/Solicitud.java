@@ -20,6 +20,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.persistence.Transient;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -58,6 +59,14 @@ public class Solicitud {
     @ManyToOne
     @JoinColumn(name = "prestador_id")
     private Prestador prestador;
+
+    @Transient
+    private boolean prestadorFinalizo; // true cuando prestador 'finalice' la solicitud del cliente
+    @Transient
+    private boolean clienteFinalizo; // true cuando cliente 'finalice' su solicitud
+
+    @NotNull
+    private boolean solicitudActiva = true; // se vuelve false cuando prestadorFinalizo && clienteFinalizo son true
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
