@@ -108,6 +108,13 @@ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    border: 1px solid #ccc; /* Borde del formulario */
+    background-color: #17a2b8;  /*Color de fondo */ 
+    min-height: 500px;
+    min-width: 500px;
+    margin: 0px;
+    padding: 20px;
+    color: #fff;
 }
 
 form label {

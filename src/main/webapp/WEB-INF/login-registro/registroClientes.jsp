@@ -9,8 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Clientes</title>
     <link rel="stylesheet" href="/css/base.css"/>
-
-    <link rel="stylesheet" href="/css/styles2.css"/>
+    <link rel="stylesheet" href="/css/stylesregistro.css"/>
 </head>
 <body>
     <header>
