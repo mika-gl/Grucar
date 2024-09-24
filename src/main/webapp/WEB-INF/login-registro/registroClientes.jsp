@@ -29,68 +29,40 @@
         </nav>
         </header>
     </header>
-    <form:form action="/registro/nuevo?tipoDeUsuario=cliente" method="POST" modelAttribute="baseUser">
-        <div>
-            <form:label path="nombre">Nombre:</form:label>
-            <form:input path="nombre"/>
-        </div>
-        <form:errors class="error" path="nombre"/>
-        <div>
-            <form:label path="apellido">Apellido:</form:label>
-            <form:input path="apellido"/>
-        </div>
-        <form:errors class="error" path="apellido"/>
-        <div>
-            <form:label path="rut">Rut:</form:label>
-            <form:input path="rut"/>
-        </div>
-        <form:errors class="error" path="rut"/>   
-        <div>
-            <form:label path="numero">Numero</form:label>
-            <form:input path="numero"/>
-        </div>
-        <form:errors class="error" path="numero"/>        
-        <div>
-            <form:label path="passwordForm">Contrasena</form:label>
-            <form:input path="passwordForm"/>
-        </div>
-        <form:errors class="error" path="passwordForm"/>        
+      
 
     <div id="frase"></div>
         <h1>CON GRUCAR TENDRÁS LA TRANQUILIDAD QUE TANTO NECESITAS</h1>
     </div>
-
-
         <form:form action="/registro/nuevo?tipoDeUsuario=cliente" method="POST" modelAttribute="baseUser">
             <div>
-                <form:label path="name">Nombre:</form:label>
-                <form:input path="name"/>
+                <form:label path="nombre">Nombre:</form:label>
+                <form:input path="nombre"/>
             </div>
-            <form:errors class="error" path="name"/>
+            <form:errors class="error" path="nombre"/>
             <div>
-                <form:label path="email">Email</form:label>
-                <form:input path="email"/>
+                <form:label path="apellido">Apellido:</form:label>
+                <form:input path="apellido"/>
             </div>
-            <form:errors class="error" path="email"/>        
+            <form:errors class="error" path="apellido"/>
+            <div>
+                <form:label path="rut">Rut:</form:label>
+                <form:input path="rut"/>
+            </div>
+            <form:errors class="error" path="rut"/>   
+            <div>
+                <form:label path="numero">Numero</form:label>
+                <form:input path="numero"/>
+            </div>
+            <form:errors class="error" path="numero"/>        
             <div>
                 <form:label path="passwordForm">Contrasena</form:label>
                 <form:input path="passwordForm"/>
             </div>
-            <form:errors class="error" path="passwordForm"/>        
-            <div>
-                <form:label path="passwordConfirm">Confirmar Contrasena</form:label>
-                <form:input path="passwordConfirm"/>
-            </div>
-            <form:errors class="error" path="passwordConfirm"/>
-    
-            <div>
-                <form:label path="genero">Genero</form:label>
-                <form:input path="genero"/>
-            </div>
-            <form:errors class="error" path="genero"/>
+            <form:errors class="error" path="passwordForm"/>  
 
-        <button type="submit">Registrarse</button>
-    </form:form>
+            <button type="submit">Registrarse</button>
+        </form:form>
     <footer>
         <p>&copy; 2024 GRUCAR. Todos los derechos reservados.</p>
     </footer>
