@@ -3,10 +3,8 @@ package com.principal.grucar_proyecto.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.principal.grucar_proyecto.models.BaseUser;
-import com.principal.grucar_proyecto.models.Solicitud;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
@@ -26,7 +24,7 @@ public class IndexController {
         if (currentUser == null) {
             return "redirect:/";
         } else {
-            model.addAttribute("user", currentUser);
+            model.addAttribute("usuario", currentUser);
             return "home/prestador/perfilPrestador.jsp";
         }
     }

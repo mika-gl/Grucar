@@ -18,18 +18,8 @@
             <h2>GRU</h2>
             <h1>CAR</h1>
         </div>
-        <nav>
-            <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-            <li><a href="">Perfil de usuario</a></li>
-            </ul>
-            <a href="/login" class="btn-login">Iniciar Sesión</a>
-        </nav>
         </header>
     </header>
-      
 
     <div id="frase">
         <h1 >CON GRUCAR TENDRÁS LA TRANQUILIDAD QUE TANTO NECESITAS</h1>
@@ -85,6 +75,11 @@
 
             <button type="submit">Registrarse</button>
         </form:form>
+
+        <form action="/" method="get" class="salirBtn">
+            <a href="/">Volver atras</a>
+        </form>
+
     <footer>
         <p>&copy; 2024 GRUCAR. Todos los derechos reservados.</p>
     </footer>

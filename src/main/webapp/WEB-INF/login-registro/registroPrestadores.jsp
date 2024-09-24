@@ -68,5 +68,9 @@
 
         <button type="submit">Registrar</button>
     </form:form>
+
+    <form action="/" method="get">
+        <a href="/">Volver atras</a>
+    </form>
 </body>
 </html>
