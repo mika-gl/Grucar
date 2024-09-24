@@ -54,67 +54,33 @@ uri="http://www.springframework.org/tags/form" %>
                     </label>
                 </div>
             </div>
-
-            <!-- Sección derecha: formulario con todas las etiquetas -->
-            <div id="formulario">
-                <form class="profile-form">
-                    <label for="nombre">Nombre:</label>
-                    <span>${usuario.name}</span>
-
-                    <label for="apellido">Apellido:</label>
-                    <span>${usuario.apellido}</span>
-
-                    <label for="edad">Edad:</label>
-                    <span>${usuario.edad}</span>
-
-                    <label for="genero">Género:</label>
-                    <span>${usuario.genero}</span>
-
-                    <label for="email">Email:</label>
-                    <span>${usuario.email}</span>
-
-                    <label for="fechaRegistro">Fecha de registro:</label>
-                    <span>${usuario.fechaRegistro}</span>
-
-                    <label for="ultimaActualizacion">Última actualización:</label>
-                    <span>${usuario.ultimaActualizacion}</span>
-
-                    <div class="buttons">
-                        <button type="button" class="btn-password" aria-label="Cambiar Contraseña">Cambiar Contraseña</button>
-                        <button type="button" class="btn-delete" aria-label="Eliminar Cuenta">Eliminar Cuenta</button>
-                    </div>
-                </form>
-            </div>
             <form class="profile-form">
                     <label for="nombre">Nombre:</label>
                     <span>${usuario.nombre}</span>
-                <br></br>
+
                     <label for="apellido">Apellido:</label>
                     <span>${usuario.apellido}</span>
-                <br></br>
+
                     <label for="genero">Género:</label>
                     <span>${usuario.genero}</span>
-                <br></br>
+
                     <label for="rut">Rut:</label>
                     <span>${usuario.rut}</span>
-                <br></br>
+
                     <label for="email">Email:</label>
                     <span>${usuario.email}</span>
-                <br></br>
+
                     <label for="numero">Contacto:</label>
                     <span>${usuario.numero}</span>
-                <br></br>
+
                     <label for="licencia">Licencia:</label>
                     <span>${usuario.licencia}</span>
-                <br></br>
+
                     <label for="tipoDePersona">Tipo de Persona:</label>
                     <span>${usuario.tipoDePersona}</span>
-                <br></br>
+
                     <label for="createdAt">Fecha de registro:</label>
                     <span>${usuario.createdAt}</span>
-                <br></br>
-
-                    
 
                 <div class="buttons">
                     <button type="button" class="btn-password" aria-label="Cambiar Contraseña">Cambiar Contraseña</button>
