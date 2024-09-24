@@ -53,8 +53,8 @@
 
             <button type="submit">Registrarse</button>
         </form:form>
-        
-        <form action="/" method="get">
+
+        <form action="/" method="get" class="salirBtn">
             <a href="/">Volver atras</a>
         </form>
 

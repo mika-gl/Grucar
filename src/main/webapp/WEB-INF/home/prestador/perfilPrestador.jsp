@@ -57,8 +57,17 @@ uri="http://www.springframework.org/tags/form" %>
                     <label>Género:</label>
                     <span>${usuario.genero}</span>
                 <br></br>
+                    <label for="rut">Rut:</label>
+                    <span>${usuario.rut}</span>
+                <br></br>
                     <label for="email">Email:</label>
                     <span>${usuario.email}</span>
+                <br></br>
+                    <label for="numero">Contacto:</label>
+                    <span>${usuario.numero}</span>
+                <br></br>
+                    <label for="licencia">Licencia:</label>
+                    <span>${usuario.licencia}</span>
                 <br></br>
                 <div>
                     <label>Fecha de registro:</label>
