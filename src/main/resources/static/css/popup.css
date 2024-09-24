@@ -28,8 +28,7 @@
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: darkred;
     text-decoration: none;
     cursor: pointer;
-
 }
