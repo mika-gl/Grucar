@@ -29,7 +29,7 @@
         </nav>
         </header>
     </header>
-      
+
 
     <div id="frase">
         <h1 >CON GRUCAR TENDRÁS LA TRANQUILIDAD QUE TANTO NECESITAS</h1>
