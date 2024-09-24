@@ -15,8 +15,22 @@
     <!-- Encabezado -->
     <header>
         <div class="logo">Mi Plataforma</div>
+        <div>
+            <form action="/" method="get">
+                <a href="/">Inicio</a>
+            </form>
+            <form action="/#servicios" method="get">
+                <a href="/#servicios">Servicios</a>
+            </form>
+            <form action="/#contacto" method="get">
+                <a href="/#contacto">Contacto</a>
+            </form>
+            <form action="/" method="get">
+                <a href="/perfil">Perfil</a>
+            </form>
+        </div>
         <div class="user-info">
-            <p>Logeado como: ${currentUser.name}</p>
+            <p>Logeado como: ${currentUser.nombre}</p>
             <form action="/login/logout" method="POST">
                 <input type="hidden" name="_method" value="DELETE"/>
                 <button type="submit" class="logout-btn">Cerrar sesión</button>
@@ -39,9 +53,9 @@
                     <form:label path="averia">Problema:</form:label>
                     <form:select path="averia">
                         <option value="">Seleccione un problema</option>
-                        <option value="motor">Problemas con el motor</option>
-                        <option value="llantas">Pinchazo de llanta</option>
-                        <option value="bateria">Batería agotada</option>
+                        <option value="Problemas con el motor">Problemas con el motor</option>
+                        <option value="Pinchazo de llanta">Pinchazo de llanta</option>
+                        <option value="Batería agotada">Batería agotada</option>
                         <option value="otro">Otro</option>
                     </form:select>
                 </div>

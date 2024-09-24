@@ -17,20 +17,27 @@ public class ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public Cliente findByEmail(String email) {
-        return clienteRepository.findByEmail(email);
+    public Cliente findByNumero(String numero) {
+        return clienteRepository.findByNumero(numero);
     }
     public Cliente save(Cliente cliente) {
+        return clienteRepository.save(cliente);
+    }
+    public Cliente update(Cliente cliente) {
         return clienteRepository.save(cliente);
     }
 
     public Cliente convertBaseUserToCliente(BaseUser baseUser) {
     Cliente cliente = new Cliente();
-    cliente.setName(baseUser.getName());        
-    cliente.setEmail(baseUser.getEmail());
+    cliente.setNombre(baseUser.getNombre());        
+    cliente.setNumero(baseUser.getNumero());
     cliente.setGenero(baseUser.getGenero());
     cliente.setPassword(baseUser.getPassword());
     cliente.setPasswordForm(baseUser.getPasswordForm());
+    cliente.setRut(baseUser.getRut());
+    cliente.setApellido(baseUser.getApellido());
+    cliente.setLicencia("");
+    cliente.setTipoDePersona(baseUser.getTipoDePersona());
     return cliente;
     }
 }

@@ -1,167 +1,100 @@
-* {
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fondo suave */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-    /* el body DEBE OCUPAR el 100% del alto de la ventana */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+header {
+    padding-bottom: 0px; /* Relleno en la parte inferior del encabezado */
 }
 
-
-/* Main Section */
-
-main {
-    margin-top: 80px; /* Ajusta según la altura del header */
-    padding: 0px 20px;
-    background-color: #fff;
-    flex: 1; /* Permite que el main ocupe el espacio disponible */
-}
-
-/* Hero Section */
-
-.hero {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    min-height: 100vh; 
-    padding: 40px 20px;
-    background-color: #ffffff; 
-}
-
-/* Contenedor del texto */
-
-.hero-text {
-    flex: 1; 
-    max-width: 50%; 
-    margin-right: 20px; 
-}
-
-.hero h2 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.hero h2 span {
-    color: #8a2be2;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.register-options {
-    margin-top: 20px;
-}
-
-.register-button {
-    margin-bottom: 20px;
-}
-
-.register-button p {
-    font-size: 1.1rem;
-    margin-bottom: 10px; /* Espacio entre el texto y el botón */
-}
-
-.btn-solicitador, .btn-prestador {
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    text-align: center;
-    color: #fff;
-    border-radius: 5px;
-    font-weight: bold;
-    width: 200px; 
-}
-
-.btn-solicitador {
-    background-color: #17a2b8;
-    display: block; 
-    margin-bottom: 10px; /* Espacio entre los botones */
-}
-
-.btn-prestador {
-    background-color: #8a2be2;
-    display: block; 
-}
-
-.btn-solicitador:hover, .btn-prestador:hover {
-    opacity: 0.9;
-}
-
-/* Todo formulario de registro */
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    border: 1px solid #ccc; /* Borde del formulario */
-    background-color: #17a2b8;  /*Color de fondo */ 
-    min-height: 500px;
-    min-width: 500px;
-    margin: 0px;
+/* Estilo para la frase */
+#frase {
+    position: relative; /* Cambia la posición a relativa */
+    top: 100px; /* Ajusta este valor según sea necesario */
+    margin: 20px 0; /* Mantén márgenes para separar de otros elementos */
     padding: 20px;
-    color: #fff;
+    text-align: center; /* Centrar texto */
+}
+
+#frase h1 {
+    color: hsla(0, 0%, 0%, 0.671); /* Color del título */
+    font-size: 1.8em;
+    margin-bottom: 15px; /* Espaciado inferior para separar del párrafo */
+}
+
+#frase p {
+    color: hsla(0, 0%, 0%, 0.671); /* Color del párrafo */
+    margin-bottom: 30px; /* Espaciado inferior para separar del formulario */
+}
+
+/* Estilo del formulario */
+section#registro {
+    background-color: hsla(181, 45%, 78%, 0.466); /* Fondo para el formulario */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    border: 2px solid #ccc; /* Borde gris claro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 40%; /*33.33%;  Ancho del formulario - 1/3 de la pantalla */
+    margin: 20px auto; /* Centrar formulario */
+    position: relative; /* Para el posicionamiento del encabezado */
+    margin-top: 40px; /* Aumentar margen superior para mayor separación */
+    min-width: 300px; /* Ancho mínimo para dispositivos pequeños */
+}
+
+/* Encabezado del formulario */
+.superiorformulario {
+    color: white; /* Texto blanco */
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+    width: 100%; /* Ancho completo */
+}
+
+/* Estilo de los campos del formulario */
+div {
+    margin-bottom: 15px; /* Espaciado entre campos */
 }
 
 form label {
-    font-size: 1rem;
-    color: #333;
+    display: block; /* Que la etiqueta esté en su propia línea */
+    margin-bottom: 5px; /* Espaciado debajo de la etiqueta */
+    font-weight: bold; /* Etiquetas en negrita */
 }
 
-form input[type="text"],
-form input[type="password"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
+form input, form select {
+    width: calc(100% - 20px); /* Ancho del campo */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 1em; /* Tamaño de fuente */
 }
 
-form input[type="text"]:focus,
-form input[type="password"]:focus {
-    border-color: #8a2be2;
-    outline: none;
-}
-
-form .error {
-    color: red;
-    font-size: 0.875rem;
-    margin: 0;
-}
-
+/* Estilo del botón de enviar */
 button {
-    background-color: #8a2be2;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
+    color: white; /* Texto blanco */
+    padding: 10px 15px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-size: 1em; /* Tamaño de fuente */
 }
 
-button:hover {
-    background-color: #6f1fb2;
+/* Estilo para el enlace de volver */
+a {
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1em; /* Tamaño de fuente */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transición suave para el color y la sombra */
 }
 
-/* Frase central */
-
-h1 {
-    color: #8a2be2;
-    margin-bottom: 20px;
+a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+    color: #007bff; /* Cambia a un azul más claro al pasar el ratón */
+    text-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra de texto */
 }
 
+a:active {
+    color: #003f7f; /* Cambia a un azul más oscuro al hacer clic */
+}

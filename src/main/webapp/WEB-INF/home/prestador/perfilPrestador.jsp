@@ -17,16 +17,20 @@ uri="http://www.springframework.org/tags/form" %>
             <img src="logo.png" alt="Logo GRUCAR">
             <span>GRUCAR</span>
         </div>
-        <ul>
-            <li><a href="index.jsp">Inicio</a></li>
-            <li><a href="servicios.jsp">Servicios</a></li>
-            <li><a href="planes.jsp">Planes</a></li>
-            <li><a href="contacto.jsp">Contacto</a></li>
-        </ul>
-        <div class="nav-buttons">
-            <a href="login.jsp" class="btn">Iniciar Sesión</a>
-            <a href="registro.jsp" class="btn-register">Registro</a>
+            <form action="/" method="get">
+                <a href="/">Inicio</a>
+            </form>
+            <form action="/#servicios" method="get">
+                <a href="/#servicios">Servicios</a>
+            </form>
+            <form action="/#contacto" method="get">
+                <a href="/#contacto">Contacto</a>
+            </form>
         </div>
+        <form action="/login/logout" method="POST">
+            <input type="hidden" name="_method" value="DELETE"/>
+            <button type="submit" class="logout-btn">Cerrar sesión</button>
+        </form>
     </nav>
 
     <!-- Perfil de Usuario -->
@@ -81,7 +85,43 @@ uri="http://www.springframework.org/tags/form" %>
                     </div>
                 </form>
             </div>
-        </div> <!-- Cierra profile-content -->
-    </div> <!-- Cierra perfil-container -->
+            <form class="profile-form">
+                    <label for="nombre">Nombre:</label>
+                    <span>${usuario.nombre}</span>
+                <br></br>
+                    <label for="apellido">Apellido:</label>
+                    <span>${usuario.apellido}</span>
+                <br></br>
+                    <label for="genero">Género:</label>
+                    <span>${usuario.genero}</span>
+                <br></br>
+                    <label for="rut">Rut:</label>
+                    <span>${usuario.rut}</span>
+                <br></br>
+                    <label for="email">Email:</label>
+                    <span>${usuario.email}</span>
+                <br></br>
+                    <label for="numero">Contacto:</label>
+                    <span>${usuario.numero}</span>
+                <br></br>
+                    <label for="licencia">Licencia:</label>
+                    <span>${usuario.licencia}</span>
+                <br></br>
+                    <label for="tipoDePersona">Tipo de Persona:</label>
+                    <span>${usuario.tipoDePersona}</span>
+                <br></br>
+                    <label for="createdAt">Fecha de registro:</label>
+                    <span>${usuario.createdAt}</span>
+                <br></br>
+
+                    
+
+                <div class="buttons">
+                    <button type="button" class="btn-password" aria-label="Cambiar Contraseña">Cambiar Contraseña</button>
+                    <button type="button" class="btn-delete" aria-label="Eliminar Cuenta">Eliminar Cuenta</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

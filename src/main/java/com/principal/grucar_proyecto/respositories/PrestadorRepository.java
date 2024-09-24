@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface PrestadorRepository extends CrudRepository<Prestador, Long>{
-    Prestador findByEmail(String email);
+    Prestador findByNumero(String numero);
 }

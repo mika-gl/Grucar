@@ -20,6 +20,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.persistence.Transient;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -41,7 +42,7 @@ public class Solicitud {
     @Column(name = "solicitud_id")
     private Long solicitudId;
 
-    @NotBlank(message = "especificar averia")
+    @NotBlank(message = "Especificar avería")
     private String averia; //deberia ser un modelo? ej. Averia averia
 
     /*@Size(max = 500, message = "El campo detalles no puede exceder los 500 caracteres")
@@ -58,6 +59,12 @@ public class Solicitud {
     @ManyToOne
     @JoinColumn(name = "prestador_id")
     private Prestador prestador;
+
+    private boolean prestadorFinalizo; // true cuando prestador 'finalice' la solicitud del cliente
+    private boolean clienteFinalizo; // true cuando cliente 'finalice' su solicitud
+
+    @NotNull
+    private boolean solicitudActiva = true; // se vuelve false cuando prestadorFinalizo && clienteFinalizo son true
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)

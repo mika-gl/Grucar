@@ -8,7 +8,8 @@ uri="http://www.springframework.org/tags/form" %>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GRUCAR - Asistencia en carretera</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/stylesindex.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
   </head>
   <body>
     <header>
@@ -22,7 +23,9 @@ uri="http://www.springframework.org/tags/form" %>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#contacto">Contacto</a></li>
-          <li><a href="">Perfil de usuario</a></li>
+          <form action="/perfil" method="get">
+            <li><a href="/perfil">Perfil de Usuario</a></li>
+        </form>
         </ul>
         <a href="/login" class="btn-login">Iniciar Sesión</a>
       </nav>

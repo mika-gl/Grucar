@@ -15,10 +15,10 @@
                 <h1>Accede a tu cuenta</h1>
                 <form:form action="/login" method="POST" modelAttribute="login">
                     <div>
-                        <form:label path="email">Email:</form:label>
-                        <form:input path="email" type="text" />
+                        <form:label path="numero">Numero: +56</form:label>
+                        <form:input path="numero" type="text" />
                     </div>
-                    <form:errors path="email" class="error"/>
+                    <form:errors path="numero" class="error"/>
                     <div>
                         <form:label path="password">Contraseña:</form:label>
                         <form:input path="password" type="password" />
@@ -26,6 +26,9 @@
                     <form:errors path="password" class="error"/>
                     <button  type="submit">¡Empezando la aventura!</button>
                 </form:form>
+                <form action="/" method="get">
+                    <a href="/">Volver atras</a>
+                </form>
             </section>
         </main>
     </body>
