@@ -1,0 +1,254 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(236, 247, 253, 255);
+}
+
+
+nav {
+    background: linear-gradient(to right, #7f70f5 0%, #00c8d7 85%, #00e0ff 95%); /* Degradado morado a celeste */
+    color: white; 
+    padding: 10px 0; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+/* Logo dentro del menú de navegación */
+/* Flexbox para alinear logo y texto juntos */
+nav .logo {
+    display: flex;
+    align-items: center; 
+    margin-left: 20px; 
+}
+
+/* Tamaño de la imagen del logo */
+nav .logo img {
+    width: 40px; 
+    margin-right: 10px; 
+}
+
+/* Lista de enlaces dentro del menú de navegación */
+nav ul {
+    list-style-type: none; /* Elimina el estilo de lista */
+    display: flex; /* Organiza los enlaces en una fila */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo de los elementos de la lista de navegación */
+nav ul li {
+    margin-right: 20px; /* Espacio entre los enlaces */
+}
+
+/* Estilo de los enlaces en la navegación */
+nav ul li a {
+    color: white; 
+    text-decoration: none; 
+    font-size: 15px; 
+}
+
+/* Botones de la barra de navegación */
+nav .btn, nav .btn-register {
+    background-color: #448dcc; 
+    color: white; 
+    padding: 8px 15px; 
+    margin-left: 10px;
+    text-decoration: none; /* Elimina el subrayado */
+    border-radius: 5px; 
+    transition: background-color 0.3s ease; /* Transición suave en hover */
+}
+
+/* Transición de color al hacer hover en los botones */
+nav .btn:hover, nav .btn-register:hover {
+    background-color: #52c1e0; /* Cambia el color de fondo en hover */
+}
+
+/* Contenedor principal del perfil de usuario */
+.perfil-container {
+    width: 60%; 
+    margin: auto; 
+    padding: 20px; 
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
+    text-align: center; /* Centra el contenido textual */
+}
+
+/* Título del perfil centrado */
+.perfil-title {
+    font-size: 28px; 
+    margin-bottom: 20px; 
+    font-weight: bold;
+}
+
+/* Contenedor que organiza la imagen de perfil y el formulario */
+.profile-content {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* Tarjeta de perfil en la izquierda */
+.profile-card {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 40%; 
+}
+
+/* Imagen de perfil con borde circular */
+.profile-image img {
+    width: 180px; 
+    height: 180px; 
+    border-radius: 50%; 
+    border: 3px solid #d4d4d4; 
+    margin-bottom: 15px; 
+}
+
+/* Botón para añadir una nueva foto */
+.add-photo-btn {
+    background-color: #448dcc; 
+    color: white; 
+    font-size: large; 
+    font-weight: bold; 
+    width: 35px; 
+    height: 35px; 
+    border-radius: 50%; 
+    padding: 5px 8px; 
+    border: none; 
+    cursor: pointer; 
+    position: relative;
+    top: -30px;
+    margin-left: -35px;
+}
+
+/* Contenedor para el estado "Disponible" */
+.user-status {
+    display: flex; /* Flexbox para colocar el texto y el switch juntos */
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+
+/* Texto "Disponible" con margen derecho */
+.user-status p {
+    margin-right: 10px;
+    font-weight: bold; 
+}
+
+/* Switch para cambiar el estado de disponible */
+.switch {
+    position: relative;
+    display: inline-block; /* Tamaño propio del switch */
+    width: 43px; 
+    height: 27px; 
+}
+
+/* Oculta el checkbox real */
+.switch input {
+    opacity: 0; /* Hace el input invisible */
+    width: 0;
+    height: 0;
+}
+
+/* Configura el fondo y bordes del switch */
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d4d4d4; /* Color del switch apagado */
+    transition: .4s; /* Transición suave */
+    border-radius: 34px; 
+}
+
+/* Círculo dentro del switch */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white; 
+    transition: .4s; /* Transición suave */
+    border-radius: 50%; 
+}
+
+/* Cambia el color del switch cuando está activado */
+input:checked + .slider {
+    background-color: #448dcc; /* Color azul activado */
+}
+
+/* Mueve el círculo a la derecha cuando está activado */
+input:checked + .slider:before {
+    transform: translateX(14px); /* Mueve el círculo */
+}
+
+/* Contenedor del formulario a la derecha */
+#formulario {
+    background-color: rgba(236, 247, 253, 255); 
+    width: 45%; 
+    padding: 50px; 
+}
+
+/* Alinea el formulario a la izquierda */
+.profile-form {
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start;
+    width: 100%; 
+}
+
+/* Estilo de las etiquetas del formulario */
+.profile-form label {
+    margin: 10px 0 5px 0; 
+    font-weight: bold;
+}
+
+/* Estilo de los campos de texto del formulario */
+.profile-form span {
+    display: block;
+    width: 70%;
+    padding: 10px;
+    background-color: white; 
+    border: 3px solid #d4d4d4; 
+    border-radius: 5px; 
+    margin-bottom: 10px; 
+}
+
+/* Botones del formulario: "Cambiar Contraseña" y "Eliminar Cuenta" */
+.profile-form .buttons {
+    display: flex;
+    justify-content: space-between; /* Distribuye los botones en los extremos */
+    width: 100%; /* Los botones ocupan todo el ancho disponible */
+}
+
+/* Estilo de los botones del formulario */
+.profile-form button {
+    width: 45%; 
+    padding: 10px;
+    background-color: #448dcc; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    font-size: 16px; 
+    transition: background-color 0.3s ease; /* Transición suave en hover */
+}
+
+/* Cambia el color de fondo al pasar el mouse sobre los botones */
+.profile-form button:hover {
+    background-color: #52c1e0; /* Fondo azul más claro */
+}
+
+/* Botón específico para "Eliminar Cuenta" */
+.btn-delete {
+    background-color: #ff5c5c; /* Fondo rojo */
+}
+
+/* Cambia el color al pasar el mouse sobre "Eliminar Cuenta" */
+.btn-delete:hover {
+    background-color: #e04848; /* Rojo más oscuro */
+}
