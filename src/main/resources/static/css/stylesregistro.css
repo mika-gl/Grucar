@@ -30,17 +30,18 @@ header {
     margin-bottom: 30px; /* Espaciado inferior para separar del formulario */
 }
 
-
 /* Estilo del formulario */
 section#registro {
-    background-color: hsla(181, 45%, 78%, 0.466); /* Fondo blanco para el formulario */
+    background-color: hsla(181, 45%, 78%, 0.466); /* Fondo para el formulario */
     padding: 20px;
     border-radius: 8px; /* Bordes redondeados */
+    border: 2px solid #ccc; /* Borde gris claro */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    max-width: 600px; /* Ancho máximo del formulario */
+    width: 33.33%; /* Ancho del formulario - 1/3 de la pantalla */
     margin: 20px auto; /* Centrar formulario */
     position: relative; /* Para el posicionamiento del encabezado */
     margin-top: 40px; /* Aumentar margen superior para mayor separación */
+    min-width: 300px; /* Ancho mínimo para dispositivos pequeños */
 }
 
 /* Encabezado del formulario */
@@ -79,16 +80,6 @@ button {
     border-radius: 4px; /* Bordes redondeados */
     cursor: pointer; /* Cambia el cursor al pasar por encima */
     font-size: 1em; /* Tamaño de fuente */
-}
-
-/* Estilo para el enlace de volver */
-a {
-    text-decoration: none; /* Sin subrayado */
-    font-size: 1em; /* Tamaño de fuente */
-}
-
-a:hover {
-    text-decoration: underline; /* Subrayado al pasar el ratón */
 }
 
 /* Estilo para el enlace de volver */
