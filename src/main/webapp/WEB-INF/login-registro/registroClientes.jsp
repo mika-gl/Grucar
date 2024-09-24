@@ -59,7 +59,17 @@
                 <form:label path="passwordForm">Contrasena</form:label>
                 <form:input path="passwordForm"/>
             </div>
-            <form:errors class="error" path="passwordForm"/>  
+            <form:errors class="error" path="passwordForm"/> 
+            <div>
+                <form:label path="passwordConfirm">Confirmar Contrasena</form:label>
+                <form:input path="passwordConfirm"/>
+            </div>
+            <form:errors class="error" path="passwordConfirm"/>
+            <div>
+                <form:label path="genero">Genero</form:label>
+                <form:input path="genero"/>
+            </div>
+            <form:errors class="error" path="genero"/>
 
             <button type="submit">Registrarse</button>
         </form:form>

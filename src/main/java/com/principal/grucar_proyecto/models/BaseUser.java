@@ -34,7 +34,12 @@ public class BaseUser {
     @NotBlank(message = "apellido requerido")
     private String apellido;
 
+    private String tipoDePersona; //nat = natural / jur = juridica
+
     private String email; //opcional
+    private String comuna; //opcional
+    private String region; //opcional
+    private String direccion; //oprional
 
     @NotBlank(message = "numero requerido")
     @Pattern(regexp="^\\d{9}$", message="debe ser un numero valido") //regex para solo numeros y que sean nueve digitos
