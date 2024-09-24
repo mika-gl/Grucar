@@ -76,9 +76,10 @@
             <button type="submit">Registrarse</button>
         </form:form>
 
-        <form action="/" method="get" class="salirBtn">
+<!--         <form action="/" method="get" class="salirBtn">
             <a href="/">Volver atras</a>
-        </form>
+        </form> 
+        Arreglar en css uwu -->
 
     <footer>
         <p>&copy; 2024 GRUCAR. Todos los derechos reservados.</p>

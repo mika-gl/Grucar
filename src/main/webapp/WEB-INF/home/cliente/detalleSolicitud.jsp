@@ -26,7 +26,7 @@
                     <tr>
                         <td>${solicitud.averia}</td>
                         <td>${solicitud.detalles}</td>
-                        <td>${solicitud.prestador}</td>
+                        <td>${solicitud.prestador.nombre}</td>
                     </tr>
                 </tbody>
             </table>
