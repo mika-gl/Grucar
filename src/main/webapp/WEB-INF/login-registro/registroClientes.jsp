@@ -67,19 +67,19 @@ uri="http://www.springframework.org/tags/form" %>
         <form:errors class="error" path="genero" />
 
         <div>
-            <form:label path="numero">Número de celular:</form:label>
-            <div style="display: flex; align-items: center">
-              <span>+56</span>
-              <form:input
-                path="numero"
-                maxlength="9"
-                placeholder="912345678"
-                pattern="\\d{9}"
-                title="Debe ingresar solo 9 dígitos"
-              />
-            </div>
+          <form:label path="numero">Número de celular:</form:label>
+          <div style="display: flex; align-items: center">
+            <span>+56</span>
+            <form:input
+              path="numero"
+              maxlength="9"
+              placeholder="912345678"
+              pattern="\\d{9}"
+              title="Debe ingresar solo 9 dígitos"
+            />
           </div>
-          <form:errors class="error" path="numero" />
+        </div>
+        <form:errors class="error" path="numero" />
 
         <div>
           <form:label path="tipoDePersona">Tipo de Cliente:</form:label>
@@ -93,13 +93,13 @@ uri="http://www.springframework.org/tags/form" %>
 
         <div>
           <form:label path="passwordForm">Contraseña:</form:label>
-          <form:input path="passwordForm" />
+          <form:password path="passwordForm" />
         </div>
         <form:errors class="error" path="passwordForm" />
 
         <div>
           <form:label path="passwordConfirm">Confirmar Contraseña:</form:label>
-          <form:input path="passwordConfirm" />
+          <form:password path="passwordConfirm" />
         </div>
         <form:errors class="error" path="passwordConfirm" />
 
@@ -116,3 +116,4 @@ uri="http://www.springframework.org/tags/form" %>
     </footer>
   </body>
 </html>
+
