@@ -60,9 +60,7 @@ public class Solicitud {
     @JoinColumn(name = "prestador_id")
     private Prestador prestador;
 
-    @Transient
     private boolean prestadorFinalizo; // true cuando prestador 'finalice' la solicitud del cliente
-    @Transient
     private boolean clienteFinalizo; // true cuando cliente 'finalice' su solicitud
 
     @NotNull

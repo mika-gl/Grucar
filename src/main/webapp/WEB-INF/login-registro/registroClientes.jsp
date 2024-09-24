@@ -37,10 +37,6 @@
     <div class="superiorformulario">
         <h2>Registrate como GruAmigo</h2>
     </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 9a9a56f300277c6b75be3f97516383a41bea9081
         <form:form action="/registro/nuevo?tipoDeUsuario=cliente" method="POST" modelAttribute="baseUser">
             <div>
                 <form:label path="nombre">Nombre:</form:label>
@@ -77,6 +73,15 @@
                 <form:input path="genero"/>
             </div>
             <form:errors class="error" path="genero"/>
+            <div>
+                <form:label path="tipoDePersona">Tipo de persona</form:label>
+                <form:select path="tipoDePersona">
+                    <option value="">Seleccione un tipo</option>
+                    <option value="jur">juridica</option>
+                    <option value="nat">natural</option>
+                </form:select>
+            </div>
+            <form:errors path="tipoDePersona"/>
 
             <button type="submit">Registrarse</button>
         </form:form>

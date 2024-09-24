@@ -28,6 +28,4 @@ public class Prestador extends BaseUser {
 
     @OneToMany(mappedBy = "prestador")
     private List<Solicitud> solicitudes_aceptadas_prestador;
-
-
 }

@@ -41,5 +41,4 @@ public class Cliente extends BaseUser {
     
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Solicitud> solicitudes_clientes;
-
 }

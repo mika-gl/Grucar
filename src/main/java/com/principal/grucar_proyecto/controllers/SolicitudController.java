@@ -1,7 +1,10 @@
 package com.principal.grucar_proyecto.controllers;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.integration.IntegrationProperties.RSocket.Client;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,9 +17,13 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.principal.grucar_proyecto.models.Cliente;
+import com.principal.grucar_proyecto.models.Prestador;
 import com.principal.grucar_proyecto.models.Solicitud;
 import com.principal.grucar_proyecto.services.SolicitudService;
 import com.principal.grucar_proyecto.services.BaseUserService;
+import com.principal.grucar_proyecto.services.ClienteService;
+import com.principal.grucar_proyecto.services.PrestadorService;
 
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
@@ -32,7 +39,9 @@ public class SolicitudController {
     @Autowired
     private SolicitudService solicitudService;
     @Autowired
-    private BaseUserService userService;
+    private PrestadorService prestadorService;
+    @Autowired
+    private ClienteService clienteService;
 
     //vista principal servicio
     @GetMapping("")
@@ -40,30 +49,46 @@ public class SolicitudController {
         if (session.getAttribute("currentUser") == null) {
             return "redirect:/login";
         }
-        if (session.getAttribute("solicitud") == null) {
-            
-            Class<?> claseDeObjetoUsuario = session.getAttribute("currentUser").getClass();
-            switch (claseDeObjetoUsuario.getName()) {
-                case "com.principal.grucar_proyecto.models.Prestador":
-                model.addAttribute("solicitudes", solicitudService.findAll()); //el prestador vera la lista de todas las solicitudes
-                return "home/prestador/solicitudes.jsp";
-                
-                default: // "Cliente"
-                    System.out.println(claseDeObjetoUsuario.getName());
+        Class<?> claseDeObjetoUsuario = session.getAttribute("currentUser").getClass();
+        switch (claseDeObjetoUsuario.getName()) {
+            case "com.principal.grucar_proyecto.models.Prestador": //Prestador
+                Prestador prestador = (Prestador)session.getAttribute("currentUser");
+                Solicitud solicitudActualPrestador = solicitudService.getSolicitudActiva(solicitudService.findByPrestador(prestador));
+                if (solicitudActualPrestador.getSolicitudId() == null) {
+                    List<Solicitud> solicitudes = solicitudService.findAll();
+                    
+                    model.addAttribute("solicitudes", solicitudes);
+                    return "home/prestador/solicitudes.jsp";
+                } else {
+                    return "redirect:/solicitudes/" + solicitudActualPrestador.getSolicitudId();
+                }
+            default: // "Cliente"
+                Cliente cliente = (Cliente)session.getAttribute("currentUser");
+                Solicitud solicitudActualCliente = solicitudService.getSolicitudActiva(solicitudService.findByCliente(cliente));
+                if (solicitudActualCliente.getSolicitudId() == null) {
                     return "home/cliente/solicitudes.jsp";
-            }
-        } else {
-            Solicitud solicitudActual = (Solicitud)session.getAttribute("solicitud");
-            return "redirect:/solicitudes/" + solicitudActual.getSolicitudId();
+                } else {
+                    return "redirect:/solicitudes/" + solicitudActualCliente.getSolicitudId();
+                }
         }
     }
 
     // Método para mostrar la vista de solicitud por id
     @GetMapping("/{solicitudId}")
-    public String show(/* @ModelAttribute("rating") Solicitud solicitud, */ @PathVariable("solicitudId") Long id, Model model, HttpSession session) {
+    public String show(@PathVariable("solicitudId") Long id, Model model, HttpSession session) {
         Solicitud solicitud = solicitudService.findById(id);
         model.addAttribute("solicitud", solicitud);
-        return "home/cliente/detalleSolicitud.jsp";
+
+        Class<?> claseDeObjetoUsuario = session.getAttribute("currentUser").getClass();
+        switch (claseDeObjetoUsuario.getName()) {
+            case "com.principal.grucar_proyecto.models.Prestador":
+            
+                return "home/prestador/detalleSolicitud.jsp";
+            
+            default: // "Cliente"
+                System.out.println(claseDeObjetoUsuario.getName());
+                return "home/cliente/detalleSolicitud.jsp";
+        }
     }
 
     // Hacer nueva solicitud de cliente (pedir asistencia)
@@ -72,10 +97,50 @@ public class SolicitudController {
         if (result.hasErrors()) {
             return "home/cliente/solicitudes.jsp";
         }
-
+        if (solicitudService.haySolicitudActiva(session)) {
+            return "redirect:/solicitudes";
+        }
         solicitud = solicitudService.asignarFechas(solicitud);
         solicitudService.save(solicitud);
         session.setAttribute("solicitud", solicitud); //Agrega solicitud a session para revisar en cualquier ruta si cliente ya hizo una.
+        return "redirect:/solicitudes";
+    }
+
+    @PutMapping("/aceptar/{solicitudId}")
+    public String aceptarSolicitud(@PathVariable("solicitudId") Long id, Model model, HttpSession session) {
+        if (solicitudService.haySolicitudActiva(session)) {
+            return "redirect:/solicitudes";
+        }
+        Solicitud solicitud = solicitudService.findById(id);
+        Prestador prestador = (Prestador)session.getAttribute("currentUser");
+        
+        session.setAttribute("solicitud", solicitud);
+        solicitudService.aceptarSolicitud(prestador, id); //actualiza info de prestador en Solicitud
+
+        return "redirect:/solicitudes";
+    }
+
+    @GetMapping("/{solicitudId}/modificar")
+    public String mostrarModificarSolicitud(@PathVariable("solicitudId") Long id, Model model, HttpSession session) {
+        //TODO: validar que se trata de quien hizo la solicitud (la id de currentUser es la misma que la id de Cliente en Solicitud), si no redirigir.
+        Solicitud solicitud = solicitudService.findById(id);
+       
+        return "home/cliente/modificarSolicitud.jsp";
+    }
+    @PutMapping("/{solicitudId}/modificar")
+    public String modificarSolicitud(@PathVariable("solicitudId") Long id, Model model, HttpSession session) {
+        //TODO: validar que se trata de quien hizo la solicitud (la id de currentUser es la misma que la id de Cliente en Solicitud), si no redirigir.
+
+        Solicitud solicitud = solicitudService.findById(id);
+       
+        return "redirect:/solicitudes";
+    }
+    @PutMapping("/{solicitudId}/finalizar")
+    public String finalizarSolicitud(@PathVariable("solicitudId") Long id, Model model, HttpSession session) {
+        //TODO: validar que se trata de el Cliente o el Prestador ASOSCIADOS con la solicitud
+        Solicitud solicitud = solicitudService.findById(id);
+        solicitudService.finalizarSolicitud(session, solicitud);
+       
         return "redirect:/solicitudes";
     }
 

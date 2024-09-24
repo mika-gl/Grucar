@@ -23,6 +23,9 @@ public class ClienteService {
     public Cliente save(Cliente cliente) {
         return clienteRepository.save(cliente);
     }
+    public Cliente update(Cliente cliente) {
+        return clienteRepository.save(cliente);
+    }
 
     public Cliente convertBaseUserToCliente(BaseUser baseUser) {
     Cliente cliente = new Cliente();
@@ -34,6 +37,7 @@ public class ClienteService {
     cliente.setRut(baseUser.getRut());
     cliente.setApellido(baseUser.getApellido());
     cliente.setLicencia("");
+    cliente.setTipoDePersona(baseUser.getTipoDePersona());
     return cliente;
     }
 }

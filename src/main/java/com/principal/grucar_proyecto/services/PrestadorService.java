@@ -25,6 +25,9 @@ public class PrestadorService {
     public Prestador save(Prestador prestador) {
         return prestadorRepository.save(prestador);
     }
+    public Prestador update(Prestador prestador) {
+        return prestadorRepository.save(prestador);
+    }
     
     public Prestador convertBaseUserToPrestador(BaseUser baseUser) {
     Prestador prestador = new Prestador();
@@ -36,6 +39,8 @@ public class PrestadorService {
     prestador.setRut(baseUser.getRut());
     prestador.setApellido(baseUser.getApellido());
     prestador.setLicencia(baseUser.getLicencia());
+    prestador.setTipoDePersona(baseUser.getTipoDePersona());
+
     return prestador;
     }
 }

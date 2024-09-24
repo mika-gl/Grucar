@@ -34,6 +34,7 @@ public class BaseUser {
     @NotBlank(message = "apellido requerido")
     private String apellido;
 
+    @NotBlank(message = "tipo de persona requerido")
     private String tipoDePersona; //nat = natural / jur = juridica
 
     private String email; //opcional

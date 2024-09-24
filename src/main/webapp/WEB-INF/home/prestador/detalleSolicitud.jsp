@@ -12,11 +12,12 @@
     <body>
         <main>            
             <div class="filterRow">
-                <h1>tu solicitud: ${solicitud.averia}</h1>
+                <h1>Solicitud de cliente: ${solicitud.averia}</h1>
             </div>
             <table>
                 <thead>
                     <tr>
+                        <th>Cliente</th>
                         <th>Averia</th>
                         <th>Detalles</th>
                         <th>Prestador</th>
@@ -24,14 +25,15 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td>${solicitud.cliente.nombre}</td>
                         <td>${solicitud.averia}</td>
                         <td>${solicitud.detalles}</td>
-                        <td>${solicitud.prestador}</td>
+                        <td>${solicitud.prestador.nombre}</td>
                     </tr>
                 </tbody>
             </table>
             <div >
-                <button  onclick='window.location.href="/solicitudes/${solicitud.solicitudId}/modificar"'>modificar</button>
+                <button>contactar cliente</button>
             </div>
             <form:form action="/solicitudes/${solicitud.solicitudId}/finalizar" method="POST">
                 <button type="submit">finalizar</button>

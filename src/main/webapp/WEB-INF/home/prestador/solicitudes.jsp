@@ -30,7 +30,7 @@
                 </form>
             </div>
             <p>Logeado como: ${currentUser.nombre}</p>
-            <form action="/login/logout" method="POST"></form>
+            <form action="/login/logout" method="POST">
                 <input type="hidden" name="_method" value="DELETE"/>
                 <button type="submit" class="logout-btn">Cerrar sesión</button>
             </form>
@@ -46,17 +46,26 @@
                 <th>Detalles</th>
                 <th>Prestador</th>
                 <th>Fecha emision</th>
+                <th>Accion</th>
             </tr>
             <c:if test="${solicitud.solicitudActiva}">
-                <c:forEach items="${solicitudes}" var="solicitud">
-                    <tr>
-                        <td>${solicitud.cliente.nombre}</td>
-                        <td>${solicitud.averia}</td>
-                        <td>${solicitud.detalles}</td>
-                        <td>${solicitud.prestador.nombre}</td>
-                        <td>${solicitud.createdAt}</td>
-                    </tr>
-                </c:forEach>
+                <c:if test="${solicitud.prestador == null}">
+                    <c:forEach items="${solicitudes}" var="solicitud">
+                        <tr>
+                            <td>${solicitud.cliente.nombre}</td>
+                            <td>${solicitud.averia}</td>
+                            <td>${solicitud.detalles}</td>
+                            <td>${solicitud.prestador.nombre}</td>
+                            <td>${solicitud.createdAt}</td>
+                            <td>
+                                <form action="/solicitudes/aceptar/${solicitud.solicitudId}" method="POST">
+                                    <input type="hidden" name="_method" value="PUT"/>
+                                    <button type="submit">aceptar</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </c:if>
             </c:if>
         </table>
     </body>

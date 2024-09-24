@@ -55,6 +55,14 @@
             <form:input path="genero"/>
         </div>
         <form:errors class="error" path="genero"/>
+        <div>
+            <form:select path="tipoDePersona">
+                <option value="">Seleccione un tipo</option>
+                <option value="jur">juridica</option>
+                <option value="nat">natural</option>
+            </form:select>
+        </div>
+        <form:errors class="error" path="tipoDePersona"/>
 
         <!-- CARNET DE IDENTIDAD, O DE CONDUCIR -->
 
