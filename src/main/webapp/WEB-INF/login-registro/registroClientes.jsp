@@ -30,10 +30,12 @@
         </header>
     </header>
 
-    <div id="frase"></div>
-        <h1>CON GRUCAR TENDRÁS LA TRANQUILIDAD QUE TANTO NECESITAS</h1>
+    <div id="frase">
+        <h1 >CON GRUCAR TENDRÁS LA TRANQUILIDAD QUE TANTO NECESITAS</h1>
     </div>
-
+    <div class="superiorformulario">
+        <h2>Registrate como GruAmigo</h2>
+    </div>
 
         <form:form action="/registro/nuevo?tipoDeUsuario=cliente" method="POST" modelAttribute="baseUser">
             <div>

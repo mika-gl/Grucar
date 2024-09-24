@@ -104,6 +104,18 @@ main {
 
 /* Todo formulario de registro */
 
+.superiorformulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2px;
+    background-color: #17a2b8;
+    min-width: 500px;
+    min-height: auto;
+    color: #fff;
+    font-weight: bold;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -114,12 +126,14 @@ form {
     min-width: 500px;
     margin: 0px;
     padding: 20px;
-    color: #fff;
 }
 
 form label {
     font-size: 1rem;
-    color: #333;
+    color: #fff;
+    display: block; /* Que el label ocupe toda la línea */
+    font-weight: bold; /* Negrita para el label */
+    margin-bottom: 5px; /* Espaciado debajo del label */
 }
 
 form input[type="text"],
@@ -134,6 +148,7 @@ form input[type="password"] {
 form input[type="text"]:focus,
 form input[type="password"]:focus {
     border-color: #8a2be2;
+    border: 2px solid;
     outline: none;
 }
 
@@ -147,6 +162,7 @@ button {
     background-color: #8a2be2;
     color: #fff;
     padding: 10px 20px;
+    margin-bottom: 20px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -160,8 +176,11 @@ button:hover {
 
 /* Frase central */
 
-h1 {
+#frase {
     color: #8a2be2;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
