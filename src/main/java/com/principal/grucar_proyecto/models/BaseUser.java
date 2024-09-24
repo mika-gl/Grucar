@@ -19,8 +19,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-
 @MappedSuperclass
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,46 +26,47 @@ import lombok.Setter;
 @Setter
 public class BaseUser {
     
-    @NotBlank(message = "nombre requerido")
+    @NotBlank(message = "Nombre requerido")
     private String nombre;
 
-    @NotBlank(message = "apellido requerido")
+    @NotBlank(message = "Apellido requerido")
     private String apellido;
 
-    @NotBlank(message = "tipo de persona requerido")
-    private String tipoDePersona; //nat = natural / jur = juridica
+    @NotBlank(message = "Tipo de persona requerido")
+    private String tipoDePersona; // nat = natural / jur = jurídica
 
-    private String email; //opcional
-    private String comuna; //opcional
-    private String region; //opcional
-    private String direccion; //oprional
+    private String email; // opcional
+    private String comuna; // opcional
+    private String region; // opcional
+    private String direccion; // opcional
 
-    @NotBlank(message = "numero requerido")
-    @Pattern(regexp="^\\d{9}$", message="debe ser un numero valido") //regex para solo numeros y que sean nueve digitos
+    @NotBlank(message = "Número requerido")
+    @Pattern(regexp = "^\\d{9}$", message = "Debe ser un número válido") // regex para solo números y que sean nueve dígitos
     private String numero; // sin el +56
 
-    @NotBlank(message= "rut requerido")
+    @NotBlank(message = "RUT requerido")
     private String rut;
 
     private String password;
 
-    @NotNull(message = "contraseña requerida")
-    @Size(min=8 ,message = "la contraseña no tiene al menos 8 caracteres")
+    @NotNull(message = "Contraseña requerida")
+    @Size(min = 8, message = "La contraseña debe tener al menos 8 caracteres")
     @Transient
     private String passwordForm;
+
     @Transient
     private String passwordConfirm;
 
-    @NotNull(message="genero requerido")
+    @NotNull(message = "Género requerido")
     private String genero;
 
     private String licencia; // tipo de dato? String por mientras
 
-    //TODO: validacion de identidad por camara
+    // TODO: validación de identidad por cámara
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(updatable = false,name = "created_at")
+    @Column(updatable = false, name = "created_at")
     private Date createdAt;
 
     @UpdateTimestamp

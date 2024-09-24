@@ -43,6 +43,7 @@ uri="http://www.springframework.org/tags/form" %>
         </div>
         <form:errors class="error" path="nombre" />
 
+<<<<<<< HEAD
         <div>
           <form:label path="apellido">Apellido:</form:label>
           <form:input path="apellido" placeholder="Introduce tu apellido" />
@@ -110,6 +111,12 @@ uri="http://www.springframework.org/tags/form" %>
         <a href="/">Volver al Inicio</a>
       </form>
     </section>
+=======
+<!--         <form action="/" method="get" class="salirBtn">
+            <a href="/">Volver atras</a>
+        </form> 
+        Arreglar en css uwu -->
+>>>>>>> back-exp
 
     <footer>
       <p>&copy; 2024 GRUCAR. Todos los derechos reservados.</p>

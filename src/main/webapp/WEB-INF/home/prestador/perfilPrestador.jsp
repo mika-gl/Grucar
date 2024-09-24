@@ -54,7 +54,7 @@ uri="http://www.springframework.org/tags/form" %>
                     <label for="apellido">Apellido:</label>
                     <span>${usuario.apellido}</span>
                 <br></br>
-                    <label>Género:</label>
+                    <label for="genero">Género:</label>
                     <span>${usuario.genero}</span>
                 <br></br>
                     <label for="rut">Rut:</label>
@@ -69,10 +69,14 @@ uri="http://www.springframework.org/tags/form" %>
                     <label for="licencia">Licencia:</label>
                     <span>${usuario.licencia}</span>
                 <br></br>
-                <div>
-                    <label>Fecha de registro:</label>
+                    <label for="tipoDePersona">Tipo de Persona:</label>
+                    <span>${usuario.tipoDePersona}</span>
+                <br></br>
+                    <label for="createdAt">Fecha de registro:</label>
                     <span>${usuario.createdAt}</span>
-                </div>
+                <br></br>
+
+                    
 
                 <div class="buttons">
                     <button type="button" class="btn-password" aria-label="Cambiar Contraseña">Cambiar Contraseña</button>
