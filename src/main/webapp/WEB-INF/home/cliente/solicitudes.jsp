@@ -27,7 +27,7 @@
             </form>
         </div>
         <div class="user-info">
-            <p>Logeado como: ${currentUser.name}</p>
+            <p>Logeado como: ${currentUser.nombre}</p>
             <form action="/login/logout" method="POST">
                 <input type="hidden" name="_method" value="DELETE"/>
                 <button type="submit" class="logout-btn">Cerrar sesión</button>

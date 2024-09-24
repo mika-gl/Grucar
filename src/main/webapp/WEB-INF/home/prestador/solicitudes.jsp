@@ -10,7 +10,7 @@
         <title>Lista solicitudes</title>
     </head>
     <body>
-        <h1>Logeado como: ${currentUser.name}</h1>
+        <h1>Logeado como: ${currentUser.nombre}</h1>
         <h3>prestador</h3>
         <form method="POST" action="/login/logout">
             <input type="hidden" name="_method" value="DELETE"/>
@@ -24,15 +24,17 @@
                 <th>Prestador</th>
                 <th>Fecha emision</th>
             </tr>
-            <c:forEach items="${solicitudes}" var="solicitud">
-                <tr>
-                    <td>${solicitud.cliente.name}</td>
-                    <td>${solicitud.averia}</td>
-                    <td>${solicitud.detalles}</td>
-                    <td>${solicitud.prestador.name}</td>
-                    <td>${solicitud.createdAt}</td>
-                </tr>
-            </c:forEach>
+            <c:if test="${solicitud.solicitudActiva}">
+                <c:forEach items="${solicitudes}" var="solicitud">
+                    <tr>
+                        <td>${solicitud.cliente.nombre}</td>
+                        <td>${solicitud.averia}</td>
+                        <td>${solicitud.detalles}</td>
+                        <td>${solicitud.prestador.nombre}</td>
+                        <td>${solicitud.createdAt}</td>
+                    </tr>
+                </c:forEach>
+            </c:if>
         </table>
     </body>
 </html>

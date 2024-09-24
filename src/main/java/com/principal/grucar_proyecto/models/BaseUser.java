@@ -10,9 +10,9 @@ import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import jakarta.persistence.Transient;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,11 +29,19 @@ import lombok.Setter;
 public class BaseUser {
     
     @NotBlank(message = "nombre requerido")
-    private String name;
+    private String nombre;
 
-    @NotBlank(message = "email requerido")
-    @Email(message = "email no valido")
-    private String email;
+    @NotBlank(message = "apellido requerido")
+    private String apellido;
+
+    private String email; //opcional
+
+    @NotBlank(message = "numero requerido")
+    @Pattern(regexp="^\\d{9}$", message="debe ser un numero valido") //regex para solo numeros y que sean nueve digitos
+    private String numero; // sin el +56
+
+    @NotBlank(message= "rut requerido")
+    private String rut;
 
     private String password;
 
@@ -46,6 +54,8 @@ public class BaseUser {
 
     @NotNull(message="genero requerido")
     private String genero;
+
+    private String licencia; // tipo de dato? String por mientras
 
     //TODO: validacion de identidad por camara
 

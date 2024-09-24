@@ -33,6 +33,9 @@
             <div >
                 <button  onclick='window.location.href="/solicitudes/${solicitud.solicitudId}/modificar"'>modificar</button>
             </div>
+            <form:form action="/solicitudes/${solicitud.solicitudId}/finalizar" method="POST">
+                
+            </form:form>
         </main>
     </body>
 </html>

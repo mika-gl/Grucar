@@ -12,6 +12,7 @@ import com.principal.grucar_proyecto.models.BaseUser;
 import com.principal.grucar_proyecto.models.Cliente;
 import com.principal.grucar_proyecto.models.Prestador;
 import com.principal.grucar_proyecto.respositories.ClienteRepository;
+import com.principal.grucar_proyecto.respositories.PrestadorRepository;
 
 import lombok.AllArgsConstructor;
 
@@ -20,47 +21,19 @@ import lombok.AllArgsConstructor;
 public class BaseUserService {
 
     @Autowired
-    private PrestadorService prestadorRepository;
+    private PrestadorRepository prestadorRepository;
     @Autowired
     private ClienteRepository clienteRepository;
     
-
-    // public Cliente create(Cliente user) {
-    //     return clienteRepository.save(user);
-    // }
-    // public Cliente update(Cliente user) {
-    //     return clienteRepository.save(user);
-    // }
-    // public List<Cliente> findAll() {
-    //     return clienteRepository.findAll();
-    // }
-    // public Cliente findById(Long id) {
-    //     return clienteRepository.findById(id).orElse(null);
-    // }
-    // public void deleteById(Long id) {
-    //     clienteRepository.deleteById(id);
-    // }
-
-    // public Cliente findByEmail(String email) {
-    //     return clienteRepository.findByEmail(email);
-    // }
-
-    // Metodo para revisar si ya existen usuarios con el mismo email (y el mismo tipo de cuenta, cliente o prestador),
+    // Metodo para revisar si ya existen usuarios con el mismo Numero (y el mismo tipo de cuenta, cliente o prestador),
     // si la confirmacion de la pass esta bien, y para encriptar la contrasena.
     // Devuelve el BindingResult respectivo segun los errores.
     public BindingResult validateUser(BaseUser baseUser, BindingResult result, String tipoDeUsuario) {
-        Cliente existingCliente = clienteRepository.findByEmail(baseUser.getEmail());
-        Prestador existingPrestador = prestadorRepository.findByEmail(baseUser.getEmail());
-
-        // CODIGO PERMITE CREACION DE CUENTA CLIENTE Y PRESTADOR CON MISMO EMAIL
-        // if (existingCliente != null && tipoDeUsuario.equals("cliente")) {
-        //     result.rejectValue("email", "errorEmail", "Este email ya está registrado"); //ya hay un CLIENTE con ese email
-        // } else if (existingPrestador != null && tipoDeUsuario.equals("prestador")) {
-        //     result.rejectValue("email", "errorEmail", "Este email ya está registrado"); //ya hay un PRESTADOR con ese email
-        // }
+        Cliente existingCliente = clienteRepository.findByNumero(baseUser.getNumero());
+        Prestador existingPrestador = prestadorRepository.findByNumero(baseUser.getNumero());
 
         if (existingCliente != null || existingPrestador != null) {
-        result.rejectValue("email", "errorEmail", "Este email ya está registrado"); //ya hay un CLIENTE con ese email
+        result.rejectValue("numero", "errorNumero", "Este numero ya está registrado"); //ya hay alguien con ese numero
         
         } else if (!baseUser.getPasswordForm().equals(baseUser.getPasswordConfirm())) { //revisa si la confirmacion de pass esta bien escrita
             result.rejectValue("passwordConfirm", "errorConfirm", "Las contraseñas no coinciden");

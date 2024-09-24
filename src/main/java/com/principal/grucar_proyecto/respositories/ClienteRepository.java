@@ -7,5 +7,5 @@ import java.util.List;
 
 
 public interface ClienteRepository extends CrudRepository<Cliente, Long>{
-    Cliente findByEmail(String email);
+    Cliente findByNumero(String numero);
 }

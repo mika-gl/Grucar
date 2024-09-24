@@ -14,15 +14,25 @@
 <body>
     <form:form action="/registro/nuevo?tipoDeUsuario=cliente" method="POST" modelAttribute="baseUser">
         <div>
-            <form:label path="name">Nombre:</form:label>
-            <form:input path="name"/>
+            <form:label path="nombre">Nombre:</form:label>
+            <form:input path="nombre"/>
         </div>
-        <form:errors class="error" path="name"/>
+        <form:errors class="error" path="nombre"/>
         <div>
-            <form:label path="email">Email</form:label>
-            <form:input path="email"/>
+            <form:label path="apellido">Apellido:</form:label>
+            <form:input path="apellido"/>
         </div>
-        <form:errors class="error" path="email"/>        
+        <form:errors class="error" path="apellido"/>
+        <div>
+            <form:label path="rut">Rut:</form:label>
+            <form:input path="rut"/>
+        </div>
+        <form:errors class="error" path="rut"/>   
+        <div>
+            <form:label path="numero">Numero</form:label>
+            <form:input path="numero"/>
+        </div>
+        <form:errors class="error" path="numero"/>        
         <div>
             <form:label path="passwordForm">Contrasena</form:label>
             <form:input path="passwordForm"/>
