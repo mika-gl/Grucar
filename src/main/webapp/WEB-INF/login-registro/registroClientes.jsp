@@ -31,9 +31,16 @@
     </header>
       
 
-    <div id="frase"></div>
-        <h1>CON GRUCAR TENDRÁS LA TRANQUILIDAD QUE TANTO NECESITAS</h1>
+    <div id="frase">
+        <h1 >CON GRUCAR TENDRÁS LA TRANQUILIDAD QUE TANTO NECESITAS</h1>
     </div>
+    <div class="superiorformulario">
+        <h2>Registrate como GruAmigo</h2>
+    </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9a9a56f300277c6b75be3f97516383a41bea9081
         <form:form action="/registro/nuevo?tipoDeUsuario=cliente" method="POST" modelAttribute="baseUser">
             <div>
                 <form:label path="nombre">Nombre:</form:label>
