@@ -28,4 +28,10 @@ public class IndexController {
             return "home/prestador/perfilPrestador.jsp";
         }
     }
+
+    // Nueva ruta para la vista con cuenta regresiva
+    @GetMapping("/appmovil")
+    public String cuentaRegresiva() {
+        return "home/appmovil.jsp"; // Devuelve la vista appmovil.jsp
+    }
 }
