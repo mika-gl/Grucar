@@ -56,9 +56,18 @@
                         <option value="">Seleccione un problema</option>
                         <option value="0" <c:if test="${solicitudActual.averia == 0}">selected</c:if>  >Problemas con el motor</option>
                         <option value="1" <c:if test="${solicitudActual.averia == 1}">selected</c:if>  >Pinchazo de llanta</option>
-                        <option value="2" <c:if test="${solicitudActual.averia == 3}">selected</c:if>  >Batería agotada</option>
-                        <option value="3" <c:if test="${solicitudActual.averia == 2}">selected</c:if>  >Otro</option>
-                        
+                        <option value="2" <c:if test="${solicitudActual.averia == 2}">selected</c:if>  >Batería agotada</option>
+                        <option value="3" <c:if test="${solicitudActual.averia == 3}">selected </c:if> >Falta de combustible</option>
+                        <option value="4" <c:if test="${solicitudActual.averia == 4}">selected </c:if> >Problemas de frenos</option>
+                        <option value="5" <c:if test="${solicitudActual.averia == 5}">selected </c:if> >Problemas eléctricos</option>
+                        <option value="6" <c:if test="${solicitudActual.averia == 6}">selected </c:if> >Problemas de refrigeración del motor</option>
+                        <option value="7" <c:if test="${solicitudActual.averia == 7}">selected </c:if> >Problemas de transmisión/option>
+                        <option value="8" <c:if test="${solicitudActual.averia == 8}">selected </c:if> >Llave dentro del vehículo</option>
+                        <option value="9" <c:if test="${solicitudActual.averia == 9}">selected </c:if> >Vehículo atascado</option>
+                        <option value="10" <c:if test="${solicitudActual.averia == 10}">selected </c:if> >Problemas con las luces</option>
+                        <option value="11" <c:if test="${solicitudActual.averia == 11}">selected </c:if> >Sobrecalentamiento del vehículo</option>
+                        <option value="12" <c:if test="${solicitudActual.averia == 12}">selected </c:if> >Falla del sistema de dirección</option>
+                        <option value="o" <c:if test="${solicitudActual.averia == o}">selected </c:if> >Otro</option>
                     </form:select>
                 </div>
                 <form:errors path="averia" cssClass="error-message" />
