@@ -25,22 +25,14 @@ uri="http://www.springframework.org/tags/form" %>
           <li><a href="#contacto">Contacto</a></li>
           <form action="/perfil" method="get">
             <li><a href="/perfil">Perfil de Usuario</a></li>
-        </form>
+          </form>
+          <form action="/appmovil" method="get">
+            <li><a href="/appmovil">AppMovil</a></li>
+          </form>
         </ul>
-        <c:choose>
-          <c:when test="${currentUser == null}">
-            <a href="/login" class="btn-login">Iniciar Sesión</a>
-          </c:when>
-          <c:otherwise>
-            <form action="/login/logout" method="POST">
-              <input type="hidden" name="_method" value="DELETE"/>
-              <button type="submit" class="btn-login">Cerrar sesión</button>
-            </form>
-          </c:otherwise>
-        </c:choose>
+        <a href="/login" class="btn-login">Iniciar Sesión</a>
       </nav>
     </header>
-
     <main>
       <section id="inicio" class="hero">
         <div class="hero-text">
