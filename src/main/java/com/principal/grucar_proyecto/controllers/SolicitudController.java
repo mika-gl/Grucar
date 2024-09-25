@@ -4,26 +4,22 @@ package com.principal.grucar_proyecto.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.integration.IntegrationProperties.RSocket.Client;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.principal.grucar_proyecto.models.Cliente;
 import com.principal.grucar_proyecto.models.Prestador;
 import com.principal.grucar_proyecto.models.Solicitud;
-import com.principal.grucar_proyecto.services.SolicitudService;
-import com.principal.grucar_proyecto.services.BaseUserService;
 import com.principal.grucar_proyecto.services.ClienteService;
 import com.principal.grucar_proyecto.services.PrestadorService;
+import com.principal.grucar_proyecto.services.SolicitudService;
 
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
@@ -124,7 +120,8 @@ public class SolicitudController {
     public String mostrarModificarSolicitud(@PathVariable("solicitudId") Long id, Model model, HttpSession session) {
         //TODO: validar que se trata de quien hizo la solicitud (la id de currentUser es la misma que la id de Cliente en Solicitud), si no redirigir.
         Solicitud solicitud = solicitudService.findById(id);
-       
+        model.addAttribute("solicitud", solicitud);
+
         return "home/cliente/modificarSolicitud.jsp";
     }
     @PutMapping("/{solicitudId}/modificar")
@@ -132,7 +129,9 @@ public class SolicitudController {
         //TODO: validar que se trata de quien hizo la solicitud (la id de currentUser es la misma que la id de Cliente en Solicitud), si no redirigir.
 
         Solicitud solicitud = solicitudService.findById(id);
-       
+        model.addAttribute("solicitud", solicitud);
+
+        solicitudService.update(solicitud);
         return "redirect:/solicitudes";
     }
     @PutMapping("/{solicitudId}/finalizar")
@@ -140,7 +139,7 @@ public class SolicitudController {
         //TODO: validar que se trata de el Cliente o el Prestador ASOSCIADOS con la solicitud
         Solicitud solicitud = solicitudService.findById(id);
         solicitudService.finalizarSolicitud(session, solicitud);
-       
+
         return "redirect:/solicitudes";
     }
 
