@@ -27,6 +27,7 @@ public class SolicitudService {
 
 
     public Solicitud save(Solicitud solicitud) {
+        solicitud = traducirAveria(solicitud);
         return solicitudRepository.save(solicitud);
     }
     public List<Solicitud> findAll() {
@@ -109,5 +110,53 @@ public class SolicitudService {
                 Cliente cliente = (Cliente)session.getAttribute("currentUser");
                 return getSolicitudActiva(findByCliente(cliente)) == null;
         }
+    }
+
+    public Solicitud traducirAveria(Solicitud solicitud) {
+        switch (solicitud.getAveria()) {
+            case "0":
+                solicitud.setAveriaTraduccion("Problemas con el motor");
+                break;
+            case "1":
+                solicitud.setAveriaTraduccion("Pinchazo de llanta");
+                break;
+            case "2":
+                solicitud.setAveriaTraduccion("Batería agotada");
+                break;
+            case "3":
+                solicitud.setAveriaTraduccion("Falta de combustible");
+                break;
+            case "4":
+                solicitud.setAveriaTraduccion("Problemas de frenos");
+                break;
+            case "5":
+                solicitud.setAveriaTraduccion("Problemas eléctricos");
+                break;
+            case "6":
+                solicitud.setAveriaTraduccion("Problemas de refrigeración del motor");
+                break;
+            case "7":
+                solicitud.setAveriaTraduccion("Problemas de transmisión");
+                break;
+            case "8":
+                solicitud.setAveriaTraduccion("Llave dentro del vehículo");
+                break;
+            case "9":
+                solicitud.setAveriaTraduccion("Vehículo atascado");
+                break;
+            case "10":
+                solicitud.setAveriaTraduccion("Problemas con las luces");
+                break;
+            case "11":
+                solicitud.setAveriaTraduccion("Sobrecalentamiento del vehículo");
+                break;
+            case "12":
+                solicitud.setAveriaTraduccion("Falla del sistema de dirección");
+                break;
+            case "o":
+                solicitud.setAveriaTraduccion("Otro");
+                break;
+        }
+        return solicitud;
     }
 }

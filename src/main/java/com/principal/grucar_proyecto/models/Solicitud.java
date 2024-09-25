@@ -15,6 +15,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.persistence.Transient;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -38,6 +39,8 @@ public class Solicitud {
 
     @NotBlank(message = "Especificar avería")
     private String averia; //deberia ser un modelo? ej. Averia averia
+ 
+    private String averiaTraduccion; // codigo -> descripcion
 
     /*@Size(max = 500, message = "El campo detalles no puede exceder los 500 caracteres")
     @Column(name = "detalles", length = 500)

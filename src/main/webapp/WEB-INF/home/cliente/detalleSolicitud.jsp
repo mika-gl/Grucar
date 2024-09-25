@@ -25,7 +25,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>${solicitud.averia}</td>
+                        <td>${solicitud.averiaTraduccion}</td>
                         <td>${solicitud.detalles}</td>
                         <td>${solicitud.prestador.nombre}</td>
                         <td>+56 ${solicitud.prestador.numero}</td>

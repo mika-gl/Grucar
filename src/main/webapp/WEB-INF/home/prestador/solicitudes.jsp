@@ -50,7 +50,7 @@
                     <c:if test="${solicitud.prestador == null}">
                         <tr>
                             <td>${solicitud.cliente.nombre}</td>
-                            <td>${solicitud.averia}</td>
+                            <td>${solicitud.averiaTraduccion}</td>
                             <td>${solicitud.detalles}</td>
                             <td>${solicitud.createdAt}</td>
                             <td>${solicitud.prestador.nombre}</td>
