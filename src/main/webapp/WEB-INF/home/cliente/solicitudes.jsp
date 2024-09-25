@@ -61,10 +61,10 @@
                     <form:label path="averia">Problema:</form:label>
                     <form:select path="averia">
                         <option value="">Seleccione un problema</option>
-                        <option value="Problemas con el motor">Problemas con el motor</option>
-                        <option value="Pinchazo de llanta">Pinchazo de llanta</option>
-                        <option value="Batería agotada">Batería agotada</option>
-                        <option value="otro">Otro</option>
+                        <option value="0">Problemas con el motor</option>
+                        <option value="1">Pinchazo de llanta</option>
+                        <option value="2">Batería agotada</option>
+                        <option value="3">Otro</option>
                     </form:select>
                 </div>
                 <form:errors path="averia"/>

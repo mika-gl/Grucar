@@ -47,30 +47,31 @@
         <!-- Columna central (Formulario de problemas) -->
         <div class="column middle-column">
             <h2>Seleccione el problema</h2>
-            <form:form action="${pageContext.request.contextPath}/solicitudes/${solicitud.solicitudId}/modificar" method="POST" modelAttribute="solicitud">
+            <form:form action="${pageContext.request.contextPath}/solicitudes/${solicitud.solicitudId}/modificar" method="POST" modelAttribute="solicitudActual">
                 <input type="hidden" name="_method" value="PUT"/>
 
                 <div class="form-group">
                     <form:label path="averia">Problema:</form:label>
                     <form:select path="averia">
                         <option value="">Seleccione un problema</option>
-                        <option value="Problemas con el motor">Problemas con el motor</option>
-                        <option value="Pinchazo de llanta">Pinchazo de llanta</option>
-                        <option value="Batería agotada">Batería agotada</option>
-                        <option value="otro">Otro</option>
+                        <option value="0" <c:if test="${solicitudActual.averia == 0}">selected</c:if>  >Problemas con el motor</option>
+                        <option value="1" <c:if test="${solicitudActual.averia == 1}">selected</c:if>  >Pinchazo de llanta</option>
+                        <option value="2" <c:if test="${solicitudActual.averia == 3}">selected</c:if>  >Batería agotada</option>
+                        <option value="3" <c:if test="${solicitudActual.averia == 2}">selected</c:if>  >Otro</option>
+                        
                     </form:select>
                 </div>
                 <form:errors path="averia" cssClass="error-message" />
 
                 <div class="form-group">
-                    <form:label path="detalles">Detalle:</form:label>
+                    <form:label path="detalles">Detalle: </form:label>
                     <form:textarea path="detalles" rows="4" placeholder="Escriba detalles adicionales aquí..."></form:textarea>
                 </div>
                 <form:errors path="detalles"/>
 
                 <form:input path="cliente" type="hidden" readonly="true" value="${currentUser.clienteId}"/>
 
-                <button type="submit" class="submit-btn">Pedir Asistencia</button>
+                <button type="submit" class="submit-btn">Modificar solicitud</button>
             </form:form>
         </div>
 

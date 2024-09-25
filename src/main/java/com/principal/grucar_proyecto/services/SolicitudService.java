@@ -95,6 +95,9 @@ public class SolicitudService {
         }
         solicitudRepository.save(solicitud);
     }
+    public void cancelarSolicitud(Solicitud solicitud) {
+        solicitudRepository.delete(solicitud);
+    }
 
     public boolean haySolicitudActiva(HttpSession session) {
         Class<?> claseDeObjetoUsuario = session.getAttribute("currentUser").getClass();

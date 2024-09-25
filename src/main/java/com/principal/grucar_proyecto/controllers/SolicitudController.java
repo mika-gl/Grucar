@@ -117,7 +117,7 @@ public class SolicitudController {
     }
 
     @GetMapping("/{solicitudId}/modificar")
-    public String mostrarModificarSolicitud(@PathVariable("solicitudId") Long id, Model model, HttpSession session) {
+    public String mostrarModificarSolicitud(@PathVariable("solicitudId") Long id, Model model, HttpSession session, @ModelAttribute("solicitud") Solicitud solicitud) {
         Class<?> claseDeObjetoUsuario = session.getAttribute("currentUser").getClass();
         if (!claseDeObjetoUsuario.getName().equals("com.principal.grucar_proyecto.models.Cliente")) {
             // verificar que se trata un cliente
@@ -134,9 +134,8 @@ public class SolicitudController {
             return "redirect:/";
         }
 
-
-        Solicitud solicitud = solicitudService.findById(id);
-        model.addAttribute("solicitud", solicitud);
+        Solicitud solicitudActual = solicitudService.findById(id);
+        model.addAttribute("solicitudActual", solicitudActual);
 
         return "home/cliente/modificarSolicitud.jsp";
     }
@@ -176,7 +175,7 @@ public class SolicitudController {
 
         return "redirect:/solicitudes";
     }
-    @DeleteMapping //se puede cancelar cuando un prestador aun no ha aceptado
+    @DeleteMapping("/{solicitudId}/cancelar") //se puede cancelar cuando un prestador aun no ha aceptado
     public String cancelarSolicitud(@PathVariable("solicitudId") Long id, Model model, HttpSession session) {
         Class<?> claseDeObjetoUsuario = session.getAttribute("currentUser").getClass();
         if (!claseDeObjetoUsuario.getName().equals("com.principal.grucar_proyecto.models.Cliente")) {
@@ -193,8 +192,9 @@ public class SolicitudController {
             //verificar que la solicitud no la ha aceptado ningun prestador
             return "redirect:/";
         }
+
         Solicitud solicitud = solicitudService.findById(id);
-        solicitudService.finalizarSolicitud(session, solicitud);
+        solicitudService.cancelarSolicitud(solicitud);
 
         return "redirect:/solicitudes";
     }
