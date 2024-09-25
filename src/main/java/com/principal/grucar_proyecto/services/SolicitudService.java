@@ -1,17 +1,15 @@
 package com.principal.grucar_proyecto.services;
 
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.principal.grucar_proyecto.models.Cliente;
 import com.principal.grucar_proyecto.models.Prestador;
 import com.principal.grucar_proyecto.models.Solicitud;
-import com.principal.grucar_proyecto.models.Cliente;
-
 import com.principal.grucar_proyecto.respositories.ClienteRepository;
 import com.principal.grucar_proyecto.respositories.SolicitudRepository;
 
@@ -75,7 +73,7 @@ public class SolicitudService {
         solicitud.setUpdatedAt(new Date());
         return solicitud;
     }
- 
+
     public void aceptarSolicitud(Prestador prestador, Long solicitudId) {
         Solicitud solicitud = solicitudRepository.findById(solicitudId).orElse(null);
         solicitud.setPrestador(prestador);
@@ -96,6 +94,9 @@ public class SolicitudService {
             solicitud.setSolicitudActiva(false);
         }
         solicitudRepository.save(solicitud);
+    }
+    public void cancelarSolicitud(Solicitud solicitud) {
+        solicitudRepository.delete(solicitud);
     }
 
     public boolean haySolicitudActiva(HttpSession session) {

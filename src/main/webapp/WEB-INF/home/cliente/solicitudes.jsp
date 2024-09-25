@@ -60,6 +60,7 @@ uri="http://www.springframework.org/tags/form" %>
         <div class="column middle-column">
           <div class="form-container">
             <h2>Seleccione el Problema</h2>
+<<<<<<< HEAD
             <form:form
               action="/solicitudes/nueva"
               method="POST"
@@ -78,6 +79,20 @@ uri="http://www.springframework.org/tags/form" %>
                 </form:select>
               </div>
               <form:errors path="averia" />
+=======
+            <form:form action="/solicitudes/nueva" method="POST" modelAttribute="solicitud">
+                <div class="form-group">
+                    <form:label path="averia">Problema:</form:label>
+                    <form:select path="averia">
+                        <option value="">Seleccione un problema</option>
+                        <option value="0">Problemas con el motor</option>
+                        <option value="1">Pinchazo de llanta</option>
+                        <option value="2">Batería agotada</option>
+                        <option value="3">Otro</option>
+                    </form:select>
+                </div>
+                <form:errors path="averia"/>
+>>>>>>> back-exp
 
               <div class="form-group">
                 <form:label path="detalles">Detalle:</form:label>
