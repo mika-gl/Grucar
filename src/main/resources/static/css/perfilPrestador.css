@@ -1,189 +1,218 @@
+main {
+    padding-top: 70px; /* Ajusta este valor según la altura del encabezado */
+}
 
 
 /* Contenedor principal del perfil de usuario */
 .perfil-container {
-    width: 60%; 
-    margin: auto; 
-    padding: 20px; 
+    width: 70%; /* Ajustado para mejor visualización */
+    margin: auto;
+    padding: 60px; /*60px o 70px, ver cual queda mejor*/
     background-color: #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
-    text-align: center; /* Centra el contenido textual */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-/* Título del perfil centrado */
+/* Título del perfil */
 .perfil-title {
-    font-size: 28px; 
-    margin-bottom: 20px; 
+    font-size: 32px;
+    margin-bottom: 20px;
     font-weight: bold;
+    color: #333;
 }
 
-/* Contenedor que organiza la imagen de perfil y el formulario */
+/* Contenido principal del perfil (imagen + formulario) */
 .profile-content {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap; /* Ajusta en pantallas pequeñas */
 }
 
-/* Tarjeta de perfil en la izquierda */
+/* Imagen de perfil */
 .profile-card {
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    width: 40%; 
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
 }
 
-/* Imagen de perfil con borde circular */
+/* Estilo de la imagen de perfil */
 .profile-image img {
-    width: 180px; 
-    height: 180px; 
-    border-radius: 50%; 
-    border: 3px solid #d4d4d4; 
-    margin-bottom: 15px; 
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 3px solid #d4d4d4;
 }
 
-/* Botón para añadir una nueva foto */
+/* Botón de añadir foto */
 .add-photo-btn {
-    background-color: #448dcc; 
-    color: white; 
-    font-size: large; 
-    font-weight: bold; 
-    width: 35px; 
-    height: 35px; 
-    border-radius: 50%; 
-    padding: 5px 8px; 
-    border: none; 
-    cursor: pointer; 
-    position: relative;
-    top: -30px;
-    margin-left: -35px;
+    background-color: #448dcc;
+    color: white;
+    font-size: large;
+    width: 45px; /* Agrandado */
+    height: 45px; /* Agrandado */
+    border-radius: 50%;
+    margin-top: -20px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: 480px;
+    top: 340px;
+    transition: background-color 0.3s ease;
 }
 
-/* Contenedor para el estado "Disponible" */
+.add-photo-btn:hover {
+    background-color: #52c1e0; /* Color al pasar el mouse */
+}
+
+/* Estado de usuario (disponible) */
 .user-status {
-    display: flex; /* Flexbox para colocar el texto y el switch juntos */
-    align-items: center; 
-    margin-bottom: 10px; 
+    display: flex;
+    flex-direction: column; /* Cambiar a columna para que el switch esté debajo */
+    align-items: flex-start; /* Alinear a la izquierda */
+    margin-top: 15px;
 }
 
-/* Texto "Disponible" con margen derecho */
 .user-status p {
-    margin-right: 10px;
-    font-weight: bold; 
+    margin-bottom: 5px; /* Espacio entre el texto y el switch */
+    font-weight: bold;
+    font-size: 18px; /* Aumentar el tamaño de la fuente */
 }
 
-/* Switch para cambiar el estado de disponible */
+.switch-container {
+    display: flex;
+    justify-content: center; /* Centrar el switch si es necesario */
+    margin-top: 5px; /* Margen superior para separar del texto */
+}
+
+/* Ajustar el tamaño del switch */
+.user-status {
+    display: flex;
+    flex-direction: column; /* Cambiar a columna para que el switch esté debajo */
+    align-items: flex-start; /* Alinear a la izquierda */
+    margin-top: 15px;
+}
+
+.user-status p {
+    margin-bottom: 5px; /* Espacio entre el texto y el switch */
+    font-weight: bold;
+    font-size: 18px; /* Aumentar el tamaño de la fuente */
+}
+
+.switch-container {
+    display: flex;
+    justify-content: center; /* Centrar el switch si es necesario */
+    margin-top: 5px; /* Margen superior para separar del texto */
+}
+
+/* Ajustar el tamaño del switch */
 .switch {
     position: relative;
-    display: inline-block; /* Tamaño propio del switch */
-    width: 43px; 
-    height: 27px; 
+    display: inline-block;
+    width: 90px; /* Aumentar el ancho a 90px */
+    height: 34px; /* Aumentar la altura */
 }
 
-/* Oculta el checkbox real */
-.switch input {
-    opacity: 0; /* Hace el input invisible */
-    width: 0;
-    height: 0;
-}
-
-/* Configura el fondo y bordes del switch */
 .slider {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #d4d4d4; /* Color del switch apagado */
-    transition: .4s; /* Transición suave */
-    border-radius: 34px; 
+    background-color: #d4d4d4;
+    transition: 0.4s;
+    border-radius: 34px;
 }
 
-/* Círculo dentro del switch */
 .slider:before {
     position: absolute;
     content: "";
-    height: 14px;
-    width: 14px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white; 
-    transition: .4s; /* Transición suave */
-    border-radius: 50%; 
+    height: 26px; /* Aumentar el tamaño del círculo */
+    width: 26px; /* Aumentar el tamaño del círculo */
+    left: 4px; /* Ajustar para centrar el círculo */
+    bottom: 4px; /* Ajustar para centrar el círculo */
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
 }
 
-/* Cambia el color del switch cuando está activado */
 input:checked + .slider {
-    background-color: #448dcc; /* Color azul activado */
+    background-color: #448dcc;
 }
 
-/* Mueve el círculo a la derecha cuando está activado */
 input:checked + .slider:before {
-    transform: translateX(14px); /* Mueve el círculo */
+    transform: translateX(56px); /* Aumentar el desplazamiento del círculo (ancho total - ancho del círculo) */
 }
 
-/* Contenedor del formulario a la derecha */
-#formulario {
-    background-color: rgba(236, 247, 253, 255); 
-    width: 45%; 
-    padding: 50px; 
-}
 
-/* Alinea el formulario a la izquierda */
+/* Formulario de perfil */
 .profile-form {
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
+    width: 50%;
     align-items: flex-start;
-    width: 100%; 
+    background-color: #e0f7fa; /* Color celeste */
+    padding: 15px; /* Añadir padding */
+    border-radius: 5px; /* Bordes redondeados */
 }
 
-/* Estilo de las etiquetas del formulario */
+/* Estilo de las etiquetas y campos */
 .profile-form label {
-    margin: 10px 0 5px 0; 
+    margin-bottom: 5px;
     font-weight: bold;
 }
 
-/* Estilo de los campos de texto del formulario */
 .profile-form span {
-    display: block;
-    width: 70%;
-    padding: 10px;
-    background-color: white; 
-    border: 3px solid #d4d4d4; 
-    border-radius: 5px; 
-    margin-bottom: 10px; 
+    margin-bottom: 15px;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #d4d4d4;
 }
 
-/* Botones del formulario: "Cambiar Contraseña" y "Eliminar Cuenta" */
+/* Botones */
 .profile-form .buttons {
     display: flex;
-    justify-content: space-between; /* Distribuye los botones en los extremos */
-    width: 100%; /* Los botones ocupan todo el ancho disponible */
+    justify-content: space-between;
+    width: 100%;
 }
 
-/* Estilo de los botones del formulario */
 .profile-form button {
-    width: 45%; 
-    padding: 10px;
-    background-color: #448dcc; 
-    color: white; 
-    border: none; 
-    border-radius: 5px; 
+    width: 48%;
+    padding: 15px; /* Agrandado */
+    background-color: #448dcc;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px; 
-    transition: background-color 0.3s ease; /* Transición suave en hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Añadir transformación */
 }
 
-/* Cambia el color de fondo al pasar el mouse sobre los botones */
 .profile-form button:hover {
-    background-color: #52c1e0; /* Fondo azul más claro */
+    background-color: #52c1e0; /* Color al pasar el mouse */
+    transform: scale(1.05); /* Agrandar el botón al pasar el mouse */
 }
 
-/* Botón específico para "Eliminar Cuenta" */
 .btn-delete {
-    background-color: #ff5c5c; /* Fondo rojo */
+    background-color: #ff5c5c;
 }
 
-/* Cambia el color al pasar el mouse sobre "Eliminar Cuenta" */
 .btn-delete:hover {
-    background-color: #e04848; /* Rojo más oscuro */
+    background-color: #e04848;
+}
+
+
+
+/* Media Query para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .profile-content {
+        flex-direction: column;
+    }
+
+    .profile-card, .profile-form {
+        width: 100%;
+    }
 }
