@@ -77,7 +77,7 @@ header nav ul li a {
 }
 
 
-header nav .btn-login {
+header nav .btn-login, .logout-btn {
     background-color: #17a2b8;
     padding: 8px 15px;
     border-radius: 5px;
