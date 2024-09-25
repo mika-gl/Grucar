@@ -45,9 +45,9 @@
                 <th>Prestador</th>
                 <th>Ir al Llamado</th>
             </tr>
-            <c:if test="${solicitud.solicitudActiva}">
-                <c:if test="${solicitud.prestador == null}">
-                    <c:forEach items="${solicitudes}" var="solicitud">
+            <c:forEach items="${solicitudes}" var="solicitud">
+                <c:if test="${solicitud.solicitudActiva}">
+                    <c:if test="${solicitud.prestador == null}">
                         <tr>
                             <td>${solicitud.cliente.nombre}</td>
                             <td>${solicitud.averia}</td>
@@ -61,9 +61,9 @@
                                 </form>
                             </td>
                         </tr>
-                    </c:forEach>
+                    </c:if>
                 </c:if>
-            </c:if>
+            </c:forEach>
         </table>
     </body>
 </html>

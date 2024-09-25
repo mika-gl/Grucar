@@ -20,6 +20,7 @@
                         <th>Averia</th>
                         <th>Detalles</th>
                         <th>Prestador</th>
+                        <th>Contacto</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,15 +28,29 @@
                         <td>${solicitud.averia}</td>
                         <td>${solicitud.detalles}</td>
                         <td>${solicitud.prestador.nombre}</td>
+                        <td>+56 ${solicitud.prestador.numero}</td>
                     </tr>
                 </tbody>
             </table>
             <div >
-                <button  onclick='window.location.href="/solicitudes/${solicitud.solicitudId}/modificar"'>modificar</button>
+                <c:if test="${solicitud.prestador == null}">
+                    <button  onclick='window.location.href="/solicitudes/${solicitud.solicitudId}/modificar"'>modificar</button>
+                </c:if>
             </div>
-            <form:form action="/solicitudes/${solicitud.solicitudId}/finalizar" method="POST">
-                <button type="submit">finalizar</button>
-            </form:form>
+            <c:choose>
+                <c:when test="${solicitud.prestador != null}">
+                    <form:form action="/solicitudes/${solicitud.solicitudId}/finalizar" method="POST">
+                        <input type="hidden" name="_method" value="PUT"/>
+                        <button type="submit">finalizar</button>
+                    </form:form>
+                </c:when>
+                <c:otherwise>
+                    <form:form action="/solicitudes/${solicitud.solicitudId}/cancelar" method="POST">
+                        <input type="hidden" name="_method" value="DELETE"/>
+                        <button type="submit">cancelar</button>
+                    </form:form>
+                </c:otherwise>
+            </c:choose>
         </main>
     </body>
 </html>
