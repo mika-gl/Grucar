@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -82,7 +83,6 @@ public class SolicitudController {
                 return "home/prestador/detalleSolicitud.jsp";
             
             default: // "Cliente"
-                System.out.println(claseDeObjetoUsuario.getName());
                 return "home/cliente/detalleSolicitud.jsp";
         }
     }
@@ -118,7 +118,23 @@ public class SolicitudController {
 
     @GetMapping("/{solicitudId}/modificar")
     public String mostrarModificarSolicitud(@PathVariable("solicitudId") Long id, Model model, HttpSession session) {
-        //TODO: validar que se trata de quien hizo la solicitud (la id de currentUser es la misma que la id de Cliente en Solicitud), si no redirigir.
+        Class<?> claseDeObjetoUsuario = session.getAttribute("currentUser").getClass();
+        if (!claseDeObjetoUsuario.getName().equals("com.principal.grucar_proyecto.models.Cliente")) {
+            // verificar que se trata un cliente
+            return "redirect:/";
+        }
+        Cliente cliente = (Cliente)session.getAttribute("currentUser");
+        List<Solicitud> solicitudesCliente = solicitudService.findByCliente(cliente);
+        if (solicitudService.getSolicitudActiva(solicitudesCliente).getSolicitudId() != id) {
+            //verificar que quiere modificar la solicitud que tiene activa
+            return "redirect:/";
+        }
+        if (solicitudService.getSolicitudActiva(solicitudesCliente).getPrestador() != null) {
+            //verificar que la solicitud no la ha aceptado ningun prestador
+            return "redirect:/";
+        }
+
+
         Solicitud solicitud = solicitudService.findById(id);
         model.addAttribute("solicitud", solicitud);
 
@@ -126,7 +142,21 @@ public class SolicitudController {
     }
     @PutMapping("/{solicitudId}/modificar")
     public String modificarSolicitud(@PathVariable("solicitudId") Long id, Model model, HttpSession session) {
-        //TODO: validar que se trata de quien hizo la solicitud (la id de currentUser es la misma que la id de Cliente en Solicitud), si no redirigir.
+        Class<?> claseDeObjetoUsuario = session.getAttribute("currentUser").getClass();
+        if (!claseDeObjetoUsuario.getName().equals("com.principal.grucar_proyecto.models.Cliente")) {
+            // verificar que se trata un cliente
+            return "redirect:/";
+        }
+        Cliente cliente = (Cliente)session.getAttribute("currentUser");
+        List<Solicitud> solicitudesCliente = solicitudService.findByCliente(cliente);
+        if (solicitudService.getSolicitudActiva(solicitudesCliente).getSolicitudId() != id) {
+            //verificar que quiere modificar la solicitud que tiene activa
+            return "redirect:/";
+        }
+        if (solicitudService.getSolicitudActiva(solicitudesCliente).getPrestador() != null) {
+            //verificar que la solicitud no la ha aceptado ningun prestador
+            return "redirect:/";
+        }
 
         Solicitud solicitud = solicitudService.findById(id);
         model.addAttribute("solicitud", solicitud);
@@ -142,47 +172,26 @@ public class SolicitudController {
 
         return "redirect:/solicitudes";
     }
+    @DeleteMapping //se puede cancelar cuando un prestador aun no ha aceptado
+    public String cancelarSolicitud(@PathVariable("solicitudId") Long id, Model model, HttpSession session) {
+        Class<?> claseDeObjetoUsuario = session.getAttribute("currentUser").getClass();
+        if (!claseDeObjetoUsuario.getName().equals("com.principal.grucar_proyecto.models.Cliente")) {
+            // verificar que se trata un cliente
+            return "redirect:/";
+        }
+        Cliente cliente = (Cliente)session.getAttribute("currentUser");
+        List<Solicitud> solicitudesCliente = solicitudService.findByCliente(cliente);
+        if (solicitudService.getSolicitudActiva(solicitudesCliente).getSolicitudId() != id) {
+            //verificar que quiere eliminar la solicitud que tiene activa
+            return "redirect:/";
+        }
+        if (solicitudService.getSolicitudActiva(solicitudesCliente).getPrestador() != null) {
+            //verificar que la solicitud no la ha aceptado ningun prestador
+            return "redirect:/";
+        }
+        Solicitud solicitud = solicitudService.findById(id);
+        solicitudService.finalizarSolicitud(session, solicitud);
 
-    // // Método para mostrar la vista de editar tarea
-    // @GetMapping("/{showId}/edit")
-    // public String edit(@ModelAttribute("show") Solicitud show, Model model, HttpSession session, @PathVariable("showId") Long showId) {
-    //     Solicitud currentShow = showService.showShowById(showId);
-    //     model.addAttribute("currentShow", currentShow);
-    //     return "home/shows/edit.jsp";
-    // }
-    
-    // // Método para actualizar un tarea
-    // @PutMapping("/{showId}/edit")
-    // public String update(@Valid @ModelAttribute("show") Solicitud show, BindingResult result, HttpSession session, Model model, RedirectAttributes redirectAttributes, @PathVariable Long showId) {
-    //     Solicitud currentShow = showService.showShowById(showId);
-    //     showService.asignarFechas(show, currentShow);
-    //     if (result.hasErrors()) {
-    //         model.addAttribute("currentShow", currentShow);
-    //         return "home/shows/edit.jsp";
-    //     }
-
-    //     showService.update(show);
-    //     return "redirect:/shows";
-    // }
-
-    // // Método para eliminar un tarea
-    // @DeleteMapping("/{showId}/delete")
-    // public String deleteShow(@PathVariable Long showId, HttpSession session) {
-    //     showService.deleteById(showId);
-    //     return "redirect:/shows";
-    // }
-
-    // @PutMapping("/{showId}/rate")
-    // public String LikeShow(@PathVariable Long showId, HttpSession session, @Valid @ModelAttribute("rating") Rating rating, BindingResult result, Model model) {
-
-    //     if (result.hasErrors()) {
-    //         Solicitud show = showService.showShowById(showId);
-    //         model.addAttribute("show",show);
-    //         model.addAttribute("currentRatings", ratingService.findRatingsByShowId(showId));
-    //         return "home/shows/show.jsp";
-    //     }
-    //     ratingService.actualizarRating(session, showId, rating);
-    //     return "redirect:/shows";
-    // }
-
+        return "redirect:/solicitudes";
+    }
 }

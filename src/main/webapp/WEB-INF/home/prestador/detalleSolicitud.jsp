@@ -36,6 +36,7 @@
                 <button>contactar cliente</button>
             </div>
             <form:form action="/solicitudes/${solicitud.solicitudId}/finalizar" method="POST">
+                <input type="hidden" name="_method" value="PUT"/>
                 <button type="submit">finalizar</button>
             </form:form>
         </main>

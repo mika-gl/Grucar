@@ -27,7 +27,17 @@ uri="http://www.springframework.org/tags/form" %>
             <li><a href="/perfil">Perfil de Usuario</a></li>
         </form>
         </ul>
-        <a href="/login" class="btn-login">Iniciar Sesión</a>
+        <c:choose>
+          <c:when test="${currentUser == null}">
+            <a href="/login" class="btn-login">Iniciar Sesión</a>
+          </c:when>
+          <c:otherwise>
+            <form action="/login/logout" method="POST">
+              <input type="hidden" name="_method" value="DELETE"/>
+              <button type="submit" class="btn-login">Cerrar sesión</button>
+            </form>
+          </c:otherwise>
+        </c:choose>
       </nav>
     </header>
 
@@ -44,20 +54,22 @@ uri="http://www.springframework.org/tags/form" %>
             que siempre tengas una solución rápida para cualquier emergencia
             vehicular.
           </p>
-          <div class="register-options">
-            <div class="register-button">
-              <p>Registrarse como solicitador:</p>
-              <a href="/registro?userType=cliente" class="btn-solicitador"
-                >GRUAMIGO</a
-              >
+          <c:if test="${currentUser == null}">
+            <div class="register-options">
+              <div class="register-button">
+                <p>Registrarse como solicitador:</p>
+                <a href="/registro?userType=cliente" class="btn-solicitador"
+                  >GRUAMIGO</a
+                >
+              </div>
+              <div class="register-button">
+                <p>Registrarse como prestador:</p>
+                <a href="/registro?userType=prestador" class="btn-prestador"
+                  >GRUCAR</a
+                >
+              </div>
             </div>
-            <div class="register-button">
-              <p>Registrarse como prestador:</p>
-              <a href="/registro?userType=prestador" class="btn-prestador"
-                >GRUCAR</a
-              >
-            </div>
-          </div>
+          </c:if>
         </div>
         <div class="image-section">
           <img
