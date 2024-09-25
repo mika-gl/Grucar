@@ -29,7 +29,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #8a2be2;
+    background: linear-gradient(to right, #8a2be2 10%, #00c8d7 85%, #00e0ff 95%); /* Degradado morado a celeste */
     color: #fff;
     padding: 10px 20px;
     display: flex;
@@ -77,7 +77,7 @@ header nav ul li a {
 }
 
 
-header nav .btn-login {
+header nav .btn-login, .logout-btn {
     background-color: #17a2b8;
     padding: 8px 15px;
     border-radius: 5px;
