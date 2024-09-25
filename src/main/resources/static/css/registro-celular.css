@@ -127,7 +127,7 @@
   
   
   
-  button {
+  form button {
     position: absolute;
     width: 90vw;
     height: 3em;
@@ -138,11 +138,11 @@
     font-weight: bold;
     
   }
-  button:last-of-type {
+  form button:last-of-type {
     top: 78vh;
     background-color: #00000038;
   }
-  button:active {
+  form button:active {
     opacity: 0.5;
   }
 
