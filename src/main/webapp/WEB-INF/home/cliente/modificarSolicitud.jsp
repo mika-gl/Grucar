@@ -47,7 +47,9 @@
         <!-- Columna central (Formulario de problemas) -->
         <div class="column middle-column">
             <h2>Seleccione el problema</h2>
-            <form:form action="/{solicitudId}/modificar" method="POST" modelAttribute="solicitud">
+            <form:form action="${pageContext.request.contextPath}/solicitudes/${solicitud.solicitudId}/modificar" method="POST" modelAttribute="solicitud">
+                <input type="hidden" name="_method" value="PUT"/>
+
                 <div class="form-group">
                     <form:label path="averia">Problema:</form:label>
                     <form:select path="averia">
@@ -58,7 +60,7 @@
                         <option value="otro">Otro</option>
                     </form:select>
                 </div>
-                <form:errors path="averia"/>
+                <form:errors path="averia" cssClass="error-message" />
 
                 <div class="form-group">
                     <form:label path="detalles">Detalle:</form:label>

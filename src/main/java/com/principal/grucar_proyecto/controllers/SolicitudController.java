@@ -125,12 +125,12 @@ public class SolicitudController {
         return "home/cliente/modificarSolicitud.jsp";
     }
     @PutMapping("/{solicitudId}/modificar")
-    public String modificarSolicitud(@PathVariable("solicitudId") Long id, Model model, HttpSession session) {
+    public String modificarSolicitud(@ModelAttribute("solicitud")@Valid Solicitud solicitud, @PathVariable("solicitudId") Long id, Model model, BindingResult result, HttpSession session) {
         //TODO: validar que se trata de quien hizo la solicitud (la id de currentUser es la misma que la id de Cliente en Solicitud), si no redirigir.
-
-        Solicitud solicitud = solicitudService.findById(id);
-        model.addAttribute("solicitud", solicitud);
-
+        if(result.hasErrors()){
+            model.addAttribute("solicitud", solicitud);
+            return "home/cliente/modificarSolicitud.jsp";
+        }
         solicitudService.update(solicitud);
         return "redirect:/solicitudes";
     }
