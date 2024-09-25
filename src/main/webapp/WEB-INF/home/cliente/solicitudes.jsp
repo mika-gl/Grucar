@@ -74,7 +74,35 @@ uri="http://www.springframework.org/tags/form" %>
                   </option>
                   <option value="Pinchazo de llanta">Pinchazo de llanta</option>
                   <option value="Batería agotada">Batería agotada</option>
-                  <option value="otro">Otro</option>
+                  <option value="Falta de combustible">
+                    Falta de combustible
+                  </option>
+                  <option value="Problemas de frenos">
+                    Problemas de frenos
+                  </option>
+                  <option value="Problemas eléctricos">
+                    Problemas eléctricos
+                  </option>
+                  <option value="Refrigeración del motor">
+                    Problemas de refrigeración del motor
+                  </option>
+                  <option value="Problemas de transmisión">
+                    Problemas de transmisión
+                  </option>
+                  <option value="Llave dentro del vehículo">
+                    Llave dentro del vehículo
+                  </option>
+                  <option value="Vehículo atascado">Vehículo atascado</option>
+                  <option value="Problemas con las luces">
+                    Problemas con las luces
+                  </option>
+                  <option value="Sobrecalentamiento del vehículo">
+                    Sobrecalentamiento del vehículo
+                  </option>
+                  <option value="Falla del sistema de dirección">
+                    Falla del sistema de dirección
+                  </option>
+                  <option value="Otro">Otro</option>
                 </form:select>
               </div>
               <form:errors path="averia" />
