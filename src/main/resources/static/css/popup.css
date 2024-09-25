@@ -16,6 +16,26 @@
     padding: 20px;
     border: 1px solid #888;
     width: 30%;
+    text-align: center; /* Centrar el contenido de texto */
+}
+
+/* Botón SOS en el popup */
+.sos-btn {
+    background-color: red;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición para el efecto hover */
+    display: block;
+    margin: 0 auto; /* Centrar el botón */
+}
+
+/* Efecto al pasar el cursor sobre el botón */
+.sos-btn:hover {
+    background-color: darkred; /* Color más oscuro al pasar el cursor */
 }
 
 /* Botón de cerrar */
@@ -28,7 +48,7 @@
 
 .close:hover,
 .close:focus {
-    color: darkred;
+    color: rgb(133, 5, 5);
     text-decoration: none;
     cursor: pointer;
 }
