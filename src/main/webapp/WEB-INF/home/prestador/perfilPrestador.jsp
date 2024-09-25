@@ -43,7 +43,7 @@ uri="http://www.springframework.org/tags/form" %>
             <!-- Sección izquierda: imagen y estado -->
             <div class="profile-card">
                 <div class="profile-image">
-                    <img src="profile-placeholder.png" alt="Foto de Perfil">
+                    <img src="${pageContext.request.contextPath}/images/profile.jpg" alt="">
                     <button class="add-photo-btn" aria-label="Añadir Foto"><span>+</span></button>
                 </div>
                 <div class="user-status">
