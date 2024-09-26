@@ -20,6 +20,9 @@ public class ClienteService {
     public Cliente findByNumero(String numero) {
         return clienteRepository.findByNumero(numero);
     }
+    public Cliente findById(Long id) {
+        return clienteRepository.findById(id).orElse(null);
+    }
     public Cliente save(Cliente cliente) {
         return clienteRepository.save(cliente);
     }

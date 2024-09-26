@@ -18,10 +18,12 @@ public class PrestadorService {
     @Autowired
     private PrestadorRepository prestadorRepository;
 
-        public Prestador findByNumero(String numero) {
+    public Prestador findByNumero(String numero) {
         return prestadorRepository.findByNumero(numero);
     }
-
+    public Prestador findById(Long id) {
+        return prestadorRepository.findById(id).orElse(null);
+    }
     public Prestador save(Prestador prestador) {
         return prestadorRepository.save(prestador);
     }

@@ -34,7 +34,7 @@ uri="http://www.springframework.org/tags/form"%>
 
     <main>
       <div class="perfil-container">
-        <h1 class="perfil-title">Perfil de Usuario</h1>
+        <h1 class="perfil-title">Perfil de Usuario: ${usuario.nombre}</h1>
 
         <div class="profile-content">
           <div class="profile-card">
