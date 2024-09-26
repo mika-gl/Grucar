@@ -10,9 +10,31 @@
         <title>Show info</title>
     </head>
     <body>
+        <header>
+            <div class="logo">
+                <img src="logo.png" alt="Logo GRUCAR" />
+                <h2>GRU</h2>
+                <h1>CAR</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/#servicios">Servicios</a></li>
+                    <li><a href="/#contacto">Contacto</a></li>
+                    <p><em>Gru ${currentUser.nombre} conectado!</em></p>
+                    <form action="/perfil" method="get">
+                        <li><a href="/perfil/redirect">Perfil de Usuario</a></li>
+                    </form>
+                </ul>
+                <form action="/login/logout" method="POST">
+                    <input type="hidden" name="_method" value="DELETE" />
+                    <button type="submit" class="btn-login">Cerrar sesión</button>
+                </form>
+            </nav>
+        </header>
         <main>            
             <div class="filterRow">
-                <h1>Solicitud de cliente: ${solicitud.averia}</h1>
+                <h1>Solicitud de cliente: ${solicitud.averiaTraduccion}</h1>
             </div>
             <table>
                 <thead>

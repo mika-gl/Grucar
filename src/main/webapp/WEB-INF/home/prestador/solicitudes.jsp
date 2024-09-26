@@ -24,7 +24,9 @@ uri="http://www.springframework.org/tags/form" %>
           <li><a href="/">Inicio</a></li>
           <li><a href="/#servicios">Servicios</a></li>
           <li><a href="/#contacto">Contacto</a></li>
-          <li><a href="/perfilPrestador">Perfil de Usuario</a></li>
+          <form action="/perfil" method="get">
+            <li><a href="/perfil/redirect">Perfil de Usuario</a></li>
+          </form>
         </ul>
         <form action="/login/logout" method="POST">
           <input type="hidden" name="_method" value="DELETE" />

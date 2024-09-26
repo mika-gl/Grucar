@@ -25,7 +25,7 @@ uri="http://www.springframework.org/tags/form" %>
           <li><a href="/#servicios">Servicios</a></li>
           <li><a href="/#contacto">Contacto</a></li>
           <form action="/perfil" method="get">
-            <li><a href="/perfil">Perfil de Usuario</a></li>
+            <li><a href="/perfil/redirect">Perfil de Usuario</a></li>
           </form>
         </ul>
         <a href="/login" class="btn-login">Iniciar Sesión</a>
