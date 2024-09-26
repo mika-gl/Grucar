@@ -91,3 +91,8 @@ main {
     max-width: 100%;
     height: auto;
 }
+
+#map {
+    height: 550px;
+    width: 400px;
+}
