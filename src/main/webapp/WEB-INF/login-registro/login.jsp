@@ -2,40 +2,41 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>login y register</title>
-        <link rel="stylesheet" href="/css/login.css"/>
-        <link rel="stylesheet" href="/css/login-celular.css"/>
-    </head>
-    <body>
-        <main >
-            <section id="login">
-                <h1>Accede a tu cuenta</h1>
-                <form:form action="/login" method="POST" modelAttribute="login">
-                    <div class="form-element">
-                        <div>
-                            <form:label path="numero">Número Celular:</form:label>
-                            <div id="codigo-numero">
-                                <div class="codigo-numero">+56</div>
-                                <form:input path="numero" type="text" placeholder="ej. 123456789"/>
-                            </div>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login y Registro</title>
+    <link rel="stylesheet" href="/css/login.css"/>
+    <link rel="stylesheet" href="/css/login-celular.css"/>
+</head>
+<body>
+    <main>
+        <section id="login" aria-labelledby="login-title">
+            <h1 id="login-title">Accede a tu cuenta</h1>
+            <form:form action="/login" method="POST" modelAttribute="login" autocomplete="off">
+                <article class="form-element">
+                    <div class="telefono-input">
+                        <form:label path="numero" aria-label="Número Celular">Número Celular:</form:label>
+                        <div id="codigo-numero">
+                            <span class="codigo-numero">+56</span>
+                            <form:input path="numero" type="text" placeholder="ej. 912345678" aria-required="true" maxlength="9"/>
                         </div>
-                        <form:errors path="numero" class="error"/>
-                        <div>
-                            <form:label path="password">Contraseña:</form:label>
-                            <form:input path="password" placeholder="Contraseña" type="password" />
-                        </div>
-                        <form:errors path="password" class="error"/>
                     </div>
-                    <button  type="submit">¡Empezando la aventura!</button>
-                </form:form>
-                <button onclick="window.location.href='/'">Volver atras</button>
-            </section>
-        </main>
-        <script src="/js/error-input.js"></script>
-    </body>
+                    <form:errors path="numero" class="error"/>
+
+                    <div>
+                        <form:label path="password" aria-label="Contraseña">Contraseña:</form:label>
+                        <form:input path="password" placeholder="Contraseña" type="password" aria-required="true"/>
+                    </div>
+                    <form:errors path="password" class="error"/>
+                </article>
+                <button type="submit" aria-label="Iniciar sesión">¡Empezando la aventura!</button>
+            </form:form>
+            <a href="/" class="back-link">Volver atrás</a>
+        </section>
+    </main>
+    <script src="/js/error-input.js"></script>
+</body>
 </html>
 
