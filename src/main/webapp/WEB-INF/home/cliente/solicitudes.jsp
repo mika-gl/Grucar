@@ -24,7 +24,7 @@ uri="http://www.springframework.org/tags/form" %>
     <!-- Encabezado -->
       <header>
       <div class="logo">
-        <img src="logo.png" alt="Logo GRUCAR" />
+        <img src="images/logogrucarpng" alt="Logo GRUCAR" />
         <h2>GRU</h2>
         <h1>CAR</h1>
       </div>
