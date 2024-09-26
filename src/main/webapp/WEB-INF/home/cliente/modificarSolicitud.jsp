@@ -58,7 +58,9 @@
             <div class="column middle-column">
                 <div class="form-container">
                     <h2>Modificar Problema</h2>
-                    <form:form action="/solicitudes/modificar/${solicitud.solicitudId}" method="POST" modelAttribute="solicitud">
+                    <form:form action="${pageContext.request.contextPath}/solicitudes/${solicitud.solicitudId}/modificar" method="POST" modelAttribute="solicitud">
+                        <input type="hidden" name="_method" value="PUT"/>
+
                         <div class="form-group">
                             <form:label path="averia">Problema:</form:label>
                             <form:select path="averia">
