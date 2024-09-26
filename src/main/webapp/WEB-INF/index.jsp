@@ -30,7 +30,17 @@ uri="http://www.springframework.org/tags/form" %>
             <li><a href="/appmovil">AppMovil</a></li>
           </form>
         </ul>
-        <a href="/login" class="btn-login">Iniciar Sesión</a>
+        <c:choose>
+          <c:when test="${currentUser == null}">
+            <button onclick="window.location.href='/login'" class="btn-login">Iniciar Sesión</button>
+          </c:when>
+          <c:otherwise>
+            <form action="/login/logout" method="POST">
+              <input type="hidden" name="_method" value="DELETE"/>
+              <button type="submit" class="btn-login logout-btn">Cerrar Sesión</button>
+            </form>
+          </c:otherwise>
+        </c:choose>
       </nav>
     </header>
     <main>

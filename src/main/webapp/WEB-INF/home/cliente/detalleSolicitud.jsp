@@ -7,31 +7,31 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Show info</title>
+        <link rel="stylesheet" href="/css/detalleSolicitud-cliente.css"/>
+        <title>Tu Solicitud</title>
     </head>
     <body>
         <main>            
             <div class="filterRow">
-                <h1>tu solicitud: ${solicitud.averia}</h1>
+                <h1>Buscando ayudante para resolver: ${solicitud.averiaTraduccion}...</h1>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Averia</th>
-                        <th>Detalles</th>
-                        <th>Prestador</th>
-                        <th>Contacto</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>${solicitud.averiaTraduccion}</td>
-                        <td>${solicitud.detalles}</td>
-                        <td>${solicitud.prestador.nombre}</td>
-                        <td>+56 ${solicitud.prestador.numero}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="loading-img">
+                <div id="div1">
+                </div>
+                <div id="div2">
+                </div>
+                <div id="div3">
+                </div>
+            </div>
+            <p>Tus especificaciones: ${solicitud.detalles}</p>
+            <c:if test="${solicitud.prestador != null}">
+                <!-- agregar link a perfil de prestador-->
+                <h3>Ayudante <a href="">${solicitud.prestador.nombre}</a> encontrado!</h3>
+            
+                <button class="call-button" onclick="window.location.href = '/+56${solicitud.prestador.numero}'">llamar</button>
+            </c:if>
+
+            <!-- botones para modificar, cancelar, finalizar-->
             <div >
                 <c:if test="${solicitud.prestador == null}">
                     <button  onclick='window.location.href="/solicitudes/${solicitud.solicitudId}/modificar"'>modificar</button>
@@ -52,5 +52,6 @@
                 </c:otherwise>
             </c:choose>
         </main>
+        <script src="/js/detalleSolicitud-cliente.js"></script>
     </body>
 </html>

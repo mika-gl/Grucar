@@ -1,0 +1,19 @@
+.loading-img {
+    height: 10vh;
+    width: 10vw;
+    display: flex;
+    gap: 0.5em;
+  }
+  .loading-img div {
+    height: 4vh;
+    min-width: 4vh;
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey;
+    border-radius: 50%;
+  }
+
+  .loading-img .lit-ball {
+    background-color: yellow;
+    transform: scale(1.1);
+  }

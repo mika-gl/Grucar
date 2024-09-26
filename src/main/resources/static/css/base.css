@@ -77,18 +77,22 @@ header nav ul li a {
 }
 
 
-header nav .btn-login, .logout-btn {
-    background-color: #17a2b8;
-    padding: 8px 15px;
-    border-radius: 5px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    margin-left: auto; /* Empuja el botón a la derecha */
+header nav .btn-login, header nav .logout-btn {
+  background-color: #17a2b8;
+  padding: 12px 15px;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  margin-left: auto; /* Empuja el botón a la derecha */
+
+  border: none;
+  cursor: pointer;
 }
 
-header nav .btn-login:hover {
-    background-color: #138496;
+header nav .btn-login:hover, header nav .logout-btn:hover {
+  background-color: #138496;
 }
 
 /* Pie de página */

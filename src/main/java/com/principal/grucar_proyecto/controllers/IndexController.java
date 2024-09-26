@@ -5,6 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.principal.grucar_proyecto.models.BaseUser;
+import com.principal.grucar_proyecto.models.Cliente;
+import com.principal.grucar_proyecto.models.Prestador;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
@@ -20,12 +22,19 @@ public class IndexController {
 
     @GetMapping("/perfil")
     public String perfilUsuario(HttpSession session, Model model) {
-        BaseUser currentUser = (BaseUser) session.getAttribute("currentUser");
-        if (currentUser == null) {
+        if (session.getAttribute("currentUser") == null) {
             return "redirect:/";
-        } else {
-            model.addAttribute("usuario", currentUser);
-            return "home/prestador/perfilPrestador.jsp";
+        }
+        Class<?> claseDeObjetoUsuario = session.getAttribute("currentUser").getClass();
+        switch (claseDeObjetoUsuario.getName()) {
+            case "com.principal.grucar_proyecto.models.Prestador":
+                Prestador currentPrestador = (Prestador)session.getAttribute("currentUser");
+                model.addAttribute("usuario", currentPrestador);
+                return "home/prestador/perfilPrestador.jsp";
+            default: // "Cliente"
+                Cliente currentCliente = (Cliente)session.getAttribute("currentUser");
+                model.addAttribute("usuario", currentCliente);
+                return "home/cliente/perfilCliente.jsp";
         }
     }
 

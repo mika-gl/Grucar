@@ -37,6 +37,7 @@ public class SolicitudService {
         return solicitudRepository.findById(id).orElse(null);
     }
     public Solicitud update(Solicitud solicitud) {
+        solicitud = traducirAveria(solicitud);
         return solicitudRepository.save(solicitud);
     }
     public void deleteById(Long id) {
