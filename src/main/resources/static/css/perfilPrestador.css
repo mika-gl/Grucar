@@ -22,6 +22,17 @@ main {
 }
 
 /* Contenido principal del perfil (imagen + formulario) */
+/* Contenedor principal del perfil de usuario */
+.perfil-container {
+    width: 70%; /* Ajustado para mejor visualización */
+    margin: auto;
+    padding: 60px; /*60px o 70px, ver cuál queda mejor*/
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Contenido principal del perfil (imagen + formulario) */
 .profile-content {
     display: flex;
     justify-content: space-around;
@@ -30,12 +41,13 @@ main {
     flex-wrap: wrap; /* Ajusta en pantallas pequeñas */
 }
 
-/* Imagen de perfil */
+/* Contenedor de imagen de perfil */
 .profile-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 40%;
+    position: relative;
 }
 
 /* Estilo de la imagen de perfil */
@@ -46,27 +58,34 @@ main {
     border: 3px solid #d4d4d4;
 }
 
+/* Estilo para el contenedor que agrupa la imagen y el botón */
+.profile-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre imagen y botón */
+    position: relative; /* Para permitir que el botón se superponga ligeramente */
+}
+
 /* Botón de añadir foto */
 .add-photo-btn {
     background-color: #448dcc;
     color: white;
     font-size: large;
-    width: 45px; /* Agrandado */
-    height: 45px; /* Agrandado */
+    width: 45px; /* Tamaño del botón */
+    height: 45px; /* Tamaño del botón */
     border-radius: 50%;
-    margin-top: -20px;
     border: none;
     cursor: pointer;
-    position: absolute;
-    left: 480px;
-    top: 340px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: -10px; /* Superponer un poco el botón */
+    margin-top: -30px; /* Subir un poco el botón para que quede encima de la imagen */
 }
 
 .add-photo-btn:hover {
-    background-color: #52c1e0; /* Color al pasar el mouse */
+    background-color: #52c1e0;
+    transform: scale(1.05);
 }
-
 /* Estado de usuario (disponible) */
 .user-status {
     display: flex;
@@ -183,7 +202,7 @@ input:checked + .slider:before {
 .profile-form button {
     width: 48%;
     padding: 15px; /* Agrandado */
-    background-color: #448dcc;
+    background-color: #8a2be2;
     color: white;
     border: none;
     border-radius: 5px;
@@ -192,7 +211,7 @@ input:checked + .slider:before {
 }
 
 .profile-form button:hover {
-    background-color: #52c1e0; /* Color al pasar el mouse */
+    background-color: #d16ddf; /* Color al pasar el mouse */
     transform: scale(1.05); /* Agrandar el botón al pasar el mouse */
 }
 
@@ -204,6 +223,47 @@ input:checked + .slider:before {
     background-color: #e04848;
 }
 
+/* Estilos para el campo de email y el botón de guardar */
+/* Estilos para el contenedor de email */
+/* Contenedor del email */
+.email-container {
+    display: flex; /* Flexbox para alineación horizontal */
+    align-items: center; /* Alinear verticalmente al centro */
+    margin-bottom: 15px; /* Espaciado inferior para separación */
+    width: 100%; /* Ajustar el contenedor al 100% del ancho disponible */
+}
+
+/* Estilo del campo de email */
+.email-container input[type="email"] {
+    flex-grow: 1; /* Ocupa el espacio disponible */
+    padding: 10px;
+    border: 1px solid #d16ddf;
+    border-radius: 5px;
+    margin-right: 10px; /* Espacio entre el campo de entrada y el botón */
+    width: calc(100% - 110px); /* Resta el ancho del botón más el margen */
+}
+
+/* Botón de guardar */
+/* Botón de guardar */
+.guardar-btn {
+    padding: 5px 10px;
+    background-color: #8a2be2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 30px;
+    width: 100px; /* Ancho fijo para el botón */
+    display: flex; /* Usa flexbox para alinear el contenido */
+    justify-content: center; /* Alinea horizontalmente el texto al centro */
+    align-items: center; /* Alinea verticalmente el texto al centro */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.guardar-btn:hover {
+    background-color: #d16ddf;
+    transform: scale(1.05);
+}
 
 
 /* Media Query para pantallas pequeñas */
