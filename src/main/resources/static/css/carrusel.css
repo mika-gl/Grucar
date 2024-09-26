@@ -22,29 +22,29 @@
 @keyframes movimiento_slider {
 
   0%{ transform: translateX(0%);}
-  11%{ transform: translateX(0%);}
+  9%{ transform: translateX(0%);}
 
   11%{transform:translateX(-100%);}
-  22%{transform:translateX(-100%);}
+  21%{transform:translateX(-100%);}
 
-  22%{transform:translateX(-200%);}
+  23%{transform:translateX(-200%);}
   33%{transform:translateX(-200%);}
 
-  33%{transform:translateX(-300%);}
+  34%{transform:translateX(-300%);}
   44%{transform:translateX(-300%);}
 
-  44%{transform:translateX(-400%);}
-  55%{transform:translateX(-400%);}
+  46%{transform:translateX(-400%);}
+  56%{transform:translateX(-400%);}
 
-  55%{transform:translateX(-500%);}
-  66%{transform:translateX(-500%);}
+  58%{transform:translateX(-500%);}
+  68%{transform:translateX(-500%);}
 
-  66%{transform:translateX(-600%);}
-  77%{transform:translateX(-600%);}
+  70%{transform:translateX(-600%);}
+  80%{transform:translateX(-600%);}
 
-  77%{transform:translateX(-700%);}
-  88%{transform:translateX(-700%);}
+  82%{transform:translateX(-700%);}
+  92%{transform:translateX(-700%);}
 
-  88%{transform:translateX(-800%);}
+  94%{transform:translateX(-800%);}
   100%{transform:translateX(-800%);}
 }
