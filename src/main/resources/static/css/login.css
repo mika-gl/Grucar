@@ -1,4 +1,3 @@
-
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
@@ -71,3 +70,20 @@ button {
 button:hover {
     background-color: #6f1fb2;
 }
+
+.back-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #17a2b8;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.back-link:hover {
+    transform: scale(1.1); /* Agranda el enlace ligeramente */
+    color: #8a2be2; /* Cambia a color morado */
+    text-decoration: underline;
+}
+
+
+
