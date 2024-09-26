@@ -10,6 +10,7 @@ uri="http://www.springframework.org/tags/form" %>
     <title>GRUCAR - Asistencia en carretera</title>
     <link rel="stylesheet" href="css/stylesindex.css"/>
     <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/carrusel.css"/>
   </head>
   <body>
     <header>
@@ -98,10 +99,18 @@ uri="http://www.springframework.org/tags/form" %>
 
         </div>
         <div class="image-section">
-          <img
-            src="images/roadside-assistance.png"
-            alt="Asistencia en carretera"
-          />
+        <ul>
+          <li><img src="images/carousel/img1.jpg" alt="1"></li>
+          <li><img src="images/carousel/img2.jpg" alt="2"></li>
+          <li><img src="images/carousel/img3.jpg" alt="3"></li>
+          <li><img src="images/carousel/img4.jpg" alt="4"></li>
+          <li><img src="images/carousel/img5.jpg" alt="5"></li>
+          <li><img src="images/carousel/img6.jpg" alt="6"></li>
+          <li><img src="images/carousel/img7.jpg" alt="7"></li>
+          <li><img src="images/carousel/img8.jpg" alt="8"></li>
+          <li><img src="images/carousel/img9.jpg" alt="9"></li>
+        </ul>
+
         </div>
       </section>
 

@@ -1,0 +1,43 @@
+.image-section {
+  width: auto;
+  height: 350px;
+  margin: 200px auto;  /* Centradas */
+  overflow: hidden;   /* Para que muestre solo la primera imagen */
+}
+
+.image-section ul {
+  display: flex;
+  list-style: none; /* Esto quita el icono de lista */
+  display: flex;    /* Para que esten hacia el lado */
+  animation: movimiento_slider 60s infinite alternate ease-in-out;
+}
+
+@keyframes movimiento_slider {
+
+  0%{ transform: translateX(0%);}
+  11%{ transform: translateX(0%);}
+
+  11%{transform:translateX(-100%);}
+  22%{transform:translateX(-100%);}
+
+  22%{transform:translateX(-200%);}
+  33%{transform:translateX(-200%);}
+
+  33%{transform:translateX(-300%);}
+  44%{transform:translateX(-300%);}
+
+  44%{transform:translateX(-400%);}
+  55%{transform:translateX(-400%);}
+
+  55%{transform:translateX(-500%);}
+  66%{transform:translateX(-500%);}
+
+  66%{transform:translateX(-600%);}
+  77%{transform:translateX(-600%);}
+
+  77%{transform:translateX(-700%);}
+  88%{transform:translateX(-700%);}
+
+  88%{transform:translateX(-800%);}
+  99%{transform:translateX(-800%);}
+}
