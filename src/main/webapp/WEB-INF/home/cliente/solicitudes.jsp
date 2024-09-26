@@ -119,6 +119,20 @@ uri="http://www.springframework.org/tags/form" %>
         </div>
       </div>
 
+      <style>
+        .leaflet-top, .leaflet-bottom {
+            position: absolute;
+            z-index: 1000;
+            pointer-events: none;
+        }
+        .leaflet-top, .leaflet-bottom {
+            position: unset;
+            z-index: 1000;
+            pointer-events: none;
+        }
+      </style>
+
+
       <!-- Popup de emergencia -->
       <div id="miModal" class="modal">
         <div class="modal-content">
