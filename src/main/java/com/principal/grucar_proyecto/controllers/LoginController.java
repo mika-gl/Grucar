@@ -9,15 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.principal.grucar_proyecto.models.Cliente;
-import com.principal.grucar_proyecto.models.Prestador;
 import com.principal.grucar_proyecto.models.forms.Login;
+import com.principal.grucar_proyecto.services.ClienteService;
 import com.principal.grucar_proyecto.services.LoginService;
 import com.principal.grucar_proyecto.services.PrestadorService;
-import com.principal.grucar_proyecto.services.BaseUserService;
-import com.principal.grucar_proyecto.services.ClienteService;
 
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
@@ -61,7 +57,7 @@ public class LoginController {
             currentSession.invalidate();
             return "login-registro/login.jsp";
         }
-        return "redirect:/solicitudes";
+        return "redirect:/";
     }
 
     @DeleteMapping("/logout")

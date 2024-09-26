@@ -8,7 +8,7 @@ uri="http://www.springframework.org/tags/form"%>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil de Usuario</title>
-    <link rel="stylesheet" type="text/css" href="/css/perfilPrestador.css" />
+    <link rel="stylesheet" type="text/css" href="/css/perfilCliente.css" />
     <link rel="stylesheet" type="text/css" href="/css/base.css" />
   </head>
   <body>
@@ -23,6 +23,7 @@ uri="http://www.springframework.org/tags/form"%>
           <li><a href="/">Inicio</a></li>
           <li><a href="/#servicios">Servicios</a></li>
           <li><a href="/#contacto">Contacto</a></li>
+          <li><a href="/solicitudes">GruAsistencia</a></li>
         </ul>
         <form action="/login/logout" method="POST">
           <input type="hidden" name="_method" value="DELETE" />
@@ -60,51 +61,39 @@ uri="http://www.springframework.org/tags/form"%>
           <form class="profile-form">
             <label for="nombre">Nombre:</label>
             <span>${usuario.nombre}</span>
-
+        
             <label for="apellido">Apellido:</label>
             <span>${usuario.apellido}</span>
-
+        
             <label for="genero">Género:</label>
             <span>${usuario.genero}</span>
-
+        
             <label for="rut">Rut:</label>
             <span>${usuario.rut}</span>
-
+        
             <label for="email">Email:</label>
-            <span>${usuario.email}</span>
-
+            <div class="email-container">
+                <input type="email" id="email" name="email" value="${usuario.email}" placeholder="ejemplo@correo.com" required />
+                <button type="submit" class="guardar-btn" aria-label="Guardar Email">Guardar</button>
+            </div>
+        
             <label for="numero">Contacto:</label>
             <span>${usuario.numero}</span>
-
-            <label for="licencia">Licencia:</label>
-            <span>${usuario.licencia}</span>
-
+        
             <label for="tipoDePersona">Tipo de Persona:</label>
             <span>${usuario.tipoDePersona}</span>
-
+        
             <label for="createdAt">Fecha de registro:</label>
             <span>${usuario.createdAt}</span>
-
+        
             <div class="buttons">
-              <button
-                type="button"
-                class="btn-password"
-                aria-label="Cambiar Contraseña"
-              >
-                Cambiar Contraseña
-              </button>
-              <button
-                type="button"
-                class="btn-delete"
-                aria-label="Eliminar Cuenta"
-              >
-                Eliminar Cuenta
-              </button>
+                <button type="button" class="btn-password" aria-label="Cambiar Contraseña">Cambiar Contraseña</button>
+                <button type="button" class="btn-delete" aria-label="Eliminar Cuenta">Eliminar Cuenta</button>
             </div>
-          </form>
+        </form>
+        
         </div>
       </div>
     </main>
   </body>
 </html>
-
