@@ -25,8 +25,8 @@
                     <li><a href="/#servicios">Servicios</a></li>
                     <li><a href="/#contacto">Contacto</a></li>
                     <li><a href="/perfil">Perfil de Usuario</a></li>
+
                 </ul>
-                <p>Logueado como: ${currentUser.nombre}</p>
                 <form action="/login/logout" method="POST">
                     <input type="hidden" name="_method" value="DELETE"/>
                     <button type="submit" class="btn-login">Cerrar sesión</button>
@@ -34,36 +34,50 @@
             </nav>
         </header>
         
-        <h3>Solicitudes del GruAmigo</h3>
-        <p>GruCar procesando...</p>
-        <table>
-            <tr>
-                <th>Cliente</th>
-                <th>Avería</th>
-                <th>Detalles</th>
-                <th>Fecha de Solicitud</th> 
-                <th>Prestador</th>
-                <th>Ir al Llamado</th>
-            </tr>
-            <c:forEach items="${solicitudes}" var="solicitud">
-                <c:if test="${solicitud.solicitudActiva}">
-                    <c:if test="${solicitud.prestador == null}">
-                        <tr>
-                            <td>${solicitud.cliente.nombre}</td>
-                            <td>${solicitud.averiaTraduccion}</td>
-                            <td>${solicitud.detalles}</td>
-                            <td>${solicitud.createdAt}</td>
-                            <td>${solicitud.prestador.nombre}</td>
-                            <td>
-                                <form action="/solicitudes/aceptar/${solicitud.solicitudId}" method="POST">
-                                    <input type="hidden" name="_method" value="PUT"/>
-                                    <button type="submit">Aceptar</button>
-                                </form>
-                            </td>
-                        </tr>
+        <main>
+            <h1 class="h1style"><em>Gru ${currentUser.nombre} conectado!</em></h1>
+            <h3>Solicitudes del GruAmigo</h3>
+            <p class="pstyle">GruCar procesando...</p>
+        
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Avería</th>
+                        <th>Detalles</th>
+                        <th>Fecha de Solicitud</th>
+                        <th>Prestador</th>
+                        <th>Ir al Llamado</th>
+                    </tr>
+                    <c:forEach items="${solicitudes}" var="solicitud">
+                        <c:if test="${solicitud.solicitudActiva}">
+                            <c:if test="${solicitud.prestador == null}">
+                                <tr>
+                                    <td>${solicitud.cliente.nombre}</td>
+                                    <td>${solicitud.averiaTraduccion}</td>
+                                    <td>${solicitud.detalles}</td>
+                                    <td>${solicitud.createdAt}</td>
+                                    <td>${solicitud.prestador.nombre}</td>
+                                    <td>
+                                        <form action="/solicitudes/aceptar/${solicitud.solicitudId}" method="POST">
+                                            <input type="hidden" name="_method" value="PUT"/>
+                                            <button type="submit">Aceptar</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </c:if>
                     </c:if>
-                </c:if>
-            </c:forEach>
-        </table>
+                </table>
+            </div> <!-- End of container -->
+                <!-- Sección de Recomendaciones -->
+    <section class="recommendations">
+        <h2>Recomendaciones para ser un buen GruCar</h2>
+        <div class="recommendation-box-container">
+            <div class="recommendation-box">Recomendaciones para ser un buen GruCar</div>
+            <div class="recommendation-box">Recomendaciones para ser un buen GruCar</div>
+            <div class="recommendation-box">Recomendaciones para ser un buen GruCar</div>
+        </div>
+    </section>
+        </main>        
     </body>
-</html>
