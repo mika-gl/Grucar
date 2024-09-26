@@ -35,11 +35,13 @@ uri="http://www.springframework.org/tags/form" %>
       </nav>
     </header>
 
-    <main>
+    <main class="main-container">
       <h1 class="h1style"><em>Gru ${currentUser.nombre} conectado!</em></h1>
-      <h3>Solicitudes del GruAmigo</h3>
-      <p class="pstyle">GruCar procesando...</p>
-
+      <p class="pstyle">
+        GruCar procesando
+        <span class="dots">.</span><span class="dots">.</span><span class="dots">.</span>
+      </p>
+      <h3 class="h3style">Solicitudes del GruAmigo</h3>    
       <div class="table-container">
         <table>
           <tr>
