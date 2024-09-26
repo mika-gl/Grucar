@@ -11,32 +11,33 @@
         <title>Tu Solicitud</title>
     </head>
     <body>
-        <main>            
-            <div class="filterRow">
-                <h1>Buscando ayudante para resolver: ${solicitud.averiaTraduccion}...</h1>
-            </div>
-            <div class="loading-img">
-                <div id="div1">
-                </div>
-                <div id="div2">
-                </div>
-                <div id="div3">
-                </div>
-            </div>
+        <main>
+            <c:choose>
+                <c:when test="${solicitud.prestador != null}">
+                    <div class="filterRow">
+                        <!-- agregar link a perfil de prestador-->
+                        <h1>Ayudante <a href="">${solicitud.prestador.nombre}</a> encontrado!</h1>
+                    
+                        <button class="call-button" onclick="window.location.href = '/+56${solicitud.prestador.numero}'">llamar</button>
+                    </div>
+                </c:when>      
+                <c:otherwise>
+                    <div class="filterRow">
+                        <h1>Buscando ayudante para resolver: ${solicitud.averiaTraduccion}...</h1>
+                    </div>
+                    <div class="loading-img">
+                        <div id="div1">
+                        </div>
+                        <div id="div2">
+                        </div>
+                        <div id="div3">
+                        </div>
+                    </div>
+                </c:otherwise>
+            </c:choose>
             <p>Tus especificaciones: ${solicitud.detalles}</p>
-            <c:if test="${solicitud.prestador != null}">
-                <!-- agregar link a perfil de prestador-->
-                <h3>Ayudante <a href="">${solicitud.prestador.nombre}</a> encontrado!</h3>
-            
-                <button class="call-button" onclick="window.location.href = '/+56${solicitud.prestador.numero}'">llamar</button>
-            </c:if>
 
             <!-- botones para modificar, cancelar, finalizar-->
-            <div >
-                <c:if test="${solicitud.prestador == null}">
-                    <button  onclick='window.location.href="/solicitudes/${solicitud.solicitudId}/modificar"'>modificar</button>
-                </c:if>
-            </div>
             <c:choose>
                 <c:when test="${solicitud.prestador != null}">
                     <form:form action="/solicitudes/${solicitud.solicitudId}/finalizar" method="POST">
@@ -45,6 +46,7 @@
                     </form:form>
                 </c:when>
                 <c:otherwise>
+                    <button  onclick='window.location.href="/solicitudes/${solicitud.solicitudId}/modificar"'>modificar</button>
                     <form:form action="/solicitudes/${solicitud.solicitudId}/cancelar" method="POST">
                         <input type="hidden" name="_method" value="DELETE"/>
                         <button type="submit">cancelar</button>

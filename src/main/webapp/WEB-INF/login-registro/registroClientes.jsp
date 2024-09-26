@@ -71,15 +71,14 @@ uri="http://www.springframework.org/tags/form" %>
 
           <div>
             <form:label path="numero">Número de celular:</form:label>
-            <div style="display: flex;">
+            <div id="codigo-numero" style="display: flex;">
               <div>+56</div>
               <form:input
                 path="numero"
                 maxlength="9"
                 placeholder="912345678"
                 pattern="\\d{9}"
-                title="Debe ingresar solo 9 dígitos"
-              />
+                title="Debe ingresar solo 9 dígitos"/>
             </div>
           </div>
           <form:errors class="error" path="numero" />

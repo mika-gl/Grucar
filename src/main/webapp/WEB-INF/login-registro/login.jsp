@@ -18,8 +18,10 @@
                     <div class="form-element">
                         <div>
                             <form:label path="numero">Número Celular:</form:label>
-                            <div class="codigo-numero">+56</div>
-                            <form:input path="numero" type="text" placeholder="ej. 123456789"/>
+                            <div id="codigo-numero">
+                                <div class="codigo-numero">+56</div>
+                                <form:input path="numero" type="text" placeholder="ej. 123456789"/>
+                            </div>
                         </div>
                         <form:errors path="numero" class="error"/>
                         <div>
@@ -33,6 +35,7 @@
                 <button onclick="window.location.href='/'">Volver atras</button>
             </section>
         </main>
+        <script src="/js/error-input.js"></script>
     </body>
 </html>
 

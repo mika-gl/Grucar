@@ -36,6 +36,8 @@
     width: 100vw;
     top: 10%;
     text-align: center;
+
+    color: rgb(23, 162, 184);
   }
   form {
     width: 100%;
@@ -62,7 +64,9 @@
   .form-element div {
     width: 100%;
     height: 8vh;
-
+  }
+  .form-element div div {
+    display: flex;
   }
   .form-element .codigo-numero {
     width: 30%;
@@ -117,9 +121,12 @@
     font-weight: bold;
     
   }
+  body button {
+    background-color: #00000038;
+  }
   form button {
     margin: 0 auto;
-    background-color: #00000038;
+    background-color: rgb(23, 162, 184);
   }
   button:active {
     opacity: 0.5;
