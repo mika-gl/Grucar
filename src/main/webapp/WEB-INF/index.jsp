@@ -72,6 +72,30 @@ uri="http://www.springframework.org/tags/form" %>
               </div>
             </div>
           </c:if>
+
+          <c:if test="${sessionScope.currentUser.getClass().name == 'com.principal.grucar_proyecto.models.Prestador'}">
+            <div class="register-options">
+              <div class="register-button">
+                <h3>Revisa las solicitudes</h3>
+                <form action="/solicitudes" method="get"></form>
+                  <a href="/solicitudes" class="btn-solicitador">Solicitudes de ayuda</a>
+                </form>
+              </div>
+            </div>
+          </c:if>
+
+          <c:if test="${sessionScope.currentUser.getClass().name == 'com.principal.grucar_proyecto.models.Cliente'}">
+            <div class="register-options">
+              <div class="register-button">
+                <h3>Pide Asistencia</h3>
+                <form action="/solicitudes" method="get"></form>
+                  <a href="/solicitudes" class="btn-solicitador">Solicitar asistencia</a>
+                </form>
+              </div>
+            </div>
+          </c:if>
+
+
         </div>
         <div class="image-section">
           <img
