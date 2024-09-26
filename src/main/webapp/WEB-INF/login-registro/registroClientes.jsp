@@ -26,7 +26,7 @@ uri="http://www.springframework.org/tags/form" %>
     </header>
 
     <section id="frase">
-      <h1>Unete a grucar<!-- CON GRUCAR TENDRÁS LA TRANQUILIDAD QUE TANTO NECESITAS --></h1>
+      <h1>CON GRUCAR TENDRÁS LA TRANQUILIDAD QUE TANTO NECESITAS</h1>
       <p></p>
     </section>
 
