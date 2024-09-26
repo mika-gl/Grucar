@@ -105,9 +105,11 @@ uri="http://www.springframework.org/tags/form" %>
           </div>
         </div>
 
-        <!-- Columna derecha (Mapa o imagen) -->
+      <!-- Columna derecha (Mapa o imagen) -->
         <div class="column right-column">
-          <img src="ruta-a-imagen-placeholder.jpg" alt="Mapa placeholder" />
+          <section class="map-section">
+            <div id="map"></div>
+          </section>
         </div>
       </div>
 
@@ -142,6 +144,26 @@ uri="http://www.springframework.org/tags/form" %>
           }
         };
       </script>
+      <!-- Leaflet JS para el mapa -->
+      <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+      <script src="script.js"></script>
+    </main>
+
+    <!-- Iniciar el mapa con Leaflet.js en script.js -->
+    <!-- JS para iniciar el mapa centrado en Santiago -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var map = L.map("map").setView([-33.4489, -70.6693], 13); // Santiago
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution:
+            'Datos del mapa © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> colaboradores',
+        }).addTo(map);
+        L.marker([-33.4489, -70.6693])
+          .addTo(map)
+          .bindPopup("Estás aquí")
+          .openPopup();
+      });
+    </script>
     </main>
   </body>
 </html>
