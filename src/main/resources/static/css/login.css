@@ -1,7 +1,7 @@
+/* Estilo general */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
-    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,30 +30,65 @@ form {
     gap: 15px;
 }
 
-form label {
-    font-size: 1rem;
-    color: #333;
+.form-element {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-form input[type="text"],
-form input[type="password"] {
-    padding: 10px;
+.telefono-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
+    overflow: hidden;
 }
 
-form input[type="text"]:focus,
-form input[type="password"]:focus {
-    border-color: #8a2be2;
+.country-code {
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    background-color: #f0f0f0;
+}
+
+.flag-img {
+    width: 20px;
+    height: auto;
+    margin-right: 8px;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    border: none;
+    flex-grow: 1;
+    border-left: 1px solid #ccc;
     outline: none;
 }
 
-form .error {
-    color: red;
-    font-size: 0.875rem;
-    margin: 0;
+.password-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.password-label {
+    background-color: #f0f0f0;
+    padding: 0 4px;
+    border-right: 1px solid #ccc;
+    white-space: nowrap;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #8a2be2;
 }
 
 button {
@@ -76,14 +111,11 @@ button:hover {
     margin-top: 10px;
     color: #17a2b8;
     text-decoration: none;
-    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .back-link:hover {
-    transform: scale(1.1); /* Agranda el enlace ligeramente */
-    color: #8a2be2; /* Cambia a color morado */
+    color: #8a2be2;
     text-decoration: underline;
 }
-
 
 

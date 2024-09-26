@@ -15,22 +15,27 @@
         <section id="login" aria-labelledby="login-title">
             <h1 id="login-title">Accede a tu cuenta</h1>
             <form:form action="/login" method="POST" modelAttribute="login" autocomplete="off">
-                <article class="form-element">
+                <div class="form-element">
                     <div class="telefono-input">
-                        <form:label path="numero" aria-label="Número Celular">Número Celular:</form:label>
-                        <div id="codigo-numero">
-                            <span class="codigo-numero">+56</span>
+                        <form:label path="numero" aria-label="Número Celular"></form:label>
+                        <div class="input-group">
+                            <div class="country-code">
+                                <img src="/images/chile-flag.png" alt="CL" class="flag-img">
+                                <span>+56</span>
+                            </div>
                             <form:input path="numero" type="text" placeholder="ej. 912345678" aria-required="true" maxlength="9"/>
                         </div>
                     </div>
                     <form:errors path="numero" class="error"/>
-
-                    <div>
-                        <form:label path="password" aria-label="Contraseña">Contraseña:</form:label>
-                        <form:input path="password" placeholder="Contraseña" type="password" aria-required="true"/>
+                
+                    <!-- Contenedor para la contraseña, similar al del número -->
+                    <div class="password-group">
+                        <div class="password-label">Contraseña</div>
+                        <form:input path="password" type="password" placeholder="Escribir contraseña" aria-required="true"/>
                     </div>
                     <form:errors path="password" class="error"/>
-                </article>
+                </div>
+                
                 <button type="submit" aria-label="Iniciar sesión">¡Empezando la aventura!</button>
             </form:form>
             <a href="/" class="back-link">Volver atrás</a>
