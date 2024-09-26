@@ -1,28 +1,33 @@
 var balls = document.querySelectorAll(".loading-img div");
-var ball1 = document.getElementById("div1");
 
 
-balls.forEach((ball) => {
-  let lit=false;
-  var i = 1;
-  setInterval(() => {
-    if (ball.id==="1"&&i===1) {
-      lightBall(ball);
-      i++;
-    } else if (ball.id==="2"&&i===2) {
-      lightBall(ball);
-      i++;
-    } else if (ball.id==="3"&&i===3) {
-      lightball(ball);
-    }
+var loadingTimer = 1;
+setInterval(() => {
+  var ball1 = document.getElementById("div1");
+  var ball2 = document.getElementById("div2");
+  var ball3 = document.getElementById("div3");
 
-    if (i===3) {
-      i=1;
-    }
-  }, 1000);
-  i++
-});
+  if (loadingTimer > 3) {
+    unlightBall(ball3);
+    loadingTimer=1;
+  }
+
+  if (loadingTimer === 1) {
+    lightBall(ball1);
+  } else if (loadingTimer === 2) {
+    unlightBall(ball1);
+    lightBall(ball2);
+  } else if (loadingTimer === 3) {
+    unlightBall(ball2);
+    lightBall(ball3);
+  }
+
+  loadingTimer++;
+}, 400);
 
 function lightBall(ball) {
-  ball1.classList.toggle("lit-ball");
+  ball.classList.toggle("lit-ball");
+}
+function unlightBall(ball) {
+  ball.classList.toggle("lit-ball");
 }
