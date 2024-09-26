@@ -95,22 +95,22 @@ main {
     opacity: 0.9;
 }
 
-/* Image Section */
+/* Image Section 
 .image-section {
     flex: 1; 
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px; /* Espacio alrededor de la imagen */
+    padding: 20px; /* Espacio alrededor de la imagen 
 }
 
 .image-section img {
     max-width: 100%;
     height: auto; 
-    border-radius: 15px;
+    border-radius: 15px; */
 }
 
-
+/* ESO ME ESTORBABA EN EL CARRUSEL */
 
 /* Footer */
 footer {

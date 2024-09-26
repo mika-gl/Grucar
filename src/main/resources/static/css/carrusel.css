@@ -1,15 +1,22 @@
+
+
+
 .image-section {
-  width: auto;
-  height: 350px;
-  margin: 200px auto;  /* Centradas */
+  max-width: 500px;
+  max-height: 350px;
+  margin: 0px auto 0px;  /* Centradas */
   overflow: hidden;   /* Para que muestre solo la primera imagen */
+  border: 4px solid rgb(252, 0, 0);
 }
 
 .image-section ul {
-  display: flex;
   list-style: none; /* Esto quita el icono de lista */
   display: flex;    /* Para que esten hacia el lado */
-  animation: movimiento_slider 60s infinite alternate ease-in-out;
+  animation: movimiento_slider  180s infinite alternate ease-in-out ;
+}
+
+.image-section img {
+  padding: 0px 2px;
 }
 
 @keyframes movimiento_slider {
@@ -39,5 +46,5 @@
   88%{transform:translateX(-700%);}
 
   88%{transform:translateX(-800%);}
-  99%{transform:translateX(-800%);}
+  100%{transform:translateX(-800%);}
 }
