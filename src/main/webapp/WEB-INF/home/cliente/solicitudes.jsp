@@ -9,8 +9,9 @@ uri="http://www.springframework.org/tags/form" %>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hacer Solicitud - GruAsistencia</title>
-    <link rel="stylesheet" href="/css/vistacliente.css" />
     <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/vistacliente.css" />
+    <link rel="stylesheet" href="/css/vistacliente-celular.css" />
     <link rel="stylesheet" href="/css/popup.css" />
         <!-- Leaflet CSS para el mapa -->
     <link
@@ -185,8 +186,22 @@ uri="http://www.springframework.org/tags/form" %>
           .addTo(map)
           .bindPopup("Estás aquí")
           .openPopup();
-      });
-    </script>
-    </main>
-  </body>
+        });
+
+// Botón desplegable
+const collapseButtons = document.querySelectorAll('.collapse-button');
+collapseButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    button.classList.toggle('active');
+    const content = button.nextElementSibling;
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+});
+</script>
+</main>
+</body>
 </html>
