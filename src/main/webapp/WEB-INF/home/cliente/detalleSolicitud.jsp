@@ -1,175 +1,97 @@
-/* Contenedor principal centrado */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f9;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page isErrorPage="true" %>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Solicitud</title>
+    <link rel="stylesheet" href="/css/detalleSolicitud-cliente.css"/>
+    <link rel="stylesheet" href="/css/base.css"/>
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <img src="logo.png" alt="Logo GRUCAR" />
+          <h2>GRU</h2>
+          <h1>CAR</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/#servicios">Servicios</a></li>
+            <li><a href="/#contacto">Contacto</a></li>
+            <p><em>Gru ${currentUser.nombre} conectado!</em></p>
+            <li><a href="/perfil">Perfil de Usuario</a></li>
+          </ul>
+          <form action="/login/logout" method="POST">
+            <input type="hidden" name="_method" value="DELETE" />
+            <button type="submit" class="btn-login">Cerrar sesión</button>
+          </form>
+        </nav>
+      </header>
+    <main>            
+        <!-- Contenedor principal de la solicitud -->
+        <div class="card-container">
+            <h1>Buscando ayudante para resolver: ${solicitud.averiaTraduccion}...</h1>
+            
+            <!-- Especificaciones de la solicitud -->
+            <div class="card-body">
+                <p>Tus especificaciones: ${solicitud.detalles}</p>
+                
+                <!-- Ayudante encontrado -->
+                <c:if test="${solicitud.prestador != null}">
+                    <h3>Ayudante <a href="">${solicitud.prestador.nombre}</a> encontrado!</h3>
+                    <button class="call-button" onclick="window.location.href = '/+56${solicitud.prestador.numero}'">llamar</button>
+                </c:if>
+            </div>
 
-/* Centrar la tarjeta dentro del body */
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 900px;
-  padding-top: 200px; /* Ajusta este valor según la altura del encabezado */
-}
+            <!-- Botones de acción -->
+            <div class="action-buttons">
+                <c:if test="${solicitud.prestador == null}">
+                    <button onclick='window.location.href="/solicitudes/${solicitud.solicitudId}/modificar"'>Modificar</button>
+                </c:if>
+                <c:choose>
+                    <c:when test="${solicitud.prestador != null}">
+                        <form:form action="/solicitudes/${solicitud.solicitudId}/finalizar" method="POST">
+                            <input type="hidden" name="_method" value="PUT"/>
+                            <button type="submit">Finalizar</button>
+                        </form:form>
+                    </c:when>
+                    <c:otherwise>
+                        <form:form action="/solicitudes/${solicitud.solicitudId}/cancelar" method="POST">
+                            <input type="hidden" name="_method" value="DELETE"/>
+                            <button type="submit">Cancelar</button>
+                        </form:form>
+                    </c:otherwise>
+                </c:choose>
+            </div>
 
-/* Contenedor principal que parece carta */
-.card-container {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 600px;
-  padding: 20px;
-  margin-bottom: 20px;
-  text-align: center; /* Para centrar el contenido de texto */
-}
+            <!-- Cargando... -->
+            <div class="loading-img">
+                <div id="div1"></div>
+                <div id="div2"></div>
+                <div id="div3"></div>
+            </div>
+        </div>
 
-/* Estilo del encabezado de solicitud */
-.card-container h1 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 20px;
-}
+        <!-- Historial de solicitudes -->
+        <div class="history-container">
+            <h2>Historial de solicitudes</h2>
 
-/* Cuerpo de la solicitud */
-.card-body {
-  font-size: 1rem;
-  color: #555;
-  padding: 15px 20px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  margin-bottom: 20px;
-  text-align: left; /* Para alinear a la izquierda el texto */
-}
-
-/* Estilo para el botón de llamada */
-.call-button {
-  display: block;
-  background-color: #448dcc;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100%;
-  max-width: 200px;
-  margin: 20px auto; /* Centrado automático */
-}
-
-.call-button:hover {
-  background-color: #52c1e0;
-}
-
-/* Botones de acción (modificar, finalizar, cancelar) */
-.action-buttons {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-}
-
-.action-buttons button {
-  background-color: #17a2b8;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  flex-grow: 1;
-  margin: 0 10px;
-  text-align: center;
-}
-
-.action-buttons button:hover {
-  background-color: #138496;
-}
-
-/* Historial de solicitudes */
-/* Historial de solicitudes (foros o posts) */
-.history-container {
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-  width: 80%;  /* Cambiar a 80% igual que el contenedor de la solicitud */
-  max-width: 600px; /* Ajustar a 800px igual que el contenedor de la solicitud */
-}
-
-/* Cada solicitud anterior */
-.history-item {
-  background-color: #f1f1f1;
-  border-left: 5px solid #17a2b8;
-  margin-bottom: 10px;
-  padding: 15px;
-  border-radius: 5px;
-}
-
-/* Título y fecha de la solicitud */
-.history-item h3 {
-  font-size: 1.2rem;
-  margin: 0;
-  color: #333;
-}
-
-.history-item p {
-  font-size: 0.9rem;
-  color: #555;
-  margin: 5px 0 0;
-}
-
-/* Estilo del contenedor de carga */
-.loading-img {
-    display: flex;                /* Usar flexbox para alinear las bolas */
-    justify-content: center;      /* Centrar el contenido */
-    gap: 10px;                   /* Espacio entre las bolas */
-    margin-top: 20px;           /* Margen superior */
-}
-
-/* Estilo de las bolas de carga */
-.loading-img div {
-    width: 15px;                 /* Ancho de las bolas */
-    height: 15px;                /* Altura de las bolas */
-    background-color: lightgrey; /* Color de fondo */
-    border-radius: 50%;          /* Bordes redondeados para hacerlas circulares */
-    animation: pulse 0.8s ease-in-out infinite; /* Animación continua */
-}
-
-/* Definición de la animación pulse */
-@keyframes pulse {
-    0% {
-        transform: scale(1);      /* Tamaño original */
-    }
-    50% {
-        transform: scale(1.5);    /* Tamaño agrandado */
-    }
-    100% {
-        transform: scale(1);      /* Regresa al tamaño original */
-    }
-}
-
-/* Aplicar diferentes retrasos a cada bola para alternar el efecto */
-.loading-img div:nth-child(1) {
-    animation-delay: 0s; /* Sin retraso */
-}
-
-.loading-img div:nth-child(2) {
-    animation-delay: 0.4s; /* Retraso de 0.4s */
-}
-
-.loading-img div:nth-child(3) {
-    animation-delay: 0.8s; /* Retraso de 0.8s */
-}
+            <!-- Solicitudes anteriores -->
+            <div class="history-item">
+                <h3>Solicitud: ejemplo poner id de solicitud</h3>
+                <p>Detalles: ejemplo poner id de solicitud.</p>
+            </div>
+            <div class="history-item">
+                <h3>Solicitud: ejemplo poner id de solicitud</h3>
+                <p>Detalles: ejemplo poner id de solicitud.</p>
+            </div>
+            <!-- Puedes añadir más items aquí -->
+        </div>
+    </main>
+</body>
+</html>
