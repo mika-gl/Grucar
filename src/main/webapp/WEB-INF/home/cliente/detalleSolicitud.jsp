@@ -26,10 +26,6 @@
             <p><em>Gru ${currentUser.nombre} conectado!</em></p>
             <li><a href="/perfil">Perfil de Usuario</a></li>
           </ul>
-          <form action="/login/logout" method="POST">
-            <input type="hidden" name="_method" value="DELETE" />
-            <button type="submit" class="btn-login">Cerrar sesión</button>
-          </form>
         </nav>
       </header>
     <main>            
