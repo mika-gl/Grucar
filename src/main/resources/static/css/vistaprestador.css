@@ -26,7 +26,7 @@ h3 {
 
 /* Estilos para el contenedor de la tabla */
 .table-container {
-    background: linear-gradient(135deg, #8a2be2 10%, #00c8d7 85%, #00e0ff 95%);
+    background: linear-gradient(to bottom, #4c00829f, rgba(76, 0, 130, 0)); /* Degradado vertical */
     border-radius: 8px;
     padding: 20px;
     margin: 20px auto; /* Mantiene centrado el contenedor */
@@ -81,7 +81,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #138496;
 }
 
 /* Sección de Recomendaciones */
@@ -97,7 +97,8 @@ button:hover {
 }
 
 .recommendation-box {
-    background-color: #892be2b6;
+    background: linear-gradient(to bottom, #4c00829f, rgba(76, 0, 130, 0)); /* Degradado vertical */
+   
     color: white;
     padding: 20px;
     width: 250px;
@@ -107,8 +108,25 @@ button:hover {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+
 /* Transición en los recuadros de recomendaciones */
+/* Efecto hover para los recuadros */
 .recommendation-box:hover {
-    transform: scale(1.05);
-    background-color: #17a2b8;
+    transform: translateY(-10px); /* Efecto de elevación */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombras más profundas */
+    background-color: #17a3b827; /* Cambia el fondo al pasar el mouse */
+    color: white; /* Cambia el color del texto al pasar el mouse */
+}
+
+/* Estilos para los títulos de los recuadros */
+.recommendation-box h2 {
+    color: #4b0082; /* Color púrpura */
+    margin-bottom: 15px;
+    font-size: 1.0rem;
+}
+
+/* Estilos para el texto en los recuadros */
+.recommendation-box p {
+    color: #333; /* Color gris oscuro */
+    font-size: 0.9rem;
 }
