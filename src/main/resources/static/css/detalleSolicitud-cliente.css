@@ -77,6 +77,7 @@ main {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
+  flex-wrap: wrap; /* Permitir el ajuste en dispositivos pequeños */
 }
 
 .action-buttons button {
@@ -91,6 +92,7 @@ main {
   flex-grow: 1;
   margin: 0 10px;
   text-align: center;
+  min-width: 120px; /* Anchura mínima para botones */
 }
 
 .action-buttons button:hover {
@@ -98,7 +100,6 @@ main {
 }
 
 /* Historial de solicitudes */
-/* Historial de solicitudes (foros o posts) */
 .history-container {
   background-color: #ffffff;
   border-radius: 8px;
@@ -106,7 +107,7 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
   width: 80%;  /* Cambiar a 80% igual que el contenedor de la solicitud */
-  max-width: 600px; /* Ajustar a 800px igual que el contenedor de la solicitud */
+  max-width: 600px; /* Ajustar a 600px igual que el contenedor de la solicitud */
 }
 
 /* Cada solicitud anterior */
@@ -133,43 +134,73 @@ main {
 
 /* Estilo del contenedor de carga */
 .loading-img {
-    display: flex;                /* Usar flexbox para alinear las bolas */
-    justify-content: center;      /* Centrar el contenido */
-    gap: 10px;                   /* Espacio entre las bolas */
-    margin-top: 20px;           /* Margen superior */
+  display: flex;                /* Usar flexbox para alinear las bolas */
+  justify-content: center;      /* Centrar el contenido */
+  gap: 10px;                   /* Espacio entre las bolas */
+  margin-top: 20px;           /* Margen superior */
 }
 
 /* Estilo de las bolas de carga */
 .loading-img div {
-    width: 15px;                 /* Ancho de las bolas */
-    height: 15px;                /* Altura de las bolas */
-    background-color: lightgrey; /* Color de fondo */
-    border-radius: 50%;          /* Bordes redondeados para hacerlas circulares */
-    animation: pulse 0.8s ease-in-out infinite; /* Animación continua */
+  width: 15px;                 /* Ancho de las bolas */
+  height: 15px;                /* Altura de las bolas */
+  background-color: lightgrey; /* Color de fondo */
+  border-radius: 50%;          /* Bordes redondeados para hacerlas circulares */
+  animation: pulse 0.8s ease-in-out infinite; /* Animación continua */
 }
 
 /* Definición de la animación pulse */
 @keyframes pulse {
-    0% {
-        transform: scale(1);      /* Tamaño original */
-    }
-    50% {
-        transform: scale(1.5);    /* Tamaño agrandado */
-    }
-    100% {
-        transform: scale(1);      /* Regresa al tamaño original */
-    }
+  0% {
+      transform: scale(1);      /* Tamaño original */
+  }
+  50% {
+      transform: scale(1.5);    /* Tamaño agrandado */
+  }
+  100% {
+      transform: scale(1);      /* Regresa al tamaño original */
+  }
 }
 
 /* Aplicar diferentes retrasos a cada bola para alternar el efecto */
 .loading-img div:nth-child(1) {
-    animation-delay: 0s; /* Sin retraso */
+  animation-delay: 0s; /* Sin retraso */
 }
 
 .loading-img div:nth-child(2) {
-    animation-delay: 0.4s; /* Retraso de 0.4s */
+  animation-delay: 0.4s; /* Retraso de 0.4s */
 }
 
 .loading-img div:nth-child(3) {
-    animation-delay: 0.8s; /* Retraso de 0.8s */
+  animation-delay: 0.8s; /* Retraso de 0.8s */
 }
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 600px) {
+  /* Ajustar tamaños de fuente y márgenes para pantallas pequeñas */
+  .card-container h1 {
+    font-size: 1.2rem; /* Tamaño de fuente más pequeño */
+  }
+
+  .card-body,
+  .history-item p {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+  }
+
+  .call-button {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    padding: 8px 16px; /* Ajustar el padding */
+  }
+
+  .action-buttons button {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    padding: 8px 16px; /* Ajustar el padding */
+  }
+
+  /* Estilo para el contenedor de carga */
+  .loading-img div {
+    width: 12px; /* Ancho reducido para pantallas pequeñas */
+    height: 12px; /* Altura reducida para pantallas pequeñas */
+  }
+}
+
