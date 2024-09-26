@@ -65,9 +65,9 @@
                                         </form>
                                     </td>
                                 </tr>
-                            </c:forEach>
+                            </c:if>
                         </c:if>
-                    </c:if>
+                    </c:forEach>
                 </table>
             </div> <!-- End of container -->
                 <!-- Sección de Recomendaciones -->
