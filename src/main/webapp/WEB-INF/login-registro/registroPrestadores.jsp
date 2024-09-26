@@ -139,7 +139,7 @@ uri="http://www.springframework.org/tags/form" %>
         <form:errors class="error" path="passwordConfirm" />
 
         <!-- Botón para enviar el formulario -->
-        <button type="submit">Registrar</button>
+        <button type="submit">Registrarse</button>
       </form:form>
 
       <!-- Enlace para regresar a la página anterior -->
