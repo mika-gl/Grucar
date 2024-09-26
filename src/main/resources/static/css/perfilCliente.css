@@ -202,7 +202,7 @@ input:checked + .slider:before {
 .profile-form button {
     width: 48%;
     padding: 15px; /* Agrandado */
-    background-color: #8a2be2;
+    background-color: #448dcc;
     color: white;
     border: none;
     border-radius: 5px;
@@ -211,7 +211,7 @@ input:checked + .slider:before {
 }
 
 .profile-form button:hover {
-    background-color: #d16ddf; /* Color al pasar el mouse */
+    background-color: #52c1e0; /* Color al pasar el mouse */
     transform: scale(1.05); /* Agrandar el botón al pasar el mouse */
 }
 
@@ -237,7 +237,7 @@ input:checked + .slider:before {
 .email-container input[type="email"] {
     flex-grow: 1; /* Ocupa el espacio disponible */
     padding: 10px;
-    border: 1px solid #d16ddf;
+    border: 1px solid #d4d4d4;
     border-radius: 5px;
     margin-right: 10px; /* Espacio entre el campo de entrada y el botón */
     width: calc(100% - 110px); /* Resta el ancho del botón más el margen */
@@ -247,7 +247,7 @@ input:checked + .slider:before {
 /* Botón de guardar */
 .guardar-btn {
     padding: 5px 10px;
-    background-color: #8a2be2;
+    background-color: #448dcc;
     color: white;
     border: none;
     border-radius: 5px;
@@ -261,7 +261,7 @@ input:checked + .slider:before {
 }
 
 .guardar-btn:hover {
-    background-color: #d16ddf;
+    background-color: #52c1e0;
     transform: scale(1.05);
 }
 

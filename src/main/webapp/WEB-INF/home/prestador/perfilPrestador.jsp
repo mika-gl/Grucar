@@ -23,6 +23,7 @@ uri="http://www.springframework.org/tags/form"%>
           <li><a href="/">Inicio</a></li>
           <li><a href="/#servicios">Servicios</a></li>
           <li><a href="/#contacto">Contacto</a></li>
+          <li><a href="/solicitudes">GruAsistencia</a></li>
         </ul>
         <form action="/login/logout" method="POST">
           <input type="hidden" name="_method" value="DELETE" />
@@ -71,7 +72,23 @@ uri="http://www.springframework.org/tags/form"%>
             <span>${usuario.rut}</span>
 
             <label for="email">Email:</label>
-            <span>${usuario.email}</span>
+            <div class="email-container">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value="${usuario.email}"
+                placeholder="ejemplo@correo.com"
+                required
+              />
+              <button
+                type="submit"
+                class="guardar-btn"
+                aria-label="Guardar Email"
+              >
+                Guardar
+              </button>
+            </div>
 
             <label for="numero">Contacto:</label>
             <span>${usuario.numero}</span>
