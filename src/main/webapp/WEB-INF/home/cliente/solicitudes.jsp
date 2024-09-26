@@ -21,7 +21,7 @@ uri="http://www.springframework.org/tags/form" %>
   </head>
   <body>
     <!-- Encabezado -->
-    <header>
+       <header>
       <div class="logo">
         <img src="logo.png" alt="Logo GRUCAR" />
         <h2>GRU</h2>
@@ -32,9 +32,9 @@ uri="http://www.springframework.org/tags/form" %>
           <li><a href="/">Inicio</a></li>
           <li><a href="/#servicios">Servicios</a></li>
           <li><a href="/#contacto">Contacto</a></li>
+          <p><em>Gru ${currentUser.nombre} conectado!</em></p>
           <li><a href="/perfil">Perfil de Usuario</a></li>
         </ul>
-        <p>Logueado como: ${currentUser.nombre}</p>
         <form action="/login/logout" method="POST">
           <input type="hidden" name="_method" value="DELETE" />
           <button type="submit" class="btn-login">Cerrar sesión</button>
