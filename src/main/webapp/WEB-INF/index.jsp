@@ -15,7 +15,7 @@ uri="http://www.springframework.org/tags/form" %>
   <body>
     <header>
       <div class="logo">
-        <img src="images/logo-grucar.png" alt="GRUCAR Logo" />
+        <img src="images/logo-grucar3.png" alt="GRUCAR Logo" />
         <h2>GRU</h2>
         <h1>CAR</h1>
       </div>
@@ -28,17 +28,17 @@ uri="http://www.springframework.org/tags/form" %>
             <li><a href="/perfil/redirect">Perfil de Usuario</a></li>
           </form>
           <form action="/appmovil" method="get">
-            <li><a href="/appmovil">AppMovil</a></li>
+            <li><a href="/appmovil">App Móvil</a></li>
           </form>
         </ul>
         <c:choose>
           <c:when test="${currentUser == null}">
-            <button onclick="window.location.href='/login'" class="btn-login">Iniciar Sesión</button>
+            <button onclick="window.location.href='/login'" class="btn-login">Iniciar sesión</button>
           </c:when>
           <c:otherwise>
             <form action="/login/logout" method="POST">
               <input type="hidden" name="_method" value="DELETE"/>
-              <button type="submit" class="btn-login logout-btn">Cerrar Sesión</button>
+              <button type="submit" class="btn-login logout-btn">Cerrar sesión</button>
             </form>
           </c:otherwise>
         </c:choose>
