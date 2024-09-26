@@ -7,7 +7,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Show info</title>
+        <title>Detalle de la Solicitud</title>
+        <link rel="stylesheet" href="/css/detalleSolicitud-cliente.css"/>
+        <link rel="stylesheet" href="/css/base.css"/>
     </head>
     <body>
         <header>
@@ -32,35 +34,40 @@
                 </form>
             </nav>
         </header>
+        
         <main>            
-            <div class="filterRow">
-                <h1>Solicitud de cliente: ${solicitud.averiaTraduccion}</h1>
+            <!-- Contenedor principal de la solicitud -->
+            <div class="card-container">
+                <h1>Detalles de la solicitud del cliente: ${solicitud.averiaTraduccion}</h1>
+                
+                <!-- Especificaciones de la solicitud -->
+                <div class="card-body">
+                    <p>Cliente: ${solicitud.cliente.nombre}</p>
+                    <p>Avería: ${solicitud.averiaTraduccion}</p>
+                    <p>Detalles: ${solicitud.detalles}</p>
+                    <p>Prestador: ${solicitud.prestador.nombre}</p>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="action-buttons">
+                        <button>contactar cliente</button>
+                    <form:form action="/solicitudes/${solicitud.solicitudId}/finalizar" method="POST">
+                        <input type="hidden" name="_method" value="PUT"/>
+                        <button type="submit">finalizar</button>
+                    </form:form>
+                </div>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Cliente</th>
-                        <th>Averia</th>
-                        <th>Detalles</th>
-                        <th>Prestador</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>${solicitud.cliente.nombre}</td>
-                        <td>${solicitud.averiaTraduccion}</td>
-                        <td>${solicitud.detalles}</td>
-                        <td>${solicitud.prestador.nombre}</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div >
-                <button>contactar cliente</button>
+
+            <!-- Historial de solicitudes similares -->
+            <div class="history-container">
+                <h2>Historial de solicitudes</h2>
+                
+                <div class="history-item">
+                    <h3>Solicitud: ejemplo poner id de solicitud</h3>
+                    <p>Detalles: ejemplo poner id de solicitud.</p>
+                </div>
+                <!-- Añadir más solicitudes si es necesario -->
             </div>
-            <form:form action="/solicitudes/${solicitud.solicitudId}/finalizar" method="POST">
-                <input type="hidden" name="_method" value="PUT"/>
-                <button type="submit">finalizar</button>
-            </form:form>
         </main>
     </body>
 </html>
