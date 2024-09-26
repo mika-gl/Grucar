@@ -1,53 +1,114 @@
 /* General Styles */
 
-
-h3 {
+/* Estilos para h1 */
+.h1style {
     text-align: center;
-    position: relative; /* Cambia la posición a relativa */
-    top: 75px; /* Ajusta este valor según sea necesario */
-    margin: 20px 0; /* Mantén márgenes para separar de otros elementos */
-    padding: 10px;
-    text-align: center; /* Centrar texto */
+    margin-top: 100px; /* Menor margen para evitar separación excesiva */
+    font-size: 2.0rem; 
+    color: #4B0082;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
 }
 
+/* Estilos para h3 */
+h3 {
+    text-align: center;
+    margin-top: 20px; /* Ajustado para evitar demasiada separación */
+    padding: 10px;
+    color: #8a2be2;
+}
 
-/* Table Styles */
+/* Estilos para el párrafo */
+.pstyle {
+    text-align: center;
+    color: #17a2b8;
+}
+
+/* Estilos para el contenedor de la tabla */
+.table-container {
+    background: linear-gradient(135deg, #8a2be2 10%, #00c8d7 85%, #00e0ff 95%);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto; /* Mantiene centrado el contenedor */
+    max-width: 85%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la tabla */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
 }
 
 th, td {
     border: 1px solid #dee2e6;
     padding: 10px;
     text-align: left;
+    transition: background-color 0.3s ease; /* Transición suave */
 }
 
 th {
-    background-color: hsla(271, 65%, 26%, 0.486);
+    background-color: #4c00829f;
     color: white;
 }
 
+/* Color de fondo para las filas pares */
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-tr:hover {
-    background-color: #e2e6ea;
+/* Color de fondo para las filas impares */
+tr:nth-child(odd) {
+    background-color: #ffffff;
 }
 
-/* Button Styles */
+/* Efecto al pasar el cursor sobre las filas */
+tr:hover {
+    background-color: rgb(213, 187, 235); /* Oscurecimiento al pasar el cursor */
+    cursor: pointer; /* Muestra el puntero al pasar por la fila */
+}
+
+
+/* Estilos para los botones */
 button {
-    background-color: #007bff;
+    background-color: #17a2b8;
     color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     transition: background-color 0.3s;
+    border-radius: 4px;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
+/* Sección de Recomendaciones */
+.recommendations {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.recommendation-box-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.recommendation-box {
+    background-color: #892be2b6;
+    color: white;
+    padding: 20px;
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Transición en los recuadros de recomendaciones */
+.recommendation-box:hover {
+    transform: scale(1.05);
+    background-color: #17a2b8;
+}
