@@ -1,11 +1,14 @@
 
 .image-section {
-  max-width: 520px;
-  max-height: 350px;
+  max-width: 550px;
+  max-height: 550px;
   margin: 0px auto 0px;  /* Centradas */
   overflow: hidden;   /* Para que muestre solo la primera imagen */
 
   border-radius: 5%;
+
+/*   height: 550px;
+  width: 500px; */
 }
 
 .image-section ul {
@@ -18,6 +21,7 @@
 
 .image-section img {
   padding: 0px 0px;
+/*   height: 100%; */
 }
 
 @keyframes movimiento_slider {
