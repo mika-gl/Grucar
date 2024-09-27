@@ -180,6 +180,16 @@ footer p {
     text-align: left;
 }
 
+.service-box{
+    transition: transform 0.3s ease; /* Transición suave para el aumento */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+/* Efecto al pasar el cursor */
+.service-box:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al 105% */
+}
+
 /* Estilos para la sección de contacto */
 .contact {
     padding: 40px 20px;
