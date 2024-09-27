@@ -10,6 +10,7 @@ uri="http://www.springframework.org/tags/form"%>
     <title>Perfil de Usuario</title>
     <link rel="stylesheet" type="text/css" href="/css/perfilPrestador.css" />
     <link rel="stylesheet" type="text/css" href="/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/css/reseñas.css" />
   </head>
   <body>
     <header>
@@ -33,7 +34,7 @@ uri="http://www.springframework.org/tags/form"%>
     </header>
 
     <main>
-      <div class="perfil-container">
+      <section class="perfil-container">
         <h1 class="perfil-title">Perfil de Prestador: ${usuario.nombre}</h1>
 
         <div class="profile-content">
@@ -56,6 +57,51 @@ uri="http://www.springframework.org/tags/form"%>
                 </label>
               </div>
             </div>
+            <section class="reviews">
+              <h2>Reseñas</h2>
+              <div class="reviews-list">
+                <!-- Reseñas individuales -->
+                <div class="review">
+                  <h3>Usuario1</h3>
+                  <div class="rating">
+                    <span>⭐️⭐️⭐️⭐️⭐️</span>
+                    <!-- Puntos de la evaluación -->
+                  </div>
+                  <p>¡Excelente servicio! Muy recomendable.</p>
+                </div>
+                <div class="review">
+                  <h3>Usuario2</h3>
+                  <div class="rating">
+                    <span>⭐️⭐️⭐️⭐️</span>
+                  </div>
+                  <p>
+                    Buena atención, pero puede mejorar en tiempos de respuesta.
+                  </p>
+                </div>
+                <!-- Más reseñas -->
+              </div>
+
+              <form class="review-form">
+                <h3>Deja tu reseña:</h3>
+                <textarea
+                  placeholder="Escribe tu reseña aquí..."
+                  required
+                ></textarea>
+                <div class="rating-input">
+                  <label for="rating">Calificación:</label>
+                  <select id="rating" required>
+                    <option value="">Selecciona una calificación</option>
+                    <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+                    <option value="4">⭐️⭐️⭐️⭐️</option>
+                    <option value="3">⭐️⭐️⭐️</option>
+                    <option value="2">⭐️⭐️</option>
+                    <option value="1">⭐️</option>
+                  </select>
+                </div>
+                <button type="submit" class="submit-review-btn">Enviar Reseña</button>
+              </form>
+              <script src="/js/reseñas.js"></script>
+            </section>
           </div>
 
           <form class="profile-form">
@@ -120,8 +166,7 @@ uri="http://www.springframework.org/tags/form"%>
             </div>
           </form>
         </div>
-      </div>
+      </section>
     </main>
   </body>
 </html>
-
