@@ -96,3 +96,9 @@ main {
     height: 550px;
     width: 400px;
 }
+
+@media(width < 800px ) {
+    .container {
+        flex-direction: column;
+    }
+}

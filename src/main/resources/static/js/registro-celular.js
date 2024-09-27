@@ -3,6 +3,8 @@ var backButton = document.getElementById("backButton");
 var nextButton = document.getElementById("nextButton");
 var count = 0;
 
+var rutInput = document.getElementById("rut").placeholder = "rut";
+
 function clickNormal() {
     window.location.href = '/';
 }
