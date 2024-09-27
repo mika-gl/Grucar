@@ -12,6 +12,8 @@ uri="http://www.springframework.org/tags/form" %>
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/stylesregistro.css" />
     <link rel="stylesheet" href="/css/stylesprestador.css" />
+
+    <link rel="stylesheet" href="/css/registro-celular.css"/>
   </head>
   <body>
     <header>
@@ -41,6 +43,7 @@ uri="http://www.springframework.org/tags/form" %>
         modelAttribute="baseUser"
       >
         <!-- Datos personales -->
+        <div class="form-element form-parte-1">
         <div>
           <form:label path="nombre">Nombre:</form:label>
           <form:input path="nombre" placeholder="Introduce tu nombre" />
@@ -58,7 +61,8 @@ uri="http://www.springframework.org/tags/form" %>
           <form:input path="rut" placeholder="ej: 12123456-0" />
         </div>
         <form:errors class="error" path="rut" />
-
+        </div>
+        <div class="form-element form-parte-2">
         <div>
           <form:label path="genero">Género:</form:label>
           <form:select path="genero">
@@ -72,15 +76,14 @@ uri="http://www.springframework.org/tags/form" %>
 
         <div>
           <form:label path="numero">Número de celular:</form:label>
-          <div style="display: flex; align-items: center">
-            <span>+56</span>
+          <div id="codigo-numero" style="display: flex;">
+            <div>+56</div>
             <form:input
               path="numero"
               maxlength="9"
               placeholder="912345678"
               pattern="\\d{9}"
-              title="Debe ingresar solo 9 dígitos"
-            />
+              title="Debe ingresar solo 9 dígitos"/>
           </div>
         </div>
         <form:errors class="error" path="numero" />
@@ -95,7 +98,8 @@ uri="http://www.springframework.org/tags/form" %>
           </form:select>
         </div>
         <form:errors class="error" path="tipoDePersona" />
-
+        </div>
+        <div class="form-element form-parte-3">
         <!-- Tipo de Licencia de Conducir -->
         <div>
           <form:label path="licencia">Licencia de conducir:</form:label>
@@ -128,30 +132,27 @@ uri="http://www.springframework.org/tags/form" %>
         <!-- Contraseña -->
         <div>
           <form:label path="passwordForm">Contraseña:</form:label>
-          <form:password path="passwordForm" />
+          <form:input type="password" path="passwordForm" placeholder="contraseña"/>
         </div>
         <form:errors class="error" path="passwordForm" />
 
         <div>
           <form:label path="passwordConfirm">Confirmar Contraseña:</form:label>
-          <form:password path="passwordConfirm" />
+          <form:input type="password" path="passwordConfirm" placeholder="confirma" />
         </div>
         <form:errors class="error" path="passwordConfirm" />
-
+        </div>
         <!-- Botón para enviar el formulario -->
-        <button type="submit">Registrarse</button>
-      </form:form>
-
-      <!-- Enlace para regresar a la página anterior -->
-      <form action="/" method="get" class="salirBtn">
-        <a href="/">Volver al Inicio</a>
-      </form>
-
-      
+        <button class="formButton" id="nextButton" type="button">siguiente</button>
+        <!-- <button type="submit">Registrarse</button> -->
+        <button class="formButton" id="backButton" type="button">Volver al Inicio</button>
+      </form:form> 
     </section>
 
     <footer>
       <p>&copy; 2024 GRUCAR. Todos los derechos reservados.</p>
     </footer>
+    <script src="/js/registro-celular.js"></script>
+    <script src="/js/error-input.js"></script>
   </body>
 </html>
