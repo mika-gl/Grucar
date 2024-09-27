@@ -39,12 +39,12 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  /*background-color: rgba(124, 21, 150, 0.5);*/
 }
 
 #loading {
   font-size: 24px;
-  color: rgb(0, 0, 0);
+  color: #16383b;
 }
 
 #countdown {
@@ -93,6 +93,36 @@ body::after {
 #fogos {
   display: none;
 }
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.time h2 {
+  animation: pulse 1s infinite;
+  transition: transform 0.3s ease;
+}
+
+.time h2:hover {
+  transform: scale(1.2);
+}
+
 
 @media (max-width: 500px) {
   #titulo {
