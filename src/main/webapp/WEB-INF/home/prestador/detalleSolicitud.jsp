@@ -39,7 +39,8 @@
         <main>            
             <!-- Contenedor principal de la solicitud -->
             <div class="card-container">
-                <h1>Detalles de la solicitud del cliente: ${solicitud.averiaTraduccion}</h1>
+                <h1>Solicitud aceptada!</h1>
+                <h3>Detalles</h3>
                 
                 <!-- Especificaciones de la solicitud -->
                 <div class="card-body">

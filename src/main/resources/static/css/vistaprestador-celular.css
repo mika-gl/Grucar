@@ -1,7 +1,6 @@
 @media(width < 800px) {
     body {
       padding: 0;
-      overflow: hidden;
     }
     .recommendation-box {
       background-image: unset;
