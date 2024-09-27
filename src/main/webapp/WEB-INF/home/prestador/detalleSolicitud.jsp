@@ -10,6 +10,7 @@
         <title>Detalle de la Solicitud</title>
         <link rel="stylesheet" href="/css/detalleSolicitud-cliente.css"/>
         <link rel="stylesheet" href="/css/base.css"/>
+        <link rel="stylesheet" href="/css/popup.css" />
     </head>
     <body>
         <header>
@@ -50,13 +51,48 @@
 
                 <!-- Botones de acción -->
                 <div class="action-buttons">
-                        <button>contactar cliente</button>
+                    <button id="popupBtn" class="sos-btn">Comunicarse con el cliente</button>
                     <form:form action="/solicitudes/${solicitud.solicitudId}/finalizar" method="POST">
                         <input type="hidden" name="_method" value="PUT"/>
                         <button type="submit">finalizar</button>
                     </form:form>
                 </div>
             </div>
+
+                        <!-- Popup de Llamada -->
+            <div id="miModal" class="modal">
+                <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Avisando al cliente...</h3>
+                    <div class="loading-img">
+                        <div id="div1"></div>
+                        <div id="div2"></div>
+                        <div id="div3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JS para controlar el popup -->
+            <script>
+                var modal = document.getElementById("miModal");
+                var btn = document.getElementById("popupBtn");
+                var span = document.getElementsByClassName("close")[0];
+
+                btn.onclick = function () {
+                modal.style.display = "block";
+                };
+
+                span.onclick = function () {
+                modal.style.display = "none";
+                };
+
+                window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+                };
+            </script>
+
 
             <!-- Historial de solicitudes similares -->
             <div class="history-container">
