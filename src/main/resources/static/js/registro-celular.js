@@ -59,7 +59,7 @@ if (window.innerWidth < 800) { //solo celulares
         });
     });
 } else {
-    nextButton.innerHTML = "registrarse";
+    nextButton.innerHTML = "Registrarse";
     nextButton.type = "submit";
 }
 // TODO: input-error en rojo algunos no se marcan

@@ -78,7 +78,7 @@ main {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-left: -10px; /* Superponer un poco el botón */
+    margin-left: -50px; /* Superponer un poco el botón */
     margin-top: -30px; /* Subir un poco el botón para que quede encima de la imagen */
 }
 

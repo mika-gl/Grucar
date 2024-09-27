@@ -16,7 +16,7 @@ uri="http://www.springframework.org/tags/form" %>
   <body>
     <header>
       <div class="logo">
-        <img src="images/logo-grucar.png" alt="GRUCAR Logo" />
+        <img src="/images/logo-grucar3.png" alt="GRUCAR Logo" />
         <h2>GRU</h2>
         <h1>CAR</h1>
       </div>
@@ -146,6 +146,8 @@ uri="http://www.springframework.org/tags/form" %>
       <form action="/" method="get" class="salirBtn">
         <a href="/">Volver al Inicio</a>
       </form>
+
+      
     </section>
 
     <footer>

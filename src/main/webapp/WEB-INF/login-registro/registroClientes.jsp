@@ -18,7 +18,7 @@ uri="http://www.springframework.org/tags/form" %>
   <body>
     <header>
       <div class="logo">
-        <img src="images/logo-grucar.png" alt="GRUCAR Logo" />
+        <img src="/images/logo-grucar3.png" alt="GRUCAR Logo" />
         <h2>GRU</h2>
         <h1>CAR</h1>
       </div>
@@ -110,6 +110,7 @@ uri="http://www.springframework.org/tags/form" %>
         <button class="formButton" id="nextButton" type="button">siguiente</button>
         <!-- <button type="submit">Registrarse</button> -->
         <button class="formButton" id="backButton" type="button">Volver al Inicio</button>
+        
       </form:form>
     </section>
     <footer>
