@@ -38,10 +38,7 @@ uri="http://www.springframework.org/tags/form" %>
             <li><a href="/perfil/redirect">Perfil de Usuario</a></li>
           </form>
         </ul>
-        <form action="/login/logout" method="POST">
-          <input type="hidden" name="_method" value="DELETE" />
-          <button type="submit" class="btn-login">Cerrar sesión</button>
-        </form>
+        <button onclick="window.location.href='/'" class="btn-login">Inicio</button>
       </nav>
     </header>
     <main>

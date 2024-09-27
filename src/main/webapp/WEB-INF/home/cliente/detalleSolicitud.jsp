@@ -34,13 +34,22 @@
     <main>            
         <!-- Contenedor principal de la solicitud -->
         <div class="card-container">
-            <c:if test="${solicitud.prestador == null}"> <!-- para que aparezca "buscando" solo cuando se esta buscando -->
-                <h1>Buscando ayudante para resolver: ${solicitud.averiaTraduccion}...</h1>
-            </c:if>
             
             <!-- Especificaciones de la solicitud -->
             <div class="card-body">
+                <c:if test="${solicitud.prestador == null}"> <!-- para que aparezca "buscando" solo cuando se esta buscando -->
+                    <h2>Buscando ayudante para resolver:</h2>
+                    <h2 style="color: #8a2be2;">${solicitud.averiaTraduccion}</h2>
+                </c:if>
                 <p>Tus especificaciones: ${solicitud.detalles}</p>
+                            <!-- Cargando... -->
+                <c:if test="${solicitud.prestador == null}"> <!-- asi desaparecen las bolas cuando ya se encuentra el prestador -->
+                    <div class="loading-img">
+                        <div id="div1"></div>
+                        <div id="div2"></div>
+                        <div id="div3"></div>
+                    </div>
+                </c:if>
                 
                 <!-- Ayudante encontrado -->
                 <c:if test="${solicitud.prestador != null}">
@@ -72,14 +81,7 @@
                 </c:choose>
             </div>
 
-            <!-- Cargando... -->
-            <c:if test="${solicitud.prestador == null}"> <!-- asi desaparecen las bolas cuando ya se encuentra el prestador -->
-                <div class="loading-img">
-                    <div id="div1"></div>
-                    <div id="div2"></div>
-                    <div id="div3"></div>
-                </div>
-            </c:if>
+
         </div>
 
         <!-- Historial de solicitudes -->

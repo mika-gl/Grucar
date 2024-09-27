@@ -43,6 +43,10 @@
       width: 100%;
       padding: 15px;
     }
+    .btn-login {
+      height: 5vh;
+      margin-top: -0.5em;
+    }
     
   
     /* Ajustar el contenedor del formulario */
