@@ -44,7 +44,7 @@
                 <!-- Ayudante encontrado -->
                 <c:if test="${solicitud.prestador != null}">
                     <h3>Ayudante <a href="/perfil/prestador/${solicitud.prestador.prestadorId}">${solicitud.prestador.nombre}</a> encontrado!</h3>
-                    <button class="call-button" onclick="window.location.href = '/+56${solicitud.prestador.numero}'">llamar</button>
+                    <button class="call-button" onclick="window.location.href = 'tel:+56${solicitud.prestador.numero}'">llamar</button>
                 </c:if>
             </div>
 
