@@ -1,8 +1,6 @@
 
-
-
 .image-section {
-  max-width: 500px;
+  max-width: 520px;
   max-height: 350px;
   margin: 0px auto 0px;  /* Centradas */
   overflow: hidden;   /* Para que muestre solo la primera imagen */
@@ -13,39 +11,26 @@
 .image-section ul {
   list-style: none; /* Esto quita el icono de lista */
   display: flex;    /* Para que esten hacia el lado */
-  animation: movimiento_slider  120s infinite alternate ease-in-out ;
+  animation: movimiento_slider  60s infinite alternate ease-in-out ;
 }
 
-.image-section img {
+.image-section li {
   padding: 0px 2px;
 }
 
 @keyframes movimiento_slider {
 
-  0%{ transform: translateX(0%);}
-  10%{ transform: translateX(0%);}
+  0%{ margin-left: 0%;}
+  20%{ margin-left: 0%;}
 
-  10%{transform:translateX(-100%);}
-  20%{transform:translateX(-100%);}
+  25%{margin-left: -105%;}
+  45%{margin-left: -105%;}
 
-  30%{transform:translateX(-200%);}
-  40%{transform:translateX(-200%);}
+  50%{margin-left: -230%;}
+  70%{margin-left: -230%;}
 
-  40%{transform:translateX(-300%);}
-  50%{transform:translateX(-300%);}
+  75%{margin-left: -300%;}
+  100%{margin-left: -300%;}
 
-  50%{transform:translateX(-400%);}
-  60%{transform:translateX(-400%);}
-
-  60%{transform:translateX(-500%);}
-  70%{transform:translateX(-500%);}
-
-  70%{transform:translateX(-600%);}
-  80%{transform:translateX(-600%);}
-
-  80%{transform:translateX(-700%);}
-  90%{transform:translateX(-700%);}
-
-  90%{transform:translateX(-800%);}
-  100%{transform:translateX(-800%);}
+  
 }

@@ -10,7 +10,7 @@ uri="http://www.springframework.org/tags/form" %>
     <title>GRUCAR - Asistencia en carretera</title>
     <link rel="stylesheet" href="css/stylesindex.css"/>
     <link rel="stylesheet" href="css/base.css"/>
-    <link rel="stylesheet" href="css/carrusel.css"/>
+    <link rel="stylesheet" href="css/carrusel2.css"/>
   </head>
   <body>
     <header>
