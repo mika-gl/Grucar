@@ -52,9 +52,9 @@
                 <!-- Botones de acción -->
                 <div class="action-buttons">
                     <button id="popupBtn" class="sos-btn">Comunicarse con el cliente</button>
-                    <form:form action="/solicitudes/${solicitud.solicitudId}/finalizar" method="POST">
-                        <input type="hidden" name="_method" value="PUT"/>
-                        <button type="submit">finalizar</button>
+                    <form:form action="/solicitudes/${solicitud.solicitudId}/finalizar" method="POST" onsubmit="cambiarTextoBoton()">
+                    <input type="hidden" name="_method" value="PUT"/>
+                        <button id="botonFinalizar" type="submit">Finalizar</button>
                     </form:form>
                 </div>
             </div>
@@ -91,6 +91,28 @@
                     modal.style.display = "none";
                 }
                 };
+
+                function cambiarTextoBoton() {
+                    var boton = document.getElementById("botonFinalizar");
+                    boton.innerHTML = "Esperando al cliente";
+                    // Guardar en localStorage que el botón fue presionado
+                    localStorage.setItem("botonFinalizarPresionado", "true");
+                    localStorage.setItem("ultimaPagina", window.location.href);
+                }
+
+                // Al cargar la página, verificar si el botón ya fue presionado en esta URL
+                window.onload = function() {
+                    var botonPresionado = localStorage.getItem("botonFinalizarPresionado");
+                    var ultimaPagina = localStorage.getItem("ultimaPagina");
+
+                    if (botonPresionado === "true" && ultimaPagina === window.location.href) {
+                        var boton = document.getElementById("botonFinalizar");
+                        boton.innerHTML = "Esperando al cliente";
+                    } else {
+                        // Si estamos en otra página, restablecer el texto del botón
+                        localStorage.removeItem("botonFinalizarPresionado");
+                    }
+                }
             </script>
 
 
