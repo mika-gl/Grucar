@@ -1,0 +1,67 @@
+.image-section {
+/*   width: 400px;  Ancho del contenedor */
+  height: 600px; /* Alto del contenedor, rectángulo vertical */
+  background-color: #e9e9e9;
+  margin: 0 auto;
+  overflow: hidden; /* Ocultar el exceso de imágenes que salen del contenedor */
+  position: relative; /* Para manejar mejor los filtros y el contenido */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombras elegantes */
+}
+
+.image-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* Para que las imágenes se desplacen verticalmente */
+  height: 100%;
+  width: 100%;
+  animation: movimiento_slider 110s infinite linear; /* Duración ajustada para que sea más lenta */
+  position: relative;
+}
+
+.image-section li {
+  display: block;
+  position: relative;
+  opacity: 0.6; /* Imágenes con opacidad baja */
+  transition: all 0.5s ease; /* Transición para el zoom */
+}
+
+.image-section li:hover {
+  opacity: 1; /* Imágenes se ven más claras cuando se pasa el mouse */
+  transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+.image-section img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Las imágenes horizontales se adaptan al contenedor */
+  filter: grayscale(30%); /* Filtro para darle un estilo elegante */
+}
+
+@keyframes movimiento_slider {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-100%); }  /* Avanza una imagen */
+  50% { transform: translateY(-200%); }  /* Avanza otra imagen */
+  75% { transform: translateY(-100%); }  /* Retrocede una imagen */
+  100% { transform: translateY(0); }     /* Retrocede a la posición inicial */
+}
+
+/* Filtro de transición en degradado */
+.image-section::before, .image-section::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  left: 0;
+  z-index: 2;
+}
+
+.image-section::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+.image-section::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}

@@ -1,0 +1,278 @@
+main {
+    padding-top: 70px; /* Ajusta este valor según la altura del encabezado */
+}
+
+
+/* Contenedor principal del perfil de usuario */
+.perfil-container {
+    width: 70%; /* Ajustado para mejor visualización */
+    margin: auto;
+    padding: 60px; /*60px o 70px, ver cual queda mejor*/
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Título del perfil */
+.perfil-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Contenido principal del perfil (imagen + formulario) */
+/* Contenedor principal del perfil de usuario */
+.perfil-container {
+    width: 70%; /* Ajustado para mejor visualización */
+    margin: auto;
+    padding: 60px; /*60px o 70px, ver cuál queda mejor*/
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Contenido principal del perfil (imagen + formulario) */
+.profile-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap; /* Ajusta en pantallas pequeñas */
+}
+
+/* Contenedor de imagen de perfil */
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    position: relative;
+}
+
+/* Estilo de la imagen de perfil */
+.profile-image img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 3px solid #d4d4d4;
+}
+
+/* Estilo para el contenedor que agrupa la imagen y el botón */
+.profile-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre imagen y botón */
+    position: relative; /* Para permitir que el botón se superponga ligeramente */
+}
+
+/* Botón de añadir foto */
+.add-photo-btn {
+    background-color: #448dcc;
+    color: white;
+    font-size: large;
+    width: 45px; /* Tamaño del botón */
+    height: 45px; /* Tamaño del botón */
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: -50px; /* Superponer un poco el botón */
+    margin-top: -30px; /* Subir un poco el botón para que quede encima de la imagen */
+}
+
+.add-photo-btn:hover {
+    background-color: #52c1e0;
+    transform: scale(1.05);
+}
+/* Estado de usuario (disponible) */
+.user-status {
+    display: flex;
+    flex-direction: column; /* Cambiar a columna para que el switch esté debajo */
+    align-items: flex-start; /* Alinear a la izquierda */
+    margin-top: 15px;
+}
+
+.user-status p {
+    margin-bottom: 5px; /* Espacio entre el texto y el switch */
+    font-weight: bold;
+    font-size: 18px; /* Aumentar el tamaño de la fuente */
+}
+
+.switch-container {
+    display: flex;
+    justify-content: center; /* Centrar el switch si es necesario */
+    margin-top: 5px; /* Margen superior para separar del texto */
+}
+
+/* Ajustar el tamaño del switch */
+.user-status {
+    display: flex;
+    flex-direction: column; /* Cambiar a columna para que el switch esté debajo */
+    align-items: flex-start; /* Alinear a la izquierda */
+    margin-top: 15px;
+}
+
+.user-status p {
+    margin-bottom: 5px; /* Espacio entre el texto y el switch */
+    font-weight: bold;
+    font-size: 18px; /* Aumentar el tamaño de la fuente */
+}
+
+.switch-container {
+    display: flex;
+    justify-content: center; /* Centrar el switch si es necesario */
+    margin-top: 5px; /* Margen superior para separar del texto */
+}
+
+/* Ajustar el tamaño del switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 90px; /* Aumentar el ancho a 90px */
+    height: 34px; /* Aumentar la altura */
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d4d4d4;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px; /* Aumentar el tamaño del círculo */
+    width: 26px; /* Aumentar el tamaño del círculo */
+    left: 4px; /* Ajustar para centrar el círculo */
+    bottom: 4px; /* Ajustar para centrar el círculo */
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #448dcc;
+}
+
+input:checked + .slider:before {
+    transform: translateX(56px); /* Aumentar el desplazamiento del círculo (ancho total - ancho del círculo) */
+}
+
+
+/* Formulario de perfil */
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: flex-start;
+    background-color: #e0f7fa; /* Color celeste */
+    padding: 15px; /* Añadir padding */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo de las etiquetas y campos */
+.profile-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.profile-form span {
+    margin-bottom: 15px;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #d4d4d4;
+}
+
+/* Botones */
+.profile-form .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.profile-form button {
+    width: 48%;
+    padding: 15px; /* Agrandado */
+    background-color: #8a2be2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Añadir transformación */
+}
+
+.profile-form button:hover {
+    background-color: #d16ddf; /* Color al pasar el mouse */
+    transform: scale(1.05); /* Agrandar el botón al pasar el mouse */
+}
+
+.btn-delete {
+    background-color: #ff5c5c;
+}
+
+.btn-delete:hover {
+    background-color: #e04848;
+}
+
+/* Estilos para el campo de email y el botón de guardar */
+/* Estilos para el contenedor de email */
+/* Contenedor del email */
+.email-container {
+    display: flex; /* Flexbox para alineación horizontal */
+    align-items: center; /* Alinear verticalmente al centro */
+    margin-bottom: 15px; /* Espaciado inferior para separación */
+    width: 100%; /* Ajustar el contenedor al 100% del ancho disponible */
+}
+
+/* Estilo del campo de email */
+.email-container input[type="email"] {
+    flex-grow: 1; /* Ocupa el espacio disponible */
+    padding: 10px;
+    border: 1px solid #d16ddf;
+    border-radius: 5px;
+    margin-right: 10px; /* Espacio entre el campo de entrada y el botón */
+    width: calc(100% - 110px); /* Resta el ancho del botón más el margen */
+}
+
+/* Botón de guardar */
+/* Botón de guardar */
+.guardar-btn {
+    padding: 5px 10px;
+    background-color: #8a2be2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 30px;
+    width: 100px; /* Ancho fijo para el botón */
+    display: flex; /* Usa flexbox para alinear el contenido */
+    justify-content: center; /* Alinea horizontalmente el texto al centro */
+    align-items: center; /* Alinea verticalmente el texto al centro */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.guardar-btn:hover {
+    background-color: #d16ddf;
+    transform: scale(1.05);
+}
+
+
+/* Media Query para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .profile-content {
+        flex-direction: column;
+    }
+
+    .profile-card, .profile-form {
+        width: 100%;
+    }
+}

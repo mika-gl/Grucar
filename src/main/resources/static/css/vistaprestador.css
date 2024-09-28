@@ -1,0 +1,164 @@
+/* General Styles */
+
+/* Estilos para h1 */
+.h1style {
+    text-align: center;
+    margin-top: 100px; /* Menor margen para evitar separación excesiva */
+    font-size: 2.0rem; 
+    color: #4B0082;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+/* Estilos para h3 */
+.h3style {
+    text-align: center; /* Si el h3 incluye texto que quieras alinear */
+    margin-top: 10px; 
+    margin-left: 0px; /* Ajusta según el ancho de la tabla */
+    padding-left: 10px; /* Agrega espacio interno si es necesario */
+    color: #8a2be2;
+    font-size: 1.5rem;
+}
+
+
+/* Estilos para el párrafo */
+.pstyle {
+    text-align: center;
+    color: #17a2b8;
+}
+
+/* Estilos para el contenedor de la tabla */
+.table-container {
+    background: linear-gradient(to bottom, #4c00829f, rgba(76, 0, 130, 0)); /* Degradado vertical */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto; /* Mantiene centrado el contenedor */
+    max-width: 85%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+th {
+    background-color: #4c00829f;
+    color: white;
+}
+
+/* Color de fondo para las filas pares */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Color de fondo para las filas impares */
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Efecto al pasar el cursor sobre las filas */
+tr:hover {
+    background-color: rgb(213, 187, 235); /* Oscurecimiento al pasar el cursor */
+    cursor: pointer; /* Muestra el puntero al pasar por la fila */
+}
+
+
+/* Estilos para los botones */
+button {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #138496;
+}
+
+/* Sección de Recomendaciones */
+.recommendations {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.recommendation-box-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 12%;
+}
+
+.recommendation-box {
+    background: linear-gradient(to bottom, #4c00829f, rgba(76, 0, 130, 0)); /* Degradado vertical */
+   
+    color: white;
+    padding: 20px;
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+/* Transición en los recuadros de recomendaciones */
+/* Efecto hover para los recuadros */
+.recommendation-box:hover {
+    transform: translateY(-10px); /* Efecto de elevación */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombras más profundas */
+    background-color: #17a3b827; /* Cambia el fondo al pasar el mouse */
+    color: white; /* Cambia el color del texto al pasar el mouse */
+}
+
+/* Estilos para los títulos de los recuadros */
+.recommendation-box h2 {
+    color: white; /* Color púrpura */
+    margin-bottom: 15px;
+    font-size: 1.0rem;
+}
+
+/* Estilos para el texto en los recuadros */
+.recommendation-box p {
+    color: #333; /* Color gris oscuro */
+    font-size: 0.9rem;
+}
+
+
+@keyframes dot-blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.dots {
+    animation: dot-blink 1s infinite;
+    display: inline-block; /* Esto permite que cada punto sea tratado como un bloque separado */
+    font-size: 1.5rem; /* Cambia el tamaño según tus necesidades */
+}
+
+.dots:nth-child(1) {
+    animation-delay: 0s; /* Sin retraso */
+}
+
+.dots:nth-child(2) {
+    animation-delay: 0.3s; /* 300 ms de retraso */
+}
+
+.dots:nth-child(3) {
+    animation-delay: 0.6s; /* 600 ms de retraso */
+}
+

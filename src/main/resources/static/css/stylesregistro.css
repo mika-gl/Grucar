@@ -1,0 +1,100 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fondo suave */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding-bottom: 0px; /* Relleno en la parte inferior del encabezado */
+}
+
+/* Estilo para la frase */
+#frase {
+    position: relative; /* Cambia la posición a relativa */
+    top: 100px; /* Ajusta este valor según sea necesario */
+    margin: 20px 0; /* Mantén márgenes para separar de otros elementos */
+    padding: 20px;
+    text-align: center; /* Centrar texto */
+}
+
+#frase h1 {
+    color: hsla(0, 0%, 0%, 0.671); /* Color del título */
+    font-size: 1.8em;
+    margin-bottom: 15px; /* Espaciado inferior para separar del párrafo */
+}
+
+#frase p {
+    color: hsla(0, 0%, 0%, 0.671); /* Color del párrafo */
+    margin-bottom: 30px; /* Espaciado inferior para separar del formulario */
+}
+
+/* Estilo del formulario */
+section#registro {
+    background-color: hsla(181, 45%, 78%, 0.466); /* Fondo para el formulario */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    border: 2px solid #ccc; /* Borde gris claro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 40%; /*33.33%;  Ancho del formulario - 1/3 de la pantalla */
+    margin: 20px auto; /* Centrar formulario */
+    position: relative; /* Para el posicionamiento del encabezado */
+    margin-top: 40px; /* Aumentar margen superior para mayor separación */
+    min-width: 300px; /* Ancho mínimo para dispositivos pequeños */
+}
+
+/* Encabezado del formulario */
+.superiorformulario {
+    color: white; /* Texto blanco */
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+    width: 100%; /* Ancho completo */
+}
+
+/* Estilo de los campos del formulario */
+div {
+    margin-bottom: 15px; /* Espaciado entre campos */
+}
+
+form label {
+    display: block; /* Que la etiqueta esté en su propia línea */
+    margin-bottom: 5px; /* Espaciado debajo de la etiqueta */
+    font-weight: bold; /* Etiquetas en negrita */
+}
+
+form input, form select {
+    width: calc(100% - 20px); /* Ancho del campo */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 1em; /* Tamaño de fuente */
+}
+
+/* Estilo del botón de enviar */
+button {
+    color: white; /* Texto blanco */
+    padding: 10px 15px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-size: 1em; /* Tamaño de fuente */
+}
+
+/* Estilo para el enlace de volver */
+a {
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1em; /* Tamaño de fuente */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transición suave para el color y la sombra */
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+    color: #007bff; /* Cambia a un azul más claro al pasar el ratón */
+    text-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra de texto */
+}
+
+a:active {
+    color: #003f7f; /* Cambia a un azul más oscuro al hacer clic */
+}

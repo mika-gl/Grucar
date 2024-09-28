@@ -1,0 +1,56 @@
+
+.image-section {
+  max-width: 550px;
+  max-height: 550px;
+  margin: 0px auto 0px;  /* Centradas */
+  overflow: hidden;   /* Para que muestre solo la primera imagen */
+
+  border-radius: 5%;
+
+/*   height: 550px;
+  width: 500px; */
+}
+
+.image-section ul {
+  list-style: none; /* Esto quita el icono de lista */
+  display: flex;    /* Para que esten hacia el lado */
+  width: 100%;
+  height: 100%;
+  animation: movimiento_slider  45s infinite alternate ease-in-out ;
+}
+
+.image-section img {
+  padding: 0px 0px;
+/*   height: 100%; */
+}
+
+@keyframes movimiento_slider {
+
+  0%{ transform: translateX(0%);}
+  10%{ transform: translateX(0%);}
+
+  10%{transform:translateX(-105%);}
+  20%{transform:translateX(-105%);}
+
+  30%{transform:translateX(-221%);}
+  40%{transform:translateX(-221%);}
+
+  40%{transform:translateX(-322%);}           
+  50%{transform:translateX(-322%);}
+
+  50%{transform:translateX(-422%);} 
+  60%{transform:translateX(-422%);}
+
+  60%{transform:translateX(-524%);}    
+  70%{transform:translateX(-524%);}
+
+  70%{transform:translateX(-625%);}       /* 575 */
+  80%{transform:translateX(-625%);}
+
+  80%{transform:translateX(-725%);}      /* aDSAD */
+  90%{transform:translateX(-725%);}
+
+  90%{transform:translateX(-828%);}
+  100%{transform:translateX(-828%);}
+}
+

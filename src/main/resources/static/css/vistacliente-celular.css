@@ -1,0 +1,92 @@
+/* Estilos Responsivos */
+@media screen and (max-width: 768px) {
+    /* Encabezado: Hacer que el menú y el logo se adapten */
+    body {
+        margin-top: 23%;
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      height: 18%;
+      background: #8a2be2; /* Degradado morado */
+    }
+  
+    header nav ul {
+      flex-direction: column;
+      padding: 0;
+    }
+  
+    header nav ul li {
+      margin: 10px 0;
+    }
+  
+    /* Hacer que las columnas se apilen verticalmente */
+    .container {
+      flex-direction: column;
+    }
+  
+    .column {
+      padding: 10px;
+      flex: 1;
+    }
+  
+    /* Ajustar el ancho del mapa para que ocupe todo el ancho en móviles */
+    #map {
+      height: 300px;
+      width: 100%;
+    }
+  
+    /* Ajustar el tamaño de los botones */
+    .submit-btn, .sos-btn {
+      width: 100%;
+      padding: 15px;
+    }
+    
+  
+    /* Ajustar el contenedor del formulario */
+    .form-container {
+      max-width: 100%;
+    }
+  }
+  
+  /* Efectos desplegables */
+  .collapse-content {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  
+  .collapse-button {
+    background-color: #8a2be2;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .collapse-button.active + .collapse-content {
+    display: block;
+  }
+  
+/* Estilos Responsivos */
+@media screen and (max-width: 768px) {
+    /* Resto de estilos */
+
+    /* Ajustar el tamaño de fuente y el espaciado del contenido del popup */
+    .popup-content {
+        font-size: 14px; /* Tamaño de fuente más pequeño para móviles */
+        line-height: 1.4; /* Espaciado entre líneas ajustado */
+    }
+
+    /* Botón de cerrar en dispositivos móviles */
+    .popup-close {
+        width: 100%; /* Hacer que el botón de cerrar ocupe todo el ancho */
+        padding: 12px; /* Ajustar el espaciado */
+    }
+}

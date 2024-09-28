@@ -1,0 +1,106 @@
+main {
+    padding-top: 85px; /* Ajusta este valor según la altura del encabezado */
+}
+
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Columnas */
+.column {
+    padding: 20px;
+    flex: 1;
+}
+
+/* Columna izquierda (contenedor S.O.S) */
+.left-column {
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Estilos del contenedor S.O.S. */
+.sos-container {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.info-area {
+    margin-top: 15px;
+}
+
+/* Columna central */
+.middle-column {
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+/* Estilos del contenedor del formulario */
+.form-container{
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; /* Limitar el ancho máximo */
+}
+
+/* Estilos generales del formulario */
+.form-group, 
+.servicios {
+    margin-bottom: 15px;
+}
+
+.form-group label, 
+.servicios label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.servicios select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.servicios label, .form-group label {
+    display: block; /* Asegura que los labels ocupen una línea completa */
+    margin-bottom: 5px; /* Separación entre el label y el campo de entrada */
+}
+
+/* Botón de envío */
+.submit-btn {
+    background-color: #8a2be2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Columna derecha (imagen/mapa) */
+.right-column {
+    background-color: #e0e0e0;
+}
+
+.right-column img {
+    max-width: 100%;
+    height: auto;
+}
+
+#map {
+    height: 550px;
+    width: 400px;
+}

@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    /* el body DEBE OCUPAR el 100% del alto de la ventana */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Main Section */
+main {
+    margin-top: 80px; /* Ajusta según la altura del header */
+    padding: 0px 20px;
+    background-color: #fff;
+    flex: 1; /* Permite que el main ocupe el espacio disponible */
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    min-height: 100vh; 
+    padding: 40px 20px;
+    background-color: #ffffff; 
+}
+
+/* Contenedor del texto */
+.hero-text {
+    flex: 5; 
+    max-width: 50%; 
+    margin-right: 50px;
+    
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.hero h2 span {
+    color: #8a2be2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.register-options {
+    margin-top: 20px;
+}
+
+.register-button {
+    margin-bottom: 20px;
+}
+
+.register-button p {
+    font-size: 1.1rem;
+    margin-bottom: 10px; /* Espacio entre el texto y el botón */
+}
+
+.btn-solicitador, .btn-prestador {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 200px; 
+}
+
+.btn-solicitador {
+    background-color: #17a2b8;
+    display: block; 
+    margin-bottom: 10px; /* Espacio entre los botones */
+}
+
+.btn-prestador {
+    background-color: #8a2be2;
+    display: block; 
+}
+
+.btn-solicitador:hover, .btn-prestador:hover {
+    opacity: 0.9;
+}
+
+/* Image Section */
+.image-section {
+    flex: 1; 
+    display: flex;
+    
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #33333380;
+    color: #fff;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Estilos para la sección de servicios */
+.services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    padding: 40px 20px;
+    background-color: #fff; 
+}
+
+.services h2 {
+    font-size: 2rem; 
+    margin-bottom: 40px; 
+    text-align: center; 
+    color: #333; 
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%; 
+    max-width: 1200px; /* Limita el ancho máximo para mejor apariencia */
+}
+
+.service-box {
+    background-color: #f4f4f4;
+    border: 2px solid #8a2be2;
+    border-radius: 10px;
+    padding: 20px;
+    width: 45%;
+    text-align: center;
+}
+
+.service-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.service-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-box ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.service-box{
+    transition: transform 0.3s ease; /* Transición suave para el aumento */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+/* Efecto al pasar el cursor */
+.service-box:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al 105% */
+}
+
+/* Estilos para la sección de contacto */
+.contact {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.contact p {
+    font-size: 1.2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+.btn-enviar {
+    background-color: #8a2be2;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-enviar:hover {
+    opacity: 0.9;
+}
