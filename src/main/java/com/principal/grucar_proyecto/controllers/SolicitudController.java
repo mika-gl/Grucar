@@ -97,13 +97,8 @@ public class SolicitudController {
             return "redirect:/solicitudes";
         }
         solicitud = solicitudService.asignarFechas(solicitud);
-<<<<<<< HEAD
-        session.setAttribute("solicitud", solicitud); //Agrega solicitud a session para revisar en cualquier ruta si cliente ya hizo una.
-        solicitudService.save(solicitud);
-=======
         solicitudService.save(solicitud);
         session.setAttribute("solicitud", solicitud); //Agrega solicitud a session para revisar en cualquier ruta si cliente ya hizo una.
->>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
         return "redirect:/solicitudes";
     }
 
