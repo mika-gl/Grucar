@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="/css/vistacliente.css" />
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/popup.css" />
+
+    <link rel="stylesheet" href="/css/vistacliente-celular.css" />
     <!-- Leaflet CSS para el mapa -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
@@ -31,10 +33,7 @@
                 <p><em>Gru ${currentUser.nombre} conectado!</em></p>
                 <li><a href="/perfil">Perfil de Usuario</a></li>
             </ul>
-            <form action="/login/logout" method="POST">
-                <input type="hidden" name="_method" value="DELETE" />
-                <button type="submit" class="btn-login">Cerrar sesión</button>
-            </form>
+            <button onclick="window.location.href='/'" class="btn-login">Inicio</button>
         </nav>
     </header>
     
