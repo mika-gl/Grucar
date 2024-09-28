@@ -18,23 +18,25 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 <body>
-    <!-- Encabezado -->
+       <!-- Encabezado -->
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Logo GRUCAR" />
+            <img src="/images/logo-grucar3.png" alt="Logo GRUCAR" />
             <h2>GRU</h2>
             <h1>CAR</h1>
         </div>
-        <nav>
-            <ul>
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/#servicios">Servicios</a></li>
-                <li><a href="/#contacto">Contacto</a></li>
-                <p><em>Gru ${currentUser.nombre} conectado!</em></p>
-                <li><a href="/perfil/redirect">Perfil de Usuario</a></li>
-            </ul>
-            <button onclick="window.location.href='/'" class="btn-login">Inicio</button>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/#servicios">Servicios</a></li>
+          <li><a href="/#contacto">Contacto</a></li>
+          <form action="/perfil" method="get">
+            <li><a href="/perfil/redirect">Perfil de Usuario</a></li>
+          </form>
+        </ul>
+        <p><em>Gru ${currentUser.nombre} conectado!</em></p>
+        <button onclick="window.location.href='/'" class="btn-login">Inicio</button>
+      </nav>
     </header>
     
     <main>
