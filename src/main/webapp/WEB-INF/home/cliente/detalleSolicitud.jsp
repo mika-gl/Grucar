@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/css/detalleSolicitud-celular.css"/>
 </head>
 <body>
-    <header>
+   <header>
         <div class="logo">
             <img src="/images/logo-grucar3.png" alt="Logo GRUCAR"/>
           <h2>GRU</h2>
