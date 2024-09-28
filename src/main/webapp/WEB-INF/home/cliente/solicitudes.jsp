@@ -24,7 +24,7 @@ uri="http://www.springframework.org/tags/form" %>
   </head>
   </head>
   <body>
-    <!-- Encabezado -->
+  <!-- Encabezado -->
       <header>
       <div class="logo">
         <img src="images/logo-grucar3.png" alt="Logo GRUCAR" />
@@ -36,15 +36,12 @@ uri="http://www.springframework.org/tags/form" %>
           <li><a href="/">Inicio</a></li>
           <li><a href="/#servicios">Servicios</a></li>
           <li><a href="/#contacto">Contacto</a></li>
-          <p><em>Gru ${currentUser.nombre} conectado!</em></p>
           <form action="/perfil" method="get">
             <li><a href="/perfil/redirect">Perfil de Usuario</a></li>
           </form>
         </ul>
-        <form action="/login/logout" method="POST">
-          <input type="hidden" name="_method" value="DELETE" />
-          <button type="submit" class="btn-login">Cerrar sesión</button>
-        </form>
+        <p><em>Gru ${currentUser.nombre} conectado!</em></p>
+        <button onclick="window.location.href='/'" class="btn-login">Inicio</button>
       </nav>
     </header>
     <main>
