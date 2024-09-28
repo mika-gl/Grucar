@@ -15,7 +15,7 @@
 <body>
     <header>
         <div class="logo">
-          <img src="logo.png" alt="Logo GRUCAR" />
+            <img src="/images/logo-grucar3.png" alt="Logo GRUCAR"/>
           <h2>GRU</h2>
           <h1>CAR</h1>
         </div>
@@ -24,11 +24,11 @@
             <li><a href="/">Inicio</a></li>
             <li><a href="/#servicios">Servicios</a></li>
             <li><a href="/#contacto">Contacto</a></li>
-            <p><em>Gru ${currentUser.nombre} conectado!</em></p>
             <form action="/perfil" method="get">
                 <li><a href="/perfil/redirect">Perfil de Usuario</a></li>
               </form>
           </ul>
+          <p><em>Gru ${currentUser.nombre} conectado!</em></p>
         </nav>
       </header>
     <main>            
