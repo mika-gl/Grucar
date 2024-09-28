@@ -44,7 +44,11 @@ main {
 }
 
 /* Estilos del contenedor del formulario */
+<<<<<<< HEAD
 .form-container{
+=======
+.form-container {
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
     background-color: #ffffff;
     border-radius: 5px;
     padding: 20px;
@@ -54,6 +58,7 @@ main {
 }
 
 /* Estilos generales del formulario */
+<<<<<<< HEAD
 .form-group, 
 .servicios {
     margin-bottom: 15px;
@@ -61,25 +66,39 @@ main {
 
 .form-group label, 
 .servicios label {
+=======
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
     display: block;
     margin-bottom: 5px;
 }
 
 .form-group input,
 .form-group select,
+<<<<<<< HEAD
 .form-group textarea,
 .servicios select {
+=======
+.form-group textarea {
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
+<<<<<<< HEAD
 .servicios label, .form-group label {
     display: block; /* Asegura que los labels ocupen una línea completa */
     margin-bottom: 5px; /* Separación entre el label y el campo de entrada */
 }
 
+=======
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
 /* Botón de envío */
 .submit-btn {
     background-color: #8a2be2;
@@ -104,3 +123,19 @@ main {
     height: 550px;
     width: 400px;
 }
+<<<<<<< HEAD
+=======
+
+@media(width < 800px ) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* Ocultar el botón de inicio en pantallas grandes */
+@media (min-width: 768px) {
+    .btn-login {
+      display: none;
+    }
+  }
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3

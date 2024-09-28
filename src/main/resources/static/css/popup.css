@@ -52,3 +52,13 @@
     text-decoration: none;
     cursor: pointer;
 }
+<<<<<<< HEAD
+=======
+
+.loading-img {
+    display: flex;                /* Usar flexbox para alinear las bolas */
+    justify-content: center;      /* Centrar el contenido */
+    gap: 10px;                   /* Espacio entre las bolas */
+    margin-top: 20px;           /* Margen superior */
+}
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3

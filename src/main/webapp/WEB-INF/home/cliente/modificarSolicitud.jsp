@@ -12,10 +12,16 @@
     <link rel="stylesheet" href="/css/vistacliente.css" />
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/popup.css" />
+<<<<<<< HEAD
+=======
+
+    <link rel="stylesheet" href="/css/vistacliente-celular.css" />
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
     <!-- Leaflet CSS para el mapa -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 <body>
+<<<<<<< HEAD
     <!-- Encabezado -->
     <header>
         <div class="logo">
@@ -36,6 +42,27 @@
                 <button type="submit" class="btn-login">Cerrar sesión</button>
             </form>
         </nav>
+=======
+       <!-- Encabezado -->
+    <header>
+        <div class="logo">
+            <img src="/images/logo-grucar3.png" alt="Logo GRUCAR" />
+            <h2>GRU</h2>
+            <h1>CAR</h1>
+        </div>
+      <nav>
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/#servicios">Servicios</a></li>
+          <li><a href="/#contacto">Contacto</a></li>
+          <form action="/perfil" method="get">
+            <li><a href="/perfil/redirect">Perfil de Usuario</a></li>
+          </form>
+        </ul>
+        <p><em>Gru ${currentUser.nombre} conectado!</em></p>
+        <button onclick="window.location.href='/'" class="btn-login">Inicio</button>
+      </nav>
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
     </header>
     
     <main>

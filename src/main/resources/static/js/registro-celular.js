@@ -3,6 +3,11 @@ var backButton = document.getElementById("backButton");
 var nextButton = document.getElementById("nextButton");
 var count = 0;
 
+<<<<<<< HEAD
+=======
+var rutInput = document.getElementById("rut").placeholder = "rut";
+
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
 function clickNormal() {
     window.location.href = '/';
 }

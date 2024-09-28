@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @media(width < 1000px) {
+=======
+@media(width < 800px) {
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
   * {
     margin: 0;
     padding: 0;

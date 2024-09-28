@@ -13,9 +13,12 @@ uri="http://www.springframework.org/tags/form" %>
     <link rel="stylesheet" href="/css/vistacliente.css" />
     <link rel="stylesheet" href="/css/vistacliente-celular.css" />
     <link rel="stylesheet" href="/css/popup.css" />
+<<<<<<< HEAD
     <script src="/js/alertaSolicitud.js"></script>
     <script src="/js/popupservicio.js"></script>
 
+=======
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
         <!-- Leaflet CSS para el mapa -->
     <link
       rel="stylesheet"
@@ -24,7 +27,11 @@ uri="http://www.springframework.org/tags/form" %>
   </head>
   </head>
   <body>
+<<<<<<< HEAD
     <!-- Encabezado -->
+=======
+  <!-- Encabezado -->
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
       <header>
       <div class="logo">
         <img src="images/logo-grucar3.png" alt="Logo GRUCAR" />
@@ -36,15 +43,23 @@ uri="http://www.springframework.org/tags/form" %>
           <li><a href="/">Inicio</a></li>
           <li><a href="/#servicios">Servicios</a></li>
           <li><a href="/#contacto">Contacto</a></li>
+<<<<<<< HEAD
           <p><em>Gru ${currentUser.nombre} conectado!</em></p>
+=======
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
           <form action="/perfil" method="get">
             <li><a href="/perfil/redirect">Perfil de Usuario</a></li>
           </form>
         </ul>
+<<<<<<< HEAD
         <form action="/login/logout" method="POST">
           <input type="hidden" name="_method" value="DELETE" />
           <button type="submit" class="btn-login">Cerrar sesión</button>
         </form>
+=======
+        <p><em>Gru ${currentUser.nombre} conectado!</em></p>
+        <button onclick="window.location.href='/'" class="btn-login">Inicio</button>
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
       </nav>
     </header>
     <main>
@@ -72,6 +87,7 @@ uri="http://www.springframework.org/tags/form" %>
         <div class="column middle-column">
           <div class="form-container">
             <h2>Seleccione el Problema</h2>
+<<<<<<< HEAD
             <br>
             <form:form action="/solicitudes/nueva" method="POST" modelAttribute="solicitud">
               <div class="form-group"> 
@@ -96,6 +112,26 @@ uri="http://www.springframework.org/tags/form" %>
                         <option value="2">Batería agotada</option>
                         <option value="5">Problemas eléctricos</option>
                         <option value="11">Sobrecalentamiento del vehículo</option>
+=======
+            <form:form action="/solicitudes/nueva" method="POST" modelAttribute="solicitud">
+                <div class="form-group">
+                    <form:label path="averia">Problema:</form:label>
+                    <form:select path="averia">
+                        <option value="">Seleccione un problema</option>
+                        <option value="0">Problemas con el motor</option>
+                        <option value="1">Pinchazo de llanta</option>
+                        <option value="2">Batería agotada</option>
+                        <option value="3">Falta de combustible</option>
+                        <option value="4">Problemas de frenos</option>
+                        <option value="5">Problemas eléctricos</option>
+                        <option value="6">Problemas de refrigeración del motor</option>
+                        <option value="7">Problemas de transmisión/option>
+                        <option value="8">Llave dentro del vehículo</option>
+                        <option value="9">Vehículo atascado</option>
+                        <option value="10">Problemas con las luces</option>
+                        <option value="11">Sobrecalentamiento del vehículo</option>
+                        <option value="12">Falla del sistema de dirección</option>
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
                         <option value="o">Otro</option>
                     </form:select>
                 </div>
@@ -118,7 +154,11 @@ uri="http://www.springframework.org/tags/form" %>
                 value="${currentUser.clienteId}"
               />
 
+<<<<<<< HEAD
               <button type="submit" id="submit-btn" class="submit-btn">Pedir Asistencia</button>
+=======
+              <button type="submit" class="submit-btn">Pedir Asistencia</button>
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
             </form:form>
           </div>
         </div>
@@ -156,6 +196,7 @@ uri="http://www.springframework.org/tags/form" %>
         </div>
       </div>
 
+<<<<<<< HEAD
 
       <!-- Popup para el mensaje de asistencia -->
       <div id="miModalAsistencia" class="modal">
@@ -167,6 +208,9 @@ uri="http://www.springframework.org/tags/form" %>
 
 
       <!-- JS para controlar el popup de SOS-->
+=======
+      <!-- JS para controlar el popup -->
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
       <script>
         var modal = document.getElementById("miModal");
         var btn = document.getElementById("popupBtn");
@@ -187,6 +231,7 @@ uri="http://www.springframework.org/tags/form" %>
         };
       </script>
 
+<<<<<<< HEAD
 
 
       <!-- JS para controlar el Popup de mensaje de asistencia -->
@@ -210,6 +255,8 @@ uri="http://www.springframework.org/tags/form" %>
             };
           </script>
 
+=======
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
       <!-- Leaflet JS para el mapa -->
       <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
       <script src="script.js"></script>

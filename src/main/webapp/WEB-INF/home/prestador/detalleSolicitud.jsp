@@ -10,6 +10,10 @@
         <title>Detalle de la Solicitud</title>
         <link rel="stylesheet" href="/css/detalleSolicitud-cliente.css"/>
         <link rel="stylesheet" href="/css/base.css"/>
+<<<<<<< HEAD
+=======
+        <link rel="stylesheet" href="/css/popup.css" />
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
     </head>
     <body>
         <header>
@@ -23,7 +27,10 @@
                     <li><a href="/">Inicio</a></li>
                     <li><a href="/#servicios">Servicios</a></li>
                     <li><a href="/#contacto">Contacto</a></li>
+<<<<<<< HEAD
                     <p><em>Gru ${currentUser.nombre} conectado!</em></p>
+=======
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
                     <form action="/perfil" method="get">
                         <li><a href="/perfil/redirect">Perfil de Usuario</a></li>
                     </form>
@@ -38,7 +45,12 @@
         <main>            
             <!-- Contenedor principal de la solicitud -->
             <div class="card-container">
+<<<<<<< HEAD
                 <h1>Detalles de la solicitud del cliente: ${solicitud.averiaTraduccion}</h1>
+=======
+                <h1>Solicitud aceptada!</h1>
+                <h3>Detalles</h3>
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
                 
                 <!-- Especificaciones de la solicitud -->
                 <div class="card-body">
@@ -50,14 +62,81 @@
 
                 <!-- Botones de acción -->
                 <div class="action-buttons">
+<<<<<<< HEAD
                         <button>contactar cliente</button>
                     <form:form action="/solicitudes/${solicitud.solicitudId}/finalizar" method="POST">
                         <input type="hidden" name="_method" value="PUT"/>
                         <button type="submit">finalizar</button>
+=======
+                    <button id="popupBtn" class="sos-btn">Comunicarse con el cliente</button>
+                    <form:form action="/solicitudes/${solicitud.solicitudId}/finalizar" method="POST" onsubmit="cambiarTextoBoton()">
+                    <input type="hidden" name="_method" value="PUT"/>
+                        <button id="botonFinalizar" type="submit">Finalizar</button>
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
                     </form:form>
                 </div>
             </div>
 
+<<<<<<< HEAD
+=======
+                        <!-- Popup de Llamada -->
+            <div id="miModal" class="modal">
+                <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Avisando al cliente...</h3>
+                    <div class="loading-img">
+                        <div id="div1"></div>
+                        <div id="div2"></div>
+                        <div id="div3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JS para controlar el popup -->
+            <script>
+                var modal = document.getElementById("miModal");
+                var btn = document.getElementById("popupBtn");
+                var span = document.getElementsByClassName("close")[0];
+
+                btn.onclick = function () {
+                modal.style.display = "block";
+                };
+
+                span.onclick = function () {
+                modal.style.display = "none";
+                };
+
+                window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+                };
+
+                function cambiarTextoBoton() {
+                    var boton = document.getElementById("botonFinalizar");
+                    boton.innerHTML = "Esperando al cliente";
+                    // Guardar en localStorage que el botón fue presionado
+                    localStorage.setItem("botonFinalizarPresionado", "true");
+                    localStorage.setItem("ultimaPagina", window.location.href);
+                }
+
+                // Al cargar la página, verificar si el botón ya fue presionado en esta URL
+                window.onload = function() {
+                    var botonPresionado = localStorage.getItem("botonFinalizarPresionado");
+                    var ultimaPagina = localStorage.getItem("ultimaPagina");
+
+                    if (botonPresionado === "true" && ultimaPagina === window.location.href) {
+                        var boton = document.getElementById("botonFinalizar");
+                        boton.innerHTML = "Esperando al cliente";
+                    } else {
+                        // Si estamos en otra página, restablecer el texto del botón
+                        localStorage.removeItem("botonFinalizarPresionado");
+                    }
+                }
+            </script>
+
+
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
             <!-- Historial de solicitudes similares -->
             <div class="history-container">
                 <h2>Historial de solicitudes</h2>

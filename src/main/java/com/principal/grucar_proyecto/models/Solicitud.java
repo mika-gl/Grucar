@@ -39,7 +39,10 @@ public class Solicitud {
 
     @NotBlank(message = "Especificar avería")
     private String averia; //deberia ser un modelo? ej. Averia averia
+<<<<<<< HEAD
     private String servicio; 
+=======
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
  
     private String averiaTraduccion; // codigo -> descripcion
 

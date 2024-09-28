@@ -97,13 +97,21 @@ uri="http://www.springframework.org/tags/form" %>
           <h2 style="display: none">Crea una contraseña</h2>
           <div>
             <form:label path="passwordForm">Contraseña:</form:label>
+<<<<<<< HEAD
             <form:password path="passwordForm" />
+=======
+            <form:input type="password" placeholder="contraseña" path="passwordForm" />
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
           </div>
           <form:errors class="error" path="passwordForm" />
           
           <div>
             <form:label path="passwordConfirm">Confirmar Contraseña:</form:label>
+<<<<<<< HEAD
             <form:password placeholder="confirmacion" path="passwordConfirm" />
+=======
+            <form:input type="password" placeholder="confirmacion" path="passwordConfirm" />
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
           </div>
           <form:errors class="error" path="passwordConfirm" />
         </div>

@@ -67,6 +67,12 @@ main {
   max-width: 200px;
   margin: 20px auto; /* Centrado automático */
 }
+<<<<<<< HEAD
+=======
+.whatsapp-button {
+  background-color: lightgreen;
+}
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
 
 .call-button:hover {
   background-color: #52c1e0;

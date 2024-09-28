@@ -11,6 +11,11 @@ uri="http://www.springframework.org/tags/form" %>
     <title>Lista de Solicitudes</title>
     <link rel="stylesheet" href="/css/vistaprestador.css" />
     <link rel="stylesheet" href="/css/base.css" />
+<<<<<<< HEAD
+=======
+
+    <link rel="stylesheet" href="/css/vistaprestador-celular.css"/>
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
   </head>
   <body>
     <header>
@@ -37,11 +42,20 @@ uri="http://www.springframework.org/tags/form" %>
 
     <main class="main-container">
       <h1 class="h1style"><em>Gru ${currentUser.nombre} conectado!</em></h1>
+<<<<<<< HEAD
       <p class="pstyle">
         GruCar procesando
         <span class="dots">.</span><span class="dots">.</span><span class="dots">.</span>
       </p>
       <h3 class="h3style">Solicitudes del GruAmigo</h3>    
+=======
+      <h3 class="h3style">Solicitudes activas</h3>
+      <c:if test="${solicitudes == null}">
+      <p class="pstyle">
+        <span class="dots">.</span><span class="dots">.</span><span class="dots">.</span>
+      </p>
+      </c:if>
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
       <div class="table-container">
         <table>
           <tr>
@@ -49,8 +63,11 @@ uri="http://www.springframework.org/tags/form" %>
             <th>Avería</th>
             <th>Detalles</th>
             <th>Fecha de Solicitud</th>
+<<<<<<< HEAD
             <th>Servicio</th>
             <th>Prestador</th>
+=======
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
             <th>Ir al Llamado</th>
           </tr>
           <c:forEach items="${solicitudes}" var="solicitud">
@@ -60,9 +77,20 @@ uri="http://www.springframework.org/tags/form" %>
                   <td>${solicitud.cliente.nombre}</td>
                   <td>${solicitud.averiaTraduccion}</td>
                   <td>${solicitud.detalles}</td>
+<<<<<<< HEAD
                   <td>${solicitud.createdAt}</td>
                   <td>${solicitud.servicio}</td>
                   <td>${solicitud.prestador.nombre}</td>
+=======
+                  <td style="display: none;">${solicitud.createdAt}</td>
+                  <td></td>
+                  <script>
+                        var createdAt = document.querySelector(".table-container tr td:nth-child(4)").innerText;
+                        var formattedDateDay = createdAt.match(/(?<=-)[0-9]{2}(?=-)/);
+                        var formattedDateHour = createdAt.match(/(?<= )[0-9:]{5}(?=:)/);
+                        document.querySelector(".table-container tr td:nth-child(5)").innerHTML = "el "+formattedDateDay+" a las "+formattedDateHour;
+                  </script>
+>>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
                   <td>
                     <form
                       action="/solicitudes/aceptar/${solicitud.solicitudId}"
