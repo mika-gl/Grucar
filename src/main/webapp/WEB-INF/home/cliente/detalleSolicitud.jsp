@@ -23,11 +23,11 @@
             <li><a href="/">Inicio</a></li>
             <li><a href="/#servicios">Servicios</a></li>
             <li><a href="/#contacto">Contacto</a></li>
-            <p><em>Gru ${currentUser.nombre} conectado!</em></p>
             <form action="/perfil" method="get">
                 <li><a href="/perfil/redirect">Perfil de Usuario</a></li>
               </form>
           </ul>
+        <p><em>Gru ${currentUser.nombre} conectado!</em></p>
         </nav>
       </header>
     <main>            
