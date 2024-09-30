@@ -41,25 +41,33 @@ uri="http://www.springframework.org/tags/form" %>
         modelAttribute="baseUser"
       >
         <!-- Datos personales -->
-        <div>
+        <!-- Nombre y Apellido -->
+        <div class="form-element form-parte-1">
           <form:label path="nombre">Nombre:</form:label>
-          <form:input path="nombre" placeholder="Introduce tu nombre" />
-        </div>
-        <form:errors class="error" path="nombre" />
+          <div class="input-group">
+            <form:input path="nombre" placeholder="Introduce tu nombre" />
+          </div>
+          <form:errors class="error" path="nombre" />
 
-        <div>
           <form:label path="apellido">Apellido:</form:label>
-          <form:input path="apellido" placeholder="Introduce tu apellido" />
+          <div class="input-group">
+            <form:input path="apellido" placeholder="Introduce tu apellido" />
+          </div>
+          <form:errors class="error" path="apellido" />
         </div>
-        <form:errors class="error" path="apellido" />
 
-        <div>
+
+        <!-- Rut -->
+        <div class="form-element">
           <form:label path="rut">Rut:</form:label>
-          <form:input path="rut" placeholder="ej: 12123456-0" />
+          <div class="input-group">
+            <form:input path="rut" placeholder="ej: 12123456-0" />
+          </div>
         </div>
         <form:errors class="error" path="rut" />
 
-        <div>
+        <!-- Género -->
+        <div class="form-element form-parte-2">
           <form:label path="genero">Género:</form:label>
           <form:select path="genero">
             <option value="">Selecciona tu género</option>
@@ -70,23 +78,8 @@ uri="http://www.springframework.org/tags/form" %>
         </div>
         <form:errors class="error" path="genero" />
 
-        <div>
-          <form:label path="numero">Número de celular:</form:label>
-          <div style="display: flex; align-items: center">
-            <span>+56</span>
-            <form:input
-              path="numero"
-              maxlength="9"
-              placeholder="912345678"
-              pattern="\\d{9}"
-              title="Debe ingresar solo 9 dígitos"
-            />
-          </div>
-        </div>
-        <form:errors class="error" path="numero" />
-
-        <!-- Tipo de Prestador -->
-        <div>
+        <!--Tipo de Prestador -->
+        <div class="form-element form-parte-2">
           <form:label path="tipoDePersona">Tipo de Prestador:</form:label>
           <form:select path="tipoDePersona">
             <option value="">Selecciona el tipo de prestador</option>
@@ -95,6 +88,20 @@ uri="http://www.springframework.org/tags/form" %>
           </form:select>
         </div>
         <form:errors class="error" path="tipoDePersona" />
+
+        <!-- Número de celular con formato mejorado -->
+        <div class="form-element telefono-input">
+          <div id="codigo-numero" style="display: flex;"></div>
+          <form:label path="numero" aria-label="Número Celular">Número de celular:</form:label>
+          <div class="input-group">
+              <div class="country-code">
+                  <img src="/images/chile-flag.png" alt="CL" class="flag-img">
+                  <span>+56</span>
+              </div>
+              <form:input path="numero" type="text" placeholder="ej. 912345678" aria-required="true" maxlength="9"/>
+          </div>
+          <form:errors path="numero" class="error"/>
+        </div>
 
         <!-- Tipo de Licencia de Conducir -->
         <div>
@@ -125,33 +132,35 @@ uri="http://www.springframework.org/tags/form" %>
         </div>
         <form:errors class="error" path="licencia" />
 
-        <!-- Contraseña -->
-        <div>
-          <form:label path="passwordForm">Contraseña:</form:label>
-          <form:password path="passwordForm" />
+               <!-- Contraseña y Confirmación -->
+               <div class="form-element form-parte-3">
+                <form:label path="passwordForm">Contraseña:</form:label>
+                <div class="input-group">
+                    <form:password path="passwordForm" placeholder="Introduce tu contraseña"/>
+                    
+                <form:errors class="error" path="passwordForm"/>
+    
+                <form:label path="passwordConfirm">Confirmar Contraseña:</form:label>
+                <div class="input-group">
+                    <form:password path="passwordConfirm" placeholder="Confirma tu contraseña"/>
+                    
+                <form:errors class="error" path="passwordConfirm"/>
+            </div>
+
+       <!-- Botones -->
+        <div class="form-actions">
+            <button class="formButton" id="nextButton" type="submit">Registrarse</button>
+            <button class="formButton secondary" id="backButton" type="button" onclick="window.location.href='/'">Volver al Inicio</button>
         </div>
-        <form:errors class="error" path="passwordForm" />
 
-        <div>
-          <form:label path="passwordConfirm">Confirmar Contraseña:</form:label>
-          <form:password path="passwordConfirm" />
-        </div>
-        <form:errors class="error" path="passwordConfirm" />
-
-        <!-- Botón para enviar el formulario -->
-        <button type="submit">Registrarse</button>
-      </form:form>
-
-      <!-- Enlace para regresar a la página anterior -->
-      <form action="/" method="get" class="salirBtn">
-        <a href="/">Volver al Inicio</a>
-      </form>
-
-      
-    </section>
+    </form:form>
+</section>
 
     <footer>
       <p>&copy; 2024 GRUCAR. Todos los derechos reservados.</p>
     </footer>
+    <!--Quitado a proposito, a considerar después -->
+    <script src="/js/registro-celular.js"></script>
+<script src="/js/error-input.js"></script>
   </body>
 </html>
