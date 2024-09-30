@@ -65,22 +65,12 @@ uri="http://www.springframework.org/tags/form" %>
           </div>
         </div>
 
-        <!-- Columna central (Formulario de problemas) -->
+               <!-- Columna central (Formulario de problemas) -->
         <div class="column middle-column">
           <div class="form-container">
             <h2>Seleccione el Problema</h2>
             <br>
             <form:form action="/solicitudes/nueva" method="POST" modelAttribute="solicitud">
-              <div class="form-group"> 
-                <form:label path="servicio">Servicios:</form:label> 
-                <form:select path="servicio" id="servicio" onchange="verificarSeleccion(this)">
-                    <option disabled selected>Seleccione un servicio</option>
-                    <option value="asistencia">Asistente en ruta</option>
-                    <option value="remolque">Grúa de Remolque</option>
-                    <option value="mecanico">Mecánico a domicilio</option>
-                    <option value="conductor">Conductor de reemplazo</option>
-                </form:select>
-              </div>
                 <div class="form-group">
                     <form:label path="averia">Problema:</form:label>
                     <form:select path="averia" id="problema" onchange="verificarSeleccion(this)">
@@ -97,6 +87,17 @@ uri="http://www.springframework.org/tags/form" %>
                     </form:select>
                 </div>
                 <form:errors path="averia"/>
+
+                <div class="form-group"> 
+                  <form:label path="servicio">Servicio:</form:label> 
+                  <form:select path="servicio" id="servicio" onchange="verificarSeleccion(this)">
+                      <option disabled selected>Seleccione un servicio</option>
+                      <option value="asistencia">Asistente en ruta</option>
+                      <option value="remolque">Grúa de Remolque</option>
+                      <option value="mecanico">Mecánico a domicilio</option>
+                      <option value="conductor">Conductor de reemplazo</option>
+                  </form:select>
+                </div>
 
               <div class="form-group">
                 <form:label path="detalles">Detalle:</form:label>
