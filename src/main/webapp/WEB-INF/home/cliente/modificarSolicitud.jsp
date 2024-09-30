@@ -28,9 +28,9 @@
                 <li><a href="/">Inicio</a></li>
                 <li><a href="/#servicios">Servicios</a></li>
                 <li><a href="/#contacto">Contacto</a></li>
-                <p><em>Gru ${currentUser.nombre} conectado!</em></p>
                 <li><a href="/perfil">Perfil de Usuario</a></li>
             </ul>
+            <p><em>Gru ${currentUser.nombre} conectado!</em></p>
             <form action="/login/logout" method="POST">
                 <input type="hidden" name="_method" value="DELETE" />
                 <button type="submit" class="btn-login">Cerrar sesión</button>
