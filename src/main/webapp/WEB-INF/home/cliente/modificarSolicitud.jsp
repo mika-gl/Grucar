@@ -30,9 +30,10 @@
                 <li><a href="/">Inicio</a></li>
                 <li><a href="/#servicios">Servicios</a></li>
                 <li><a href="/#contacto">Contacto</a></li>
-                <p><em>Gru ${currentUser.nombre} conectado!</em></p>
+                
                 <li><a href="/perfil/redirect">Perfil de Usuario</a></li>
             </ul>
+            <p><em>Gru ${currentUser.nombre} conectado!</em></p>
             <button onclick="window.location.href='/'" class="btn-login">Inicio</button>
         </nav>
     </header>
