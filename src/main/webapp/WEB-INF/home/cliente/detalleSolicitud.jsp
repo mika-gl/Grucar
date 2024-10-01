@@ -10,20 +10,20 @@
     <title>Tu Solicitud</title>
     <link rel="stylesheet" href="/css/detalleSolicitud-cliente.css"/>
     <link rel="stylesheet" href="/css/base.css"/>
-<<<<<<< HEAD
+
 </head>
 <body>
     <header>
         <div class="logo">
           <img src="logo.png" alt="Logo GRUCAR" />
-=======
+
     <link rel="stylesheet" href="/css/detalleSolicitud-celular.css"/>
 </head>
 <body>
    <header>
         <div class="logo">
             <img src="/images/logo-grucar3.png" alt="Logo GRUCAR"/>
->>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
+
           <h2>GRU</h2>
           <h1>CAR</h1>
         </div>
@@ -42,7 +42,7 @@
     <main>            
         <!-- Contenedor principal de la solicitud -->
         <div class="card-container">
-<<<<<<< HEAD
+
             <c:if test="${solicitud.prestador == null}"> <!-- para que aparezca "buscando" solo cuando se esta buscando -->
                 <h1>Buscando ayudante para resolver: ${solicitud.averiaTraduccion}...</h1>
             </c:if>
@@ -50,7 +50,7 @@
             <!-- Especificaciones de la solicitud -->
             <div class="card-body">
                 <p>Tus especificaciones: ${solicitud.detalles}</p>
-=======
+
             
             <!-- Especificaciones de la solicitud -->
             <div class="card-body">
@@ -66,19 +66,18 @@
                         <div id="div2"></div>
                         <div id="div3"></div>
                     </div>
-                </c:if>
->>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
+
                 
                 <!-- Ayudante encontrado -->
                 <c:if test="${solicitud.prestador != null}">
                     <h3>Ayudante <a href="/perfil/prestador/${solicitud.prestador.prestadorId}">${solicitud.prestador.nombre}</a> encontrado!</h3>
-<<<<<<< HEAD
+
                     <button class="call-button" onclick="window.location.href = '/+56${solicitud.prestador.numero}'">llamar</button>
-=======
+
                     <p>en breve se pondra en contacto contigo</p>
                     <button class="call-button" onclick="window.location.href = 'tel:+56${solicitud.prestador.numero}'">llamar</button>
                     <button class="call-button whatsapp-button" onclick='window.location.href = "http\://wa.me/+56${solicitud.prestador.numero}"'>whatsapp</button>
->>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
+
                 </c:if>
             </div>
 
@@ -103,7 +102,6 @@
                 </c:choose>
             </div>
 
-<<<<<<< HEAD
             <!-- Cargando... -->
             <c:if test="${solicitud.prestador == null}"> <!-- asi desaparecen las bolas cuando ya se encuentra el prestador -->
                 <div class="loading-img">
@@ -112,9 +110,7 @@
                     <div id="div3"></div>
                 </div>
             </c:if>
-=======
 
->>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
         </div>
 
         <!-- Historial de solicitudes -->
