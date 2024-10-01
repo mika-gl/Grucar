@@ -109,3 +109,10 @@ main {
       display: none;
     }
   }
+
+/* Ocultar el botón de inicio en pantallas grandes */
+@media (min-width: 768px) {
+  .btn-login {
+    display: none;
+  }
+}

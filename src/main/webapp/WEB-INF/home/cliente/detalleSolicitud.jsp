@@ -32,18 +32,11 @@
             <li><a href="/">Inicio</a></li>
             <li><a href="/#servicios">Servicios</a></li>
             <li><a href="/#contacto">Contacto</a></li>
-<<<<<<< HEAD
-            <p><em>Gru ${currentUser.nombre} conectado!</em></p>
-=======
->>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
             <form action="/perfil" method="get">
                 <li><a href="/perfil/redirect">Perfil de Usuario</a></li>
               </form>
           </ul>
-<<<<<<< HEAD
-=======
-          <p><em>Gru ${currentUser.nombre} conectado!</em></p>
->>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
+        <p><em>Gru ${currentUser.nombre} conectado!</em></p>
         </nav>
       </header>
     <main>            

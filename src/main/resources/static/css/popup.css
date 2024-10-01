@@ -59,3 +59,20 @@
     gap: 10px;                   /* Espacio entre las bolas */
     margin-top: 20px;           /* Margen superior */
 }
+
+/* Consultas de medios para pantallas pequeñas */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 90%; /* Ajusta el tamaño del modal en pantallas pequeñas */
+        margin: 30% auto; /* Aumenta el margen superior para centrar mejor el modal */
+    }
+
+    .sos-btn {
+        padding: 10px 20px; /* Reduce el padding del botón en pantallas pequeñas */
+        font-size: 1em; /* Ajusta el tamaño de fuente del botón */
+    }
+
+    .close {
+        font-size: 24px; /* Reduce el tamaño del botón de cerrar en pantallas pequeñas */
+    }
+}

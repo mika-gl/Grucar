@@ -27,11 +27,7 @@ uri="http://www.springframework.org/tags/form" %>
   </head>
   </head>
   <body>
-<<<<<<< HEAD
-    <!-- Encabezado -->
-=======
   <!-- Encabezado -->
->>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
       <header>
       <div class="logo">
         <img src="images/logo-grucar3.png" alt="Logo GRUCAR" />
@@ -43,23 +39,12 @@ uri="http://www.springframework.org/tags/form" %>
           <li><a href="/">Inicio</a></li>
           <li><a href="/#servicios">Servicios</a></li>
           <li><a href="/#contacto">Contacto</a></li>
-<<<<<<< HEAD
-          <p><em>Gru ${currentUser.nombre} conectado!</em></p>
-=======
->>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
           <form action="/perfil" method="get">
             <li><a href="/perfil/redirect">Perfil de Usuario</a></li>
           </form>
         </ul>
-<<<<<<< HEAD
-        <form action="/login/logout" method="POST">
-          <input type="hidden" name="_method" value="DELETE" />
-          <button type="submit" class="btn-login">Cerrar sesión</button>
-        </form>
-=======
         <p><em>Gru ${currentUser.nombre} conectado!</em></p>
         <button onclick="window.location.href='/'" class="btn-login">Inicio</button>
->>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
       </nav>
     </header>
     <main>
@@ -83,23 +68,13 @@ uri="http://www.springframework.org/tags/form" %>
           </div>
         </div>
 
-        <!-- Columna central (Formulario de problemas) -->
+               <!-- Columna central (Formulario de problemas) -->
         <div class="column middle-column">
           <div class="form-container">
             <h2>Seleccione el Problema</h2>
 <<<<<<< HEAD
             <br>
             <form:form action="/solicitudes/nueva" method="POST" modelAttribute="solicitud">
-              <div class="form-group"> 
-                <form:label path="servicio">Servicios:</form:label> 
-                <form:select path="servicio" id="servicio" onchange="verificarSeleccion(this)">
-                    <option disabled selected>Seleccione un servicio</option>
-                    <option value="asistencia">Asistente en ruta</option>
-                    <option value="remolque">Grúa de Remolque</option>
-                    <option value="mecanico">Mecánico a domicilio</option>
-                    <option value="conductor">Conductor de reemplazo</option>
-                </form:select>
-              </div>
                 <div class="form-group">
                     <form:label path="averia">Problema:</form:label>
                     <form:select path="averia" id="problema" onchange="verificarSeleccion(this)">
@@ -136,6 +111,17 @@ uri="http://www.springframework.org/tags/form" %>
                     </form:select>
                 </div>
                 <form:errors path="averia"/>
+
+                <div class="form-group"> 
+                  <form:label path="servicio">Servicio:</form:label> 
+                  <form:select path="servicio" id="servicio" onchange="verificarSeleccion(this)">
+                      <option disabled selected>Seleccione un servicio</option>
+                      <option value="asistencia">Asistente en ruta</option>
+                      <option value="remolque">Grúa de Remolque</option>
+                      <option value="mecanico">Mecánico a domicilio</option>
+                      <option value="conductor">Conductor de reemplazo</option>
+                  </form:select>
+                </div>
 
               <div class="form-group">
                 <form:label path="detalles">Detalle:</form:label>
