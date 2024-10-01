@@ -10,10 +10,7 @@
         <title>Detalle de la Solicitud</title>
         <link rel="stylesheet" href="/css/detalleSolicitud-cliente.css"/>
         <link rel="stylesheet" href="/css/base.css"/>
-<<<<<<< HEAD
-=======
         <link rel="stylesheet" href="/css/popup.css" />
->>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
     </head>
     <body>
         <header>
@@ -27,10 +24,6 @@
                     <li><a href="/">Inicio</a></li>
                     <li><a href="/#servicios">Servicios</a></li>
                     <li><a href="/#contacto">Contacto</a></li>
-<<<<<<< HEAD
-                    <p><em>Gru ${currentUser.nombre} conectado!</em></p>
-=======
->>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
                     <form action="/perfil" method="get">
                         <li><a href="/perfil/redirect">Perfil de Usuario</a></li>
                     </form>
@@ -45,12 +38,8 @@
         <main>            
             <!-- Contenedor principal de la solicitud -->
             <div class="card-container">
-<<<<<<< HEAD
-                <h1>Detalles de la solicitud del cliente: ${solicitud.averiaTraduccion}</h1>
-=======
                 <h1>Solicitud aceptada!</h1>
                 <h3>Detalles</h3>
->>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
                 
                 <!-- Especificaciones de la solicitud -->
                 <div class="card-body">
@@ -62,23 +51,14 @@
 
                 <!-- Botones de acción -->
                 <div class="action-buttons">
-<<<<<<< HEAD
-                        <button>contactar cliente</button>
-                    <form:form action="/solicitudes/${solicitud.solicitudId}/finalizar" method="POST">
-                        <input type="hidden" name="_method" value="PUT"/>
-                        <button type="submit">finalizar</button>
-=======
                     <button id="popupBtn" class="sos-btn">Comunicarse con el cliente</button>
                     <form:form action="/solicitudes/${solicitud.solicitudId}/finalizar" method="POST" onsubmit="cambiarTextoBoton()">
                     <input type="hidden" name="_method" value="PUT"/>
                         <button id="botonFinalizar" type="submit">Finalizar</button>
->>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
                     </form:form>
                 </div>
             </div>
 
-<<<<<<< HEAD
-=======
                         <!-- Popup de Llamada -->
             <div id="miModal" class="modal">
                 <div class="modal-content">
@@ -136,7 +116,6 @@
             </script>
 
 
->>>>>>> 91f2669ecd0caa14ab7f60ce989af11cff0297c3
             <!-- Historial de solicitudes similares -->
             <div class="history-container">
                 <h2>Historial de solicitudes</h2>
